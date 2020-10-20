@@ -1,0 +1,48 @@
+name: PDAL Win32 Github Build v2
+on:
+  workflow_dispatch:
+  
+jobs:
+  windows_build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout CAPI
+        uses: actions/checkout@v2
+        with:
+          repository: 'Virgis-team/capi'
+      
+      - name: Cache conda
+        uses: actions/cache@v1
+        env:
+          # Increase this value to reset cache if etc/example-environment.yml has not changed
+          CACHE_NUMBER: 0
+        with:
+          path: ~/conda_pkgs_dir
+          key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}- }}
+
+      - name: Install Conda
+        uses: conda-incubator/setup-miniconda@v1.7.0
+        with:
+          use-only-tar-bz2: true # IMPORTANT: This needs to be set for caching to work properly!
+    
+      - name: Install GDAL
+        shell: pwsh
+        run: conda install -c conda-forge gdal
+      - name: Install PDAL
+        shell: pwsh
+        run: conda install -c conda-forge pdal
+
+      - name: Build
+        shell: pwsh
+        run: |
+            $ErrorActionPreference = 'continue'
+            function exec
+            {
+                param ( [ScriptBlock] $ScriptBlock )
+                & $ScriptBlock 2>&1 | ForEach-Object -Process { "$_" }
+                if ($LastExitCode -ne 0) { exit $LastExitCode }
+            }
+            cd $env:GITHUB_WORKSPACE
+            exec { make }
+
