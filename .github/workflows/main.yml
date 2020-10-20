@@ -44,5 +44,6 @@ jobs:
                 if ($LastExitCode -ne 0) { exit $LastExitCode }
             }
             cd $env:GITHUB_WORKSPACE
+            dir
             exec { make }
 
