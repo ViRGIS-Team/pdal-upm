@@ -18,7 +18,7 @@ This package is dependent on the following packages having been loaded (and the 
 
 ## Developement and Use in the player
 
-The scripts for accessing PDAL data are included in the `pdal`namespace and follow the [PDAL C Api](https://pdal.io/CAPI/doxygen/index.html).
+The scripts for accessing PDAL data are included in the `pdal`namespace and follow the [PDAL C Api](https://pdal.io/CAPI/doxygen/html/index.html).
 
 For more details - see the documentation.
 
