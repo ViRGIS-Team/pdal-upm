@@ -9,7 +9,13 @@ namespace Pdal {
 
     public class Install{
 
-        const string sharedObject = "pdalc.dll";
+#if UNITY_STANDALONE_WIN
+        const string test = "test_pdalc.exe";
+#elif UNITY_STANDALONE_OSX
+        const string test = "test_pdalc";
+#elif UNITY_STANDALONE_LINUX
+        const string test = "test_pdalc";
+#endif
         const string packageVersion = "2.2.0";
         const string pdalcVersion = "2.0.0";
 
@@ -26,14 +32,40 @@ namespace Pdal {
                 {
                     string pluginPath = Path.Combine(Application.dataPath, "Conda");
                     if (!Directory.Exists(pluginPath)) Directory.CreateDirectory(pluginPath);
-                    string file = Path.Combine(pluginPath, sharedObject);
+#if UNITY_STANDALONE_WIN
+                    string file = Path.Combine(pluginPath, test);
+#else
+                    string file = Path.Combine(pluginPath, "bin", test);
+#endif
                     if (!File.Exists(file))
                     {
                         UpdatePackage();
                     }
                     else if (!EditorApplication.isPlayingOrWillChangePlaymode)
                     {
-                        string currentVersion = new Config().Version;
+                        string currentVersion = "0";
+                        string response;
+                        try
+                        {
+                            using (Process compiler = new Process())
+                            {
+                                compiler.StartInfo.FileName = Path.Combine(pluginPath, "bin", test);
+                                compiler.StartInfo.Arguments = $" -h";
+                                compiler.StartInfo.UseShellExecute = false;
+                                compiler.StartInfo.RedirectStandardOutput = true;
+                                compiler.StartInfo.CreateNoWindow = true;
+                                compiler.Start();
+
+                                response = compiler.StandardOutput.ReadToEnd();
+
+                                compiler.WaitForExit();
+                            }
+                            currentVersion = response.Split(new char[3] { ' ', '\r', '\n' })[1];
+                        }
+                        catch (Exception e)
+                        {
+                            Debug.Log($"Mdal Version error : {e.ToString()}");
+                        }
                         if (currentVersion != packageVersion)
                         {
                             UpdatePackage();
@@ -44,7 +76,7 @@ namespace Pdal {
                 catch (Exception e)
                 {
                     // do nothing
-                    Debug.Log($"Error in Conda Package {sharedObject} : {e.ToString()}");
+                    Debug.Log($"Error in Conda Package {test} : {e.ToString()}");
                 };
             };
 
@@ -56,16 +88,26 @@ namespace Pdal {
             Debug.Log("Pdal Install Script Awake"); 
             string pluginPath = Path.Combine(Application.dataPath, "Conda");
             string path = Path.GetDirectoryName(new StackTrace(true).GetFrame(0).GetFileName());
-            string exec = Path.Combine(path, "install_script.ps1");
             string response;
             string install = $"pdal={packageVersion}";
             using (Process compiler = new Process())
             {
+#if UNITY_STANDALONE_WIN
                 compiler.StartInfo.FileName = "powershell.exe";
-                compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass {exec} -package pdal " +
+                compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass {Path.Combine(path, "install_script.ps1")} -package pdal " +
                                                     $"-install {install} " +
                                                     $"-destination {pluginPath} " +
-                                                    $"-so_list *";
+                                                    $"-test pdal.exe";
+#elif UNITY_STANDALONE_OSX
+                compiler.StartInfo.FileName = "/bin/bash";
+                compiler.StartInfo.Arguments = $" {Path.Combine(path, "install_script.sh")} " +
+                                                "-p pdal " +
+                                                $"-i {install} " +
+                                                $"-d {pluginPath} " +
+                                                $"-t pdal ";
+#elif UNITY_STANDALONE_LINUX
+
+#endif
                 compiler.StartInfo.UseShellExecute = false;
                 compiler.StartInfo.RedirectStandardOutput = true;
                 compiler.StartInfo.CreateNoWindow = true;
@@ -79,11 +121,22 @@ namespace Pdal {
             install = $"pdal-c={pdalcVersion}";
             using (Process compiler = new Process())
             {
+#if UNITY_STANDALONE_WIN
                 compiler.StartInfo.FileName = "powershell.exe";
-                compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass {exec} -package pdal-c " +
+                compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass {Path.Combine(path, "install_script.ps1")} -package pdal-c " +
                                                     $"-install {install} " +
                                                     $"-destination {pluginPath} " +
-                                                    $"-so_list pdalc";
+                                                    $"-test {test}";
+#elif UNITY_STANDALONE_OSX
+                compiler.StartInfo.FileName = "/bin/bash";
+                compiler.StartInfo.Arguments = $" {Path.Combine(path, "install_script.sh")} " +
+                                                "-p pdal-c " +
+                                                $"-i {install} " +
+                                                $"-d {pluginPath} " +
+                                                $"-t {test} ";
+#elif UNITY_STANDALONE_LINUX
+
+#endif
                 compiler.StartInfo.UseShellExecute = false;
                 compiler.StartInfo.RedirectStandardOutput = true;
                 compiler.StartInfo.CreateNoWindow = true;
@@ -96,11 +149,22 @@ namespace Pdal {
             install = $"laszip";
             using (Process compiler = new Process())
             {
+#if UNITY_STANDALONE_WIN
                 compiler.StartInfo.FileName = "powershell.exe";
-                compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass {exec} -package laszip " +
+                compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass {Path.Combine(path, "install_script.ps1")} -package laszip " +
                                                     $"-install {install} " +
                                                     $"-destination {pluginPath} " +
-                                                    $"-so_list *";
+                                                    $"-test ";
+#elif UNITY_STANDALONE_OSX
+                compiler.StartInfo.FileName = "/bin/bash";
+                compiler.StartInfo.Arguments = $" {Path.Combine(path, "install_script.sh")} " +
+                                                "-p laszip " +
+                                                $"-i {install} " +
+                                                $"-d {pluginPath} " +
+                                                $"-t  ";
+#elif UNITY_STANDALONE_LINUX
+
+#endif
                 compiler.StartInfo.UseShellExecute = false;
                 compiler.StartInfo.RedirectStandardOutput = true;
                 compiler.StartInfo.CreateNoWindow = true;
