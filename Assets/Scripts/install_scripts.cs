@@ -93,6 +93,24 @@ namespace Pdal {
 
                 compiler.WaitForExit();
             }
+            install = $"laszip";
+            using (Process compiler = new Process())
+            {
+                compiler.StartInfo.FileName = "powershell.exe";
+                compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass {exec} -package laszip " +
+                                                    $"-install {install} " +
+                                                    $"-destination {pluginPath} " +
+                                                    $"-so_list *";
+                compiler.StartInfo.UseShellExecute = false;
+                compiler.StartInfo.RedirectStandardOutput = true;
+                compiler.StartInfo.CreateNoWindow = true;
+                compiler.Start();
+
+                response = compiler.StandardOutput.ReadToEnd();
+
+                compiler.WaitForExit();
+            }
+            Debug.Log(response);
         }
     }
 }
