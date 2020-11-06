@@ -49,7 +49,7 @@ namespace Pdal {
                         {
                             using (Process compiler = new Process())
                             {
-                                compiler.StartInfo.FileName = Path.Combine(pluginPath, "bin", test);
+                                compiler.StartInfo.FileName = file;
                                 compiler.StartInfo.Arguments = $" -h";
                                 compiler.StartInfo.UseShellExecute = false;
                                 compiler.StartInfo.RedirectStandardOutput = true;
