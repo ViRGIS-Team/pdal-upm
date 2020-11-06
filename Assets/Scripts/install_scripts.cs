@@ -26,8 +26,6 @@ namespace Pdal {
                 {
                     string pluginPath = Path.Combine(Application.dataPath, "Conda");
                     if (!Directory.Exists(pluginPath)) Directory.CreateDirectory(pluginPath);
-                    pluginPath = Path.Combine(pluginPath, "Pdal");
-                    if (!Directory.Exists(pluginPath)) Directory.CreateDirectory(pluginPath);
                     string file = Path.Combine(pluginPath, sharedObject);
                     if (!File.Exists(file))
                     {
@@ -56,7 +54,7 @@ namespace Pdal {
         }
         static void UpdatePackage() {
             Debug.Log("Pdal Install Script Awake"); 
-            string pluginPath = Path.Combine(Application.dataPath, "Conda", "Pdal");
+            string pluginPath = Path.Combine(Application.dataPath, "Conda");
             string path = Path.GetDirectoryName(new StackTrace(true).GetFrame(0).GetFileName());
             string exec = Path.Combine(path, "install_script.ps1");
             string response;
