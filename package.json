@@ -17,6 +17,17 @@
     "email": "info@virgis.og",
     "url": "https://www.virgis.org"
   },
+  "scopedRegistries": [
+    {
+      "name": "package.openupm.com",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.openupm",
+        "com.virgis.geometry3sharp",
+        "com.virgis.gdal"
+      ]
+    }
+  ],
   "hideInEditor": false,
   "dependencies": {
     "com.virgis.geometry3sharp": "1.0.4",
