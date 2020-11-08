@@ -24,17 +24,21 @@ For more details - see the documentation.
 
 The PDAL library is loaded as an unmanaged native plugin. This plugin will load correctly in the player when built. See below for a note about use in the Editor.
 
-This Library ONLY works on Windows.
+This Library currently works on Windows and Mac based platforms.
 
 ## Running in the Editor
 
-The native plugins will NOT work out of the box in the Editor.
+This package uses [Conda](https://docs.conda.io/en/latest/) to download the latest version of MDAL.
 
-This is because of some problems with the DLL search paths and the directory structure used by Unity for packages - see more discussion [here](https://forum.unity.com/threads/plugins-and-resources-inside-package.730328/#post-6432950).
+For this package to work , the development machine MUST have a working copy of Conda (either full Conda or Miniconda) installed and in the path. The following CLI command should work without change or embellishment:
 
-The fix is tro create a copy of the Plugins folder from the  [GDAL Package](https://github.com/ViRGIS-Team/gdal-upm) on your development machine outside of the Unity Project folder structure and add this to the system Path.
+```
+conda info
+```
 
-I usually do this by creating a clone of the GDAL package on my development machine and adding this to the path (noting that you need to add the Plugins folder - i.e. the location of the DLLs - and not the root folder to the path!). 
+The package will keep the installation of Mdal in `Assets\Conda`. You may want to exclude this folder from source control.
+
+This package installs the GDAL package, which copies data for GDAL and for PROJ into the `Assets/StreamingAssets`folder. You may also want to exclude this folder from source control.
 
 ## Documentation
 
