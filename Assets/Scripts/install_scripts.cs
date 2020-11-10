@@ -129,7 +129,7 @@ namespace Pdal {
                                                     $"-test {test}";
 #elif UNITY_STANDALONE_OSX
                 compiler.StartInfo.FileName = "/bin/bash";
-                compiler.StartInfo.Arguments = $" \"{Path.Combine(path, "install_script.sh")}\" " +
+                compiler.StartInfo.Arguments = $" -l \"{Path.Combine(path, "install_script.sh")}\" " +
                                                 "-p pdal-c " +
                                                 $"-i {install} " +
                                                 $"-d '{pluginPath}' " +
@@ -159,7 +159,7 @@ namespace Pdal {
                                                     $"-test laszip3.dll";
 #elif UNITY_STANDALONE_OSX
                 compiler.StartInfo.FileName = "/bin/bash";
-                compiler.StartInfo.Arguments = $" \"{Path.Combine(path, "install_script.sh")}\" " +
+                compiler.StartInfo.Arguments = $" -l \"{Path.Combine(path, "install_script.sh")}\" " +
                                                 "-p laszip " +
                                                 $"-i {install} " +
                                                 $"-d '{pluginPath}' " +
