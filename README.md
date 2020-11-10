@@ -28,7 +28,7 @@ This Library currently works on Windows and Mac based platforms.
 
 ## Running in the Editor
 
-This package uses [Conda](https://docs.conda.io/en/latest/) to download the latest version of MDAL.
+This package uses [Conda](https://docs.conda.io/en/latest/) to download the latest version of PDAL.
 
 For this package to work , the development machine MUST have a working copy of Conda (either full Conda or Miniconda) installed and in the path. The following CLI command should work without change or embellishment:
 
