@@ -100,15 +100,13 @@ namespace Pdal {
                                                     $"-install {install} " +
                                                     $"-destination '{pluginPath}' " +
                                                     $"-test pdal.exe";
-#elif UNITY_STANDALONE_OSX
+#else
                 compiler.StartInfo.FileName = "/bin/bash";
                 compiler.StartInfo.Arguments = $" \"{Path.Combine(path, "install_script.sh")}\" " +
                                                 "-p pdal " +
                                                 $"-i {install} " +
                                                 $"-d \'{pluginPath}\' " +
                                                 $"-t pdal ";
-#elif UNITY_STANDALONE_LINUX
-
 #endif
                 compiler.StartInfo.UseShellExecute = false;
                 compiler.StartInfo.RedirectStandardOutput = true;
