@@ -4,9 +4,10 @@ using System.IO;
 using System.Diagnostics;
 using System;
 using Debug = UnityEngine.Debug;
+using System.Text.RegularExpressions;
+
 
 namespace Pdal {
-
     public class Install{
 
 #if UNITY_STANDALONE_WIN
@@ -50,7 +51,6 @@ namespace Pdal {
                             using (Process compiler = new Process())
                             {
                                 compiler.StartInfo.FileName = file;
-                                compiler.StartInfo.Arguments = $" -h";
                                 compiler.StartInfo.UseShellExecute = false;
                                 compiler.StartInfo.RedirectStandardOutput = true;
                                 compiler.StartInfo.CreateNoWindow = true;
@@ -60,11 +60,13 @@ namespace Pdal {
 
                                 compiler.WaitForExit();
                             }
-                            currentVersion = response.Split(new char[3] { ' ', '\r', '\n' })[1];
+                            Regex r = new Regex(@".*: (\d.*\d).");
+                            Match m = r.Match(response);
+                            currentVersion = m.Groups[1].ToString();
                         }
                         catch (Exception e)
                         {
-                            Debug.Log($"Mdal Version error : {e.ToString()}");
+                            Debug.Log($"Pdal Version error : {e.ToString()}");
                         }
                         if (currentVersion != packageVersion)
                         {
@@ -94,16 +96,16 @@ namespace Pdal {
             {
 #if UNITY_STANDALONE_WIN
                 compiler.StartInfo.FileName = "powershell.exe";
-                compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass {Path.Combine(path, "install_script.ps1")} -package pdal " +
+                compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass \"{Path.Combine(path, "install_script.ps1")}\" -package pdal " +
                                                     $"-install {install} " +
-                                                    $"-destination {pluginPath} " +
+                                                    $"-destination '{pluginPath}' " +
                                                     $"-test pdal.exe";
 #elif UNITY_STANDALONE_OSX
                 compiler.StartInfo.FileName = "/bin/bash";
-                compiler.StartInfo.Arguments = $" {Path.Combine(path, "install_script.sh")} " +
+                compiler.StartInfo.Arguments = $" \"{Path.Combine(path, "install_script.sh")}\" " +
                                                 "-p pdal " +
                                                 $"-i {install} " +
-                                                $"-d {pluginPath} " +
+                                                $"-d \'{pluginPath}\' " +
                                                 $"-t pdal ";
 #elif UNITY_STANDALONE_LINUX
 
@@ -123,16 +125,16 @@ namespace Pdal {
             {
 #if UNITY_STANDALONE_WIN
                 compiler.StartInfo.FileName = "powershell.exe";
-                compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass {Path.Combine(path, "install_script.ps1")} -package pdal-c " +
+                compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass \"{Path.Combine(path, "install_script.ps1")}\" -package pdal-c " +
                                                     $"-install {install} " +
-                                                    $"-destination {pluginPath} " +
+                                                    $"-destination '{pluginPath}' " +
                                                     $"-test {test}";
 #elif UNITY_STANDALONE_OSX
                 compiler.StartInfo.FileName = "/bin/bash";
-                compiler.StartInfo.Arguments = $" {Path.Combine(path, "install_script.sh")} " +
+                compiler.StartInfo.Arguments = $" \"{Path.Combine(path, "install_script.sh")}\" " +
                                                 "-p pdal-c " +
                                                 $"-i {install} " +
-                                                $"-d {pluginPath} " +
+                                                $"-d '{pluginPath}' " +
                                                 $"-t {test} ";
 #elif UNITY_STANDALONE_LINUX
 
@@ -146,22 +148,24 @@ namespace Pdal {
 
                 compiler.WaitForExit();
             }
+            Debug.Log(response);
+
             install = $"laszip";
             using (Process compiler = new Process())
             {
 #if UNITY_STANDALONE_WIN
                 compiler.StartInfo.FileName = "powershell.exe";
-                compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass {Path.Combine(path, "install_script.ps1")} -package laszip " +
+                compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass \"{Path.Combine(path, "install_script.ps1")}\" -package laszip " +
                                                     $"-install {install} " +
-                                                    $"-destination {pluginPath} " +
-                                                    $"-test ";
+                                                    $"-destination '{pluginPath}' " +
+                                                    $"-test laszip3.dll";
 #elif UNITY_STANDALONE_OSX
                 compiler.StartInfo.FileName = "/bin/bash";
-                compiler.StartInfo.Arguments = $" {Path.Combine(path, "install_script.sh")} " +
+                compiler.StartInfo.Arguments = $" \"{Path.Combine(path, "install_script.sh")}\" " +
                                                 "-p laszip " +
                                                 $"-i {install} " +
-                                                $"-d {pluginPath} " +
-                                                $"-t  ";
+                                                $"-d '{pluginPath}' " +
+                                                $"-t  laszip3.dll";
 #elif UNITY_STANDALONE_LINUX
 
 #endif
