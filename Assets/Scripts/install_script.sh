@@ -10,7 +10,6 @@ do
    esac
 done
 
-export PATH="~/opt/anaconda3/bin:$PATH"
 echo "Package is $package"
 echo "Install is $package"
 conda create --name upm -y

@@ -102,7 +102,7 @@ namespace Pdal {
                                                     $"-test pdal.exe";
 #else
                 compiler.StartInfo.FileName = "/bin/bash";
-                compiler.StartInfo.Arguments = $" \"{Path.Combine(path, "install_script.sh")}\" " +
+                compiler.StartInfo.Arguments = $" -l  \"{Path.Combine(path, "install_script.sh")}\" " +
                                                 "-p pdal " +
                                                 $"-i {install} " +
                                                 $"-d \'{pluginPath}\' " +
