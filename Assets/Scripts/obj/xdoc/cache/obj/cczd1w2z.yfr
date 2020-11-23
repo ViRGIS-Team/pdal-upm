@@ -1,0 +1,4641 @@
+id: cs.temp.dll
+language: CSharp
+name:
+  Default: cs.temp.dll
+qualifiedName:
+  Default: cs.temp.dll
+type: Assembly
+modifiers: {}
+items:
+- id: Pdal
+  commentId: N:Pdal
+  language: CSharp
+  name:
+    CSharp: Pdal
+    VB: Pdal
+  nameWithType:
+    CSharp: Pdal
+    VB: Pdal
+  qualifiedName:
+    CSharp: Pdal
+    VB: Pdal
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+  modifiers: {}
+  items:
+  - id: Pdal.BakedPointCloud
+    commentId: T:Pdal.BakedPointCloud
+    language: CSharp
+    name:
+      CSharp: BakedPointCloud
+      VB: BakedPointCloud
+    nameWithType:
+      CSharp: BakedPointCloud
+      VB: BakedPointCloud
+    qualifiedName:
+      CSharp: Pdal.BakedPointCloud
+      VB: Pdal.BakedPointCloud
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: Pdal
+    source:
+      id: BakedPointCloud
+      path: ''
+      startLine: 11
+    example: []
+    syntax:
+      content:
+        CSharp: public sealed class BakedPointCloud
+        VB: Public NotInheritable Class BakedPointCloud
+    inheritance:
+    - System.Object
+    inheritedMembers:
+    - System.Object.ToString
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    modifiers:
+      CSharp:
+      - public
+      - sealed
+      - class
+      VB:
+      - Public
+      - NotInheritable
+      - Class
+    items:
+    - id: Pdal.BakedPointCloud.pointCount
+      commentId: P:Pdal.BakedPointCloud.pointCount
+      language: CSharp
+      name:
+        CSharp: pointCount
+        VB: pointCount
+      nameWithType:
+        CSharp: BakedPointCloud.pointCount
+        VB: BakedPointCloud.pointCount
+      qualifiedName:
+        CSharp: Pdal.BakedPointCloud.pointCount
+        VB: Pdal.BakedPointCloud.pointCount
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: pointCount
+        path: ''
+        startLine: 15
+      example: []
+      syntax:
+        content:
+          CSharp: public int pointCount { get; }
+          VB: Public ReadOnly Property pointCount As Integer
+        parameters: []
+        return:
+          type: System.Int32
+      overload: Pdal.BakedPointCloud.pointCount*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.BakedPointCloud.positionMap
+      commentId: P:Pdal.BakedPointCloud.positionMap
+      language: CSharp
+      name:
+        CSharp: positionMap
+        VB: positionMap
+      nameWithType:
+        CSharp: BakedPointCloud.positionMap
+        VB: BakedPointCloud.positionMap
+      qualifiedName:
+        CSharp: Pdal.BakedPointCloud.positionMap
+        VB: Pdal.BakedPointCloud.positionMap
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: positionMap
+        path: ''
+        startLine: 18
+      example: []
+      syntax:
+        content:
+          CSharp: public Texture2D positionMap { get; }
+          VB: Public ReadOnly Property positionMap As Texture2D
+        parameters: []
+        return:
+          type: Texture2D
+      overload: Pdal.BakedPointCloud.positionMap*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.BakedPointCloud.colorMap
+      commentId: P:Pdal.BakedPointCloud.colorMap
+      language: CSharp
+      name:
+        CSharp: colorMap
+        VB: colorMap
+      nameWithType:
+        CSharp: BakedPointCloud.colorMap
+        VB: BakedPointCloud.colorMap
+      qualifiedName:
+        CSharp: Pdal.BakedPointCloud.colorMap
+        VB: Pdal.BakedPointCloud.colorMap
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: colorMap
+        path: ''
+        startLine: 21
+      example: []
+      syntax:
+        content:
+          CSharp: public Texture2D colorMap { get; }
+          VB: Public ReadOnly Property colorMap As Texture2D
+        parameters: []
+        return:
+          type: Texture2D
+      overload: Pdal.BakedPointCloud.colorMap*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.BakedPointCloud.Initialize(System.Collections.Generic.IEnumerable{Vector3d},System.Collections.Generic.IEnumerable{Vector3f},System.Int32)
+      commentId: M:Pdal.BakedPointCloud.Initialize(System.Collections.Generic.IEnumerable{Vector3d},System.Collections.Generic.IEnumerable{Vector3f},System.Int32)
+      language: CSharp
+      name:
+        CSharp: Initialize(IEnumerable<Vector3d>, IEnumerable<Vector3f>, Int32)
+        VB: Initialize(IEnumerable(Of Vector3d), IEnumerable(Of Vector3f), Int32)
+      nameWithType:
+        CSharp: BakedPointCloud.Initialize(IEnumerable<Vector3d>, IEnumerable<Vector3f>, Int32)
+        VB: BakedPointCloud.Initialize(IEnumerable(Of Vector3d), IEnumerable(Of Vector3f), Int32)
+      qualifiedName:
+        CSharp: Pdal.BakedPointCloud.Initialize(System.Collections.Generic.IEnumerable<Vector3d>, System.Collections.Generic.IEnumerable<Vector3f>, System.Int32)
+        VB: Pdal.BakedPointCloud.Initialize(System.Collections.Generic.IEnumerable(Of Vector3d), System.Collections.Generic.IEnumerable(Of Vector3f), System.Int32)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Initialize
+        path: ''
+        startLine: 30
+      syntax:
+        content:
+          CSharp: public void Initialize(IEnumerable<Vector3d> positions, IEnumerable<Vector3f> colors, int size)
+          VB: Public Sub Initialize(positions As IEnumerable(Of Vector3d), colors As IEnumerable(Of Vector3f), size As Integer)
+        parameters:
+        - id: positions
+          type: System.Collections.Generic.IEnumerable{Vector3d}
+        - id: colors
+          type: System.Collections.Generic.IEnumerable{Vector3f}
+        - id: size
+          type: System.Int32
+      overload: Pdal.BakedPointCloud.Initialize*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+  - id: Pdal.PdalConfiguration
+    commentId: T:Pdal.PdalConfiguration
+    language: CSharp
+    name:
+      CSharp: PdalConfiguration
+      VB: PdalConfiguration
+    nameWithType:
+      CSharp: PdalConfiguration
+      VB: PdalConfiguration
+    qualifiedName:
+      CSharp: Pdal.PdalConfiguration
+      VB: Pdal.PdalConfiguration
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: Pdal
+    source:
+      id: PdalConfiguration
+      path: ''
+      startLine: 116
+    syntax:
+      content:
+        CSharp: public class PdalConfiguration
+        VB: Public Class PdalConfiguration
+    inheritance:
+    - System.Object
+    inheritedMembers:
+    - System.Object.ToString
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: Pdal.PdalConfiguration.ConfigurePdal
+      commentId: M:Pdal.PdalConfiguration.ConfigurePdal
+      language: CSharp
+      name:
+        CSharp: ConfigurePdal()
+        VB: ConfigurePdal()
+      nameWithType:
+        CSharp: PdalConfiguration.ConfigurePdal()
+        VB: PdalConfiguration.ConfigurePdal()
+      qualifiedName:
+        CSharp: Pdal.PdalConfiguration.ConfigurePdal()
+        VB: Pdal.PdalConfiguration.ConfigurePdal()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: ConfigurePdal
+        path: ''
+        startLine: 118
+      syntax:
+        content:
+          CSharp: public static void ConfigurePdal()
+          VB: Public Shared Sub ConfigurePdal
+      overload: Pdal.PdalConfiguration.ConfigurePdal*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+  - id: Pdal.Config
+    commentId: T:Pdal.Config
+    language: CSharp
+    name:
+      CSharp: Config
+      VB: Config
+    nameWithType:
+      CSharp: Config
+      VB: Config
+    qualifiedName:
+      CSharp: Pdal.Config
+      VB: Pdal.Config
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: Pdal
+    source:
+      id: Config
+      path: ''
+      startLine: 139
+    example: []
+    syntax:
+      content:
+        CSharp: public class Config
+        VB: Public Class Config
+    inheritance:
+    - System.Object
+    inheritedMembers:
+    - System.Object.ToString
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: Pdal.Config.#ctor
+      commentId: M:Pdal.Config.#ctor
+      language: CSharp
+      name:
+        CSharp: Config()
+        VB: Config()
+      nameWithType:
+        CSharp: Config.Config()
+        VB: Config.Config()
+      qualifiedName:
+        CSharp: Pdal.Config.Config()
+        VB: Pdal.Config.Config()
+      type: Constructor
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: .ctor
+        path: ''
+        startLine: 189
+      example: []
+      syntax:
+        content:
+          CSharp: public Config()
+          VB: Public Sub New
+      overload: Pdal.Config.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.Config.GdalData
+      commentId: P:Pdal.Config.GdalData
+      language: CSharp
+      name:
+        CSharp: GdalData
+        VB: GdalData
+      nameWithType:
+        CSharp: Config.GdalData
+        VB: Config.GdalData
+      qualifiedName:
+        CSharp: Pdal.Config.GdalData
+        VB: Pdal.Config.GdalData
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: GdalData
+        path: ''
+        startLine: 199
+      example: []
+      syntax:
+        content:
+          CSharp: public string GdalData { get; set; }
+          VB: Public Property GdalData As String
+        parameters: []
+        return:
+          type: System.String
+      overload: Pdal.Config.GdalData*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        - set
+        VB:
+        - Public
+    - id: Pdal.Config.Proj4Data
+      commentId: P:Pdal.Config.Proj4Data
+      language: CSharp
+      name:
+        CSharp: Proj4Data
+        VB: Proj4Data
+      nameWithType:
+        CSharp: Config.Proj4Data
+        VB: Config.Proj4Data
+      qualifiedName:
+        CSharp: Pdal.Config.Proj4Data
+        VB: Pdal.Config.Proj4Data
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Proj4Data
+        path: ''
+        startLine: 212
+      example: []
+      syntax:
+        content:
+          CSharp: public string Proj4Data { get; set; }
+          VB: Public Property Proj4Data As String
+        parameters: []
+        return:
+          type: System.String
+      overload: Pdal.Config.Proj4Data*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        - set
+        VB:
+        - Public
+    - id: Pdal.Config.FullVersion
+      commentId: P:Pdal.Config.FullVersion
+      language: CSharp
+      name:
+        CSharp: FullVersion
+        VB: FullVersion
+      nameWithType:
+        CSharp: Config.FullVersion
+        VB: Config.FullVersion
+      qualifiedName:
+        CSharp: Pdal.Config.FullVersion
+        VB: Pdal.Config.FullVersion
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: FullVersion
+        path: ''
+        startLine: 225
+      example: []
+      syntax:
+        content:
+          CSharp: public string FullVersion { get; }
+          VB: Public ReadOnly Property FullVersion As String
+        parameters: []
+        return:
+          type: System.String
+      overload: Pdal.Config.FullVersion*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.Config.Version
+      commentId: P:Pdal.Config.Version
+      language: CSharp
+      name:
+        CSharp: Version
+        VB: Version
+      nameWithType:
+        CSharp: Config.Version
+        VB: Config.Version
+      qualifiedName:
+        CSharp: Pdal.Config.Version
+        VB: Pdal.Config.Version
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Version
+        path: ''
+        startLine: 236
+      example: []
+      syntax:
+        content:
+          CSharp: public string Version { get; }
+          VB: Public ReadOnly Property Version As String
+        parameters: []
+        return:
+          type: System.String
+      overload: Pdal.Config.Version*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.Config.VersionInteger
+      commentId: P:Pdal.Config.VersionInteger
+      language: CSharp
+      name:
+        CSharp: VersionInteger
+        VB: VersionInteger
+      nameWithType:
+        CSharp: Config.VersionInteger
+        VB: Config.VersionInteger
+      qualifiedName:
+        CSharp: Pdal.Config.VersionInteger
+        VB: Pdal.Config.VersionInteger
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: VersionInteger
+        path: ''
+        startLine: 252
+      example: []
+      syntax:
+        content:
+          CSharp: public int VersionInteger { get; }
+          VB: Public ReadOnly Property VersionInteger As Integer
+        parameters: []
+        return:
+          type: System.Int32
+      overload: Pdal.Config.VersionInteger*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.Config.Sha1
+      commentId: P:Pdal.Config.Sha1
+      language: CSharp
+      name:
+        CSharp: Sha1
+        VB: Sha1
+      nameWithType:
+        CSharp: Config.Sha1
+        VB: Config.Sha1
+      qualifiedName:
+        CSharp: Pdal.Config.Sha1
+        VB: Pdal.Config.Sha1
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Sha1
+        path: ''
+        startLine: 258
+      example: []
+      syntax:
+        content:
+          CSharp: public string Sha1 { get; }
+          VB: Public ReadOnly Property Sha1 As String
+        parameters: []
+        return:
+          type: System.String
+      overload: Pdal.Config.Sha1*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.Config.VersionMajor
+      commentId: P:Pdal.Config.VersionMajor
+      language: CSharp
+      name:
+        CSharp: VersionMajor
+        VB: VersionMajor
+      nameWithType:
+        CSharp: Config.VersionMajor
+        VB: Config.VersionMajor
+      qualifiedName:
+        CSharp: Pdal.Config.VersionMajor
+        VB: Pdal.Config.VersionMajor
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: VersionMajor
+        path: ''
+        startLine: 269
+      example: []
+      syntax:
+        content:
+          CSharp: public int VersionMajor { get; }
+          VB: Public ReadOnly Property VersionMajor As Integer
+        parameters: []
+        return:
+          type: System.Int32
+      overload: Pdal.Config.VersionMajor*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.Config.VersionMinor
+      commentId: P:Pdal.Config.VersionMinor
+      language: CSharp
+      name:
+        CSharp: VersionMinor
+        VB: VersionMinor
+      nameWithType:
+        CSharp: Config.VersionMinor
+        VB: Config.VersionMinor
+      qualifiedName:
+        CSharp: Pdal.Config.VersionMinor
+        VB: Pdal.Config.VersionMinor
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: VersionMinor
+        path: ''
+        startLine: 275
+      example: []
+      syntax:
+        content:
+          CSharp: public int VersionMinor { get; }
+          VB: Public ReadOnly Property VersionMinor As Integer
+        parameters: []
+        return:
+          type: System.Int32
+      overload: Pdal.Config.VersionMinor*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.Config.VersionPatch
+      commentId: P:Pdal.Config.VersionPatch
+      language: CSharp
+      name:
+        CSharp: VersionPatch
+        VB: VersionPatch
+      nameWithType:
+        CSharp: Config.VersionPatch
+        VB: Config.VersionPatch
+      qualifiedName:
+        CSharp: Pdal.Config.VersionPatch
+        VB: Pdal.Config.VersionPatch
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: VersionPatch
+        path: ''
+        startLine: 281
+      example: []
+      syntax:
+        content:
+          CSharp: public int VersionPatch { get; }
+          VB: Public ReadOnly Property VersionPatch As Integer
+        parameters: []
+        return:
+          type: System.Int32
+      overload: Pdal.Config.VersionPatch*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.Config.DebugInfo
+      commentId: P:Pdal.Config.DebugInfo
+      language: CSharp
+      name:
+        CSharp: DebugInfo
+        VB: DebugInfo
+      nameWithType:
+        CSharp: Config.DebugInfo
+        VB: Config.DebugInfo
+      qualifiedName:
+        CSharp: Pdal.Config.DebugInfo
+        VB: Pdal.Config.DebugInfo
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: DebugInfo
+        path: ''
+        startLine: 287
+      example: []
+      syntax:
+        content:
+          CSharp: public string DebugInfo { get; }
+          VB: Public ReadOnly Property DebugInfo As String
+        parameters: []
+        return:
+          type: System.String
+      overload: Pdal.Config.DebugInfo*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+  - id: Pdal.DimType
+    commentId: T:Pdal.DimType
+    language: CSharp
+    name:
+      CSharp: DimType
+      VB: DimType
+    nameWithType:
+      CSharp: DimType
+      VB: DimType
+    qualifiedName:
+      CSharp: Pdal.DimType
+      VB: Pdal.DimType
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: Pdal
+    source:
+      id: DimType
+      path: ''
+      startLine: 334
+    syntax:
+      content:
+        CSharp: public class DimType
+        VB: Public Class DimType
+    inheritance:
+    - System.Object
+    inheritedMembers:
+    - System.Object.ToString
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: Pdal.DimType.#ctor
+      commentId: M:Pdal.DimType.#ctor
+      language: CSharp
+      name:
+        CSharp: DimType()
+        VB: DimType()
+      nameWithType:
+        CSharp: DimType.DimType()
+        VB: DimType.DimType()
+      qualifiedName:
+        CSharp: Pdal.DimType.DimType()
+        VB: Pdal.DimType.DimType()
+      type: Constructor
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: .ctor
+        path: ''
+        startLine: 363
+      syntax:
+        content:
+          CSharp: public DimType()
+          VB: Public Sub New
+      overload: Pdal.DimType.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.DimType.#ctor(Pdal.DimType.NativeDimType)
+      commentId: M:Pdal.DimType.#ctor(Pdal.DimType.NativeDimType)
+      language: CSharp
+      name:
+        CSharp: DimType(DimType.NativeDimType)
+        VB: DimType(DimType.NativeDimType)
+      nameWithType:
+        CSharp: DimType.DimType(DimType.NativeDimType)
+        VB: DimType.DimType(DimType.NativeDimType)
+      qualifiedName:
+        CSharp: Pdal.DimType.DimType(Pdal.DimType.NativeDimType)
+        VB: Pdal.DimType.DimType(Pdal.DimType.NativeDimType)
+      type: Constructor
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: .ctor
+        path: ''
+        startLine: 368
+      syntax:
+        content:
+          CSharp: public DimType(DimType.NativeDimType nativeType)
+          VB: Public Sub New(nativeType As DimType.NativeDimType)
+        parameters:
+        - id: nativeType
+          type: Pdal.DimType.NativeDimType
+      overload: Pdal.DimType.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.DimType.#ctor(System.UInt32,System.UInt32,System.Double,System.Double)
+      commentId: M:Pdal.DimType.#ctor(System.UInt32,System.UInt32,System.Double,System.Double)
+      language: CSharp
+      name:
+        CSharp: DimType(UInt32, UInt32, Double, Double)
+        VB: DimType(UInt32, UInt32, Double, Double)
+      nameWithType:
+        CSharp: DimType.DimType(UInt32, UInt32, Double, Double)
+        VB: DimType.DimType(UInt32, UInt32, Double, Double)
+      qualifiedName:
+        CSharp: Pdal.DimType.DimType(System.UInt32, System.UInt32, System.Double, System.Double)
+        VB: Pdal.DimType.DimType(System.UInt32, System.UInt32, System.Double, System.Double)
+      type: Constructor
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: .ctor
+        path: ''
+        startLine: 373
+      syntax:
+        content:
+          CSharp: public DimType(uint id, uint interpretation, double scale = 1, double offset = 0)
+          VB: Public Sub New(id As UInteger, interpretation As UInteger, scale As Double = 1, offset As Double = 0)
+        parameters:
+        - id: id
+          type: System.UInt32
+        - id: interpretation
+          type: System.UInt32
+        - id: scale
+          type: System.Double
+        - id: offset
+          type: System.Double
+      overload: Pdal.DimType.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.DimType.Id
+      commentId: P:Pdal.DimType.Id
+      language: CSharp
+      name:
+        CSharp: Id
+        VB: Id
+      nameWithType:
+        CSharp: DimType.Id
+        VB: DimType.Id
+      qualifiedName:
+        CSharp: Pdal.DimType.Id
+        VB: Pdal.DimType.Id
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Id
+        path: ''
+        startLine: 381
+      syntax:
+        content:
+          CSharp: public uint Id { get; set; }
+          VB: Public Property Id As UInteger
+        parameters: []
+        return:
+          type: System.UInt32
+      overload: Pdal.DimType.Id*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        - set
+        VB:
+        - Public
+    - id: Pdal.DimType.IdName
+      commentId: P:Pdal.DimType.IdName
+      language: CSharp
+      name:
+        CSharp: IdName
+        VB: IdName
+      nameWithType:
+        CSharp: DimType.IdName
+        VB: DimType.IdName
+      qualifiedName:
+        CSharp: Pdal.DimType.IdName
+        VB: Pdal.DimType.IdName
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: IdName
+        path: ''
+        startLine: 387
+      syntax:
+        content:
+          CSharp: public string IdName { get; }
+          VB: Public ReadOnly Property IdName As String
+        parameters: []
+        return:
+          type: System.String
+      overload: Pdal.DimType.IdName*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.DimType.Interpretation
+      commentId: P:Pdal.DimType.Interpretation
+      language: CSharp
+      name:
+        CSharp: Interpretation
+        VB: Interpretation
+      nameWithType:
+        CSharp: DimType.Interpretation
+        VB: DimType.Interpretation
+      qualifiedName:
+        CSharp: Pdal.DimType.Interpretation
+        VB: Pdal.DimType.Interpretation
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Interpretation
+        path: ''
+        startLine: 397
+      syntax:
+        content:
+          CSharp: public uint Interpretation { get; set; }
+          VB: Public Property Interpretation As UInteger
+        parameters: []
+        return:
+          type: System.UInt32
+      overload: Pdal.DimType.Interpretation*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        - set
+        VB:
+        - Public
+    - id: Pdal.DimType.InterpretationName
+      commentId: P:Pdal.DimType.InterpretationName
+      language: CSharp
+      name:
+        CSharp: InterpretationName
+        VB: InterpretationName
+      nameWithType:
+        CSharp: DimType.InterpretationName
+        VB: DimType.InterpretationName
+      qualifiedName:
+        CSharp: Pdal.DimType.InterpretationName
+        VB: Pdal.DimType.InterpretationName
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: InterpretationName
+        path: ''
+        startLine: 403
+      syntax:
+        content:
+          CSharp: public string InterpretationName { get; }
+          VB: Public ReadOnly Property InterpretationName As String
+        parameters: []
+        return:
+          type: System.String
+      overload: Pdal.DimType.InterpretationName*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.DimType.InterpretationByteCount
+      commentId: P:Pdal.DimType.InterpretationByteCount
+      language: CSharp
+      name:
+        CSharp: InterpretationByteCount
+        VB: InterpretationByteCount
+      nameWithType:
+        CSharp: DimType.InterpretationByteCount
+        VB: DimType.InterpretationByteCount
+      qualifiedName:
+        CSharp: Pdal.DimType.InterpretationByteCount
+        VB: Pdal.DimType.InterpretationByteCount
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: InterpretationByteCount
+        path: ''
+        startLine: 413
+      syntax:
+        content:
+          CSharp: public int InterpretationByteCount { get; }
+          VB: Public ReadOnly Property InterpretationByteCount As Integer
+        parameters: []
+        return:
+          type: System.Int32
+      overload: Pdal.DimType.InterpretationByteCount*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.DimType.Scale
+      commentId: P:Pdal.DimType.Scale
+      language: CSharp
+      name:
+        CSharp: Scale
+        VB: Scale
+      nameWithType:
+        CSharp: DimType.Scale
+        VB: DimType.Scale
+      qualifiedName:
+        CSharp: Pdal.DimType.Scale
+        VB: Pdal.DimType.Scale
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Scale
+        path: ''
+        startLine: 418
+      syntax:
+        content:
+          CSharp: public double Scale { get; }
+          VB: Public ReadOnly Property Scale As Double
+        parameters: []
+        return:
+          type: System.Double
+      overload: Pdal.DimType.Scale*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.DimType.Offset
+      commentId: P:Pdal.DimType.Offset
+      language: CSharp
+      name:
+        CSharp: Offset
+        VB: Offset
+      nameWithType:
+        CSharp: DimType.Offset
+        VB: DimType.Offset
+      qualifiedName:
+        CSharp: Pdal.DimType.Offset
+        VB: Pdal.DimType.Offset
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Offset
+        path: ''
+        startLine: 423
+      syntax:
+        content:
+          CSharp: public double Offset { get; }
+          VB: Public ReadOnly Property Offset As Double
+        parameters: []
+        return:
+          type: System.Double
+      overload: Pdal.DimType.Offset*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+  - id: Pdal.DimType.NativeDimType
+    commentId: T:Pdal.DimType.NativeDimType
+    language: CSharp
+    name:
+      CSharp: DimType.NativeDimType
+      VB: DimType.NativeDimType
+    nameWithType:
+      CSharp: DimType.NativeDimType
+      VB: DimType.NativeDimType
+    qualifiedName:
+      CSharp: Pdal.DimType.NativeDimType
+      VB: Pdal.DimType.NativeDimType
+    type: Struct
+    assemblies:
+    - cs.temp.dll
+    namespace: Pdal
+    source:
+      id: NativeDimType
+      path: ''
+      startLine: 339
+    syntax:
+      content:
+        CSharp: public struct NativeDimType
+        VB: Public Structure NativeDimType
+    inheritedMembers:
+    - System.ValueType.Equals(System.Object)
+    - System.ValueType.GetHashCode
+    - System.ValueType.ToString
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetType
+    modifiers:
+      CSharp:
+      - public
+      - struct
+      VB:
+      - Public
+      - Structure
+    items:
+    - id: Pdal.DimType.NativeDimType.id
+      commentId: F:Pdal.DimType.NativeDimType.id
+      language: CSharp
+      name:
+        CSharp: id
+        VB: id
+      nameWithType:
+        CSharp: DimType.NativeDimType.id
+        VB: DimType.NativeDimType.id
+      qualifiedName:
+        CSharp: Pdal.DimType.NativeDimType.id
+        VB: Pdal.DimType.NativeDimType.id
+      type: Field
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: id
+        path: ''
+        startLine: 342
+      syntax:
+        content:
+          CSharp: public UInt32 id
+          VB: Public id As UInt32
+        return:
+          type: UInt32
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.DimType.NativeDimType.interpretation
+      commentId: F:Pdal.DimType.NativeDimType.interpretation
+      language: CSharp
+      name:
+        CSharp: interpretation
+        VB: interpretation
+      nameWithType:
+        CSharp: DimType.NativeDimType.interpretation
+        VB: DimType.NativeDimType.interpretation
+      qualifiedName:
+        CSharp: Pdal.DimType.NativeDimType.interpretation
+        VB: Pdal.DimType.NativeDimType.interpretation
+      type: Field
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: interpretation
+        path: ''
+        startLine: 343
+      syntax:
+        content:
+          CSharp: public UInt32 interpretation
+          VB: Public interpretation As UInt32
+        return:
+          type: UInt32
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.DimType.NativeDimType.scale
+      commentId: F:Pdal.DimType.NativeDimType.scale
+      language: CSharp
+      name:
+        CSharp: scale
+        VB: scale
+      nameWithType:
+        CSharp: DimType.NativeDimType.scale
+        VB: DimType.NativeDimType.scale
+      qualifiedName:
+        CSharp: Pdal.DimType.NativeDimType.scale
+        VB: Pdal.DimType.NativeDimType.scale
+      type: Field
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: scale
+        path: ''
+        startLine: 344
+      syntax:
+        content:
+          CSharp: public double scale
+          VB: Public scale As Double
+        return:
+          type: System.Double
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.DimType.NativeDimType.offset
+      commentId: F:Pdal.DimType.NativeDimType.offset
+      language: CSharp
+      name:
+        CSharp: offset
+        VB: offset
+      nameWithType:
+        CSharp: DimType.NativeDimType.offset
+        VB: DimType.NativeDimType.offset
+      qualifiedName:
+        CSharp: Pdal.DimType.NativeDimType.offset
+        VB: Pdal.DimType.NativeDimType.offset
+      type: Field
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: offset
+        path: ''
+        startLine: 345
+      syntax:
+        content:
+          CSharp: public double offset
+          VB: Public offset As Double
+        return:
+          type: System.Double
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+  - id: Pdal.DimTypeList
+    commentId: T:Pdal.DimTypeList
+    language: CSharp
+    name:
+      CSharp: DimTypeList
+      VB: DimTypeList
+    nameWithType:
+      CSharp: DimTypeList
+      VB: DimTypeList
+    qualifiedName:
+      CSharp: Pdal.DimTypeList
+      VB: Pdal.DimTypeList
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: Pdal
+    source:
+      id: DimTypeList
+      path: ''
+      startLine: 465
+    syntax:
+      content:
+        CSharp: 'public class DimTypeList : IDisposable'
+        VB: >-
+          Public Class DimTypeList
+
+              Inherits IDisposable
+    inheritance:
+    - System.Object
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: Pdal.DimTypeList.#ctor(IntPtr)
+      commentId: M:Pdal.DimTypeList.#ctor(IntPtr)
+      language: CSharp
+      name:
+        CSharp: DimTypeList(IntPtr)
+        VB: DimTypeList(IntPtr)
+      nameWithType:
+        CSharp: DimTypeList.DimTypeList(IntPtr)
+        VB: DimTypeList.DimTypeList(IntPtr)
+      qualifiedName:
+        CSharp: Pdal.DimTypeList.DimTypeList(IntPtr)
+        VB: Pdal.DimTypeList.DimTypeList(IntPtr)
+      type: Constructor
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: .ctor
+        path: ''
+        startLine: 485
+      syntax:
+        content:
+          CSharp: public DimTypeList(IntPtr nativeList)
+          VB: Public Sub New(nativeList As IntPtr)
+        parameters:
+        - id: nativeList
+          type: IntPtr
+      overload: Pdal.DimTypeList.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.DimTypeList.ByteCount
+      commentId: P:Pdal.DimTypeList.ByteCount
+      language: CSharp
+      name:
+        CSharp: ByteCount
+        VB: ByteCount
+      nameWithType:
+        CSharp: DimTypeList.ByteCount
+        VB: DimTypeList.ByteCount
+      qualifiedName:
+        CSharp: Pdal.DimTypeList.ByteCount
+        VB: Pdal.DimTypeList.ByteCount
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: ByteCount
+        path: ''
+        startLine: 490
+      syntax:
+        content:
+          CSharp: public ulong ByteCount { get; }
+          VB: Public ReadOnly Property ByteCount As ULong
+        parameters: []
+        return:
+          type: System.UInt64
+      overload: Pdal.DimTypeList.ByteCount*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.DimTypeList.Native
+      commentId: P:Pdal.DimTypeList.Native
+      language: CSharp
+      name:
+        CSharp: Native
+        VB: Native
+      nameWithType:
+        CSharp: DimTypeList.Native
+        VB: DimTypeList.Native
+      qualifiedName:
+        CSharp: Pdal.DimTypeList.Native
+        VB: Pdal.DimTypeList.Native
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Native
+        path: ''
+        startLine: 495
+      syntax:
+        content:
+          CSharp: public IntPtr Native { get; }
+          VB: Public ReadOnly Property Native As IntPtr
+        parameters: []
+        return:
+          type: IntPtr
+      overload: Pdal.DimTypeList.Native*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.DimTypeList.Size
+      commentId: P:Pdal.DimTypeList.Size
+      language: CSharp
+      name:
+        CSharp: Size
+        VB: Size
+      nameWithType:
+        CSharp: DimTypeList.Size
+        VB: DimTypeList.Size
+      qualifiedName:
+        CSharp: Pdal.DimTypeList.Size
+        VB: Pdal.DimTypeList.Size
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Size
+        path: ''
+        startLine: 500
+      syntax:
+        content:
+          CSharp: public uint Size { get; }
+          VB: Public ReadOnly Property Size As UInteger
+        parameters: []
+        return:
+          type: System.UInt32
+      overload: Pdal.DimTypeList.Size*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.DimTypeList.Dispose
+      commentId: M:Pdal.DimTypeList.Dispose
+      language: CSharp
+      name:
+        CSharp: Dispose()
+        VB: Dispose()
+      nameWithType:
+        CSharp: DimTypeList.Dispose()
+        VB: DimTypeList.Dispose()
+      qualifiedName:
+        CSharp: Pdal.DimTypeList.Dispose()
+        VB: Pdal.DimTypeList.Dispose()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Dispose
+        path: ''
+        startLine: 505
+      syntax:
+        content:
+          CSharp: public void Dispose()
+          VB: Public Sub Dispose
+      overload: Pdal.DimTypeList.Dispose*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.DimTypeList.at(System.UInt32)
+      commentId: M:Pdal.DimTypeList.at(System.UInt32)
+      language: CSharp
+      name:
+        CSharp: at(UInt32)
+        VB: at(UInt32)
+      nameWithType:
+        CSharp: DimTypeList.at(UInt32)
+        VB: DimTypeList.at(UInt32)
+      qualifiedName:
+        CSharp: Pdal.DimTypeList.at(System.UInt32)
+        VB: Pdal.DimTypeList.at(System.UInt32)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: at
+        path: ''
+        startLine: 510
+      syntax:
+        content:
+          CSharp: public DimType at(uint index)
+          VB: Public Function at(index As UInteger) As DimType
+        parameters:
+        - id: index
+          type: System.UInt32
+        return:
+          type: Pdal.DimType
+      overload: Pdal.DimTypeList.at*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+  - id: Pdal.Pipeline
+    commentId: T:Pdal.Pipeline
+    language: CSharp
+    name:
+      CSharp: Pipeline
+      VB: Pipeline
+    nameWithType:
+      CSharp: Pipeline
+      VB: Pipeline
+    qualifiedName:
+      CSharp: Pdal.Pipeline
+      VB: Pdal.Pipeline
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: Pdal
+    source:
+      id: Pipeline
+      path: ''
+      startLine: 745
+    syntax:
+      content:
+        CSharp: 'public class Pipeline : IDisposable'
+        VB: >-
+          Public Class Pipeline
+
+              Inherits IDisposable
+    inheritance:
+    - System.Object
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: Pdal.Pipeline.#ctor
+      commentId: M:Pdal.Pipeline.#ctor
+      language: CSharp
+      name:
+        CSharp: Pipeline()
+        VB: Pipeline()
+      nameWithType:
+        CSharp: Pipeline.Pipeline()
+        VB: Pipeline.Pipeline()
+      qualifiedName:
+        CSharp: Pdal.Pipeline.Pipeline()
+        VB: Pdal.Pipeline.Pipeline()
+      type: Constructor
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: .ctor
+        path: ''
+        startLine: 793
+      example: []
+      syntax:
+        content:
+          CSharp: public Pipeline()
+          VB: Public Sub New
+      overload: Pdal.Pipeline.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.Pipeline.#ctor(System.String)
+      commentId: M:Pdal.Pipeline.#ctor(System.String)
+      language: CSharp
+      name:
+        CSharp: Pipeline(String)
+        VB: Pipeline(String)
+      nameWithType:
+        CSharp: Pipeline.Pipeline(String)
+        VB: Pipeline.Pipeline(String)
+      qualifiedName:
+        CSharp: Pdal.Pipeline.Pipeline(System.String)
+        VB: Pdal.Pipeline.Pipeline(System.String)
+      type: Constructor
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: .ctor
+        path: ''
+        startLine: 805
+      example: []
+      syntax:
+        content:
+          CSharp: public Pipeline(string json)
+          VB: Public Sub New(json As String)
+        parameters:
+        - id: json
+          type: System.String
+      overload: Pdal.Pipeline.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.Pipeline.Dispose
+      commentId: M:Pdal.Pipeline.Dispose
+      language: CSharp
+      name:
+        CSharp: Dispose()
+        VB: Dispose()
+      nameWithType:
+        CSharp: Pipeline.Dispose()
+        VB: Pipeline.Dispose()
+      qualifiedName:
+        CSharp: Pdal.Pipeline.Dispose()
+        VB: Pdal.Pipeline.Dispose()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Dispose
+        path: ''
+        startLine: 811
+      example: []
+      syntax:
+        content:
+          CSharp: public void Dispose()
+          VB: Public Sub Dispose
+      overload: Pdal.Pipeline.Dispose*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.Pipeline.Json
+      commentId: P:Pdal.Pipeline.Json
+      language: CSharp
+      name:
+        CSharp: Json
+        VB: Json
+      nameWithType:
+        CSharp: Pipeline.Json
+        VB: Pipeline.Json
+      qualifiedName:
+        CSharp: Pdal.Pipeline.Json
+        VB: Pdal.Pipeline.Json
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Json
+        path: ''
+        startLine: 819
+      example: []
+      syntax:
+        content:
+          CSharp: public string Json { get; set; }
+          VB: Public Property Json As String
+        parameters: []
+        return:
+          type: System.String
+      overload: Pdal.Pipeline.Json*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        - set
+        VB:
+        - Public
+    - id: Pdal.Pipeline.Metadata
+      commentId: P:Pdal.Pipeline.Metadata
+      language: CSharp
+      name:
+        CSharp: Metadata
+        VB: Metadata
+      nameWithType:
+        CSharp: Pipeline.Metadata
+        VB: Pipeline.Metadata
+      qualifiedName:
+        CSharp: Pdal.Pipeline.Metadata
+        VB: Pdal.Pipeline.Metadata
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Metadata
+        path: ''
+        startLine: 836
+      example: []
+      syntax:
+        content:
+          CSharp: public string Metadata { get; }
+          VB: Public ReadOnly Property Metadata As String
+        parameters: []
+        return:
+          type: System.String
+      overload: Pdal.Pipeline.Metadata*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.Pipeline.Schema
+      commentId: P:Pdal.Pipeline.Schema
+      language: CSharp
+      name:
+        CSharp: Schema
+        VB: Schema
+      nameWithType:
+        CSharp: Pipeline.Schema
+        VB: Pipeline.Schema
+      qualifiedName:
+        CSharp: Pdal.Pipeline.Schema
+        VB: Pdal.Pipeline.Schema
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Schema
+        path: ''
+        startLine: 847
+      example: []
+      syntax:
+        content:
+          CSharp: public string Schema { get; }
+          VB: Public ReadOnly Property Schema As String
+        parameters: []
+        return:
+          type: System.String
+      overload: Pdal.Pipeline.Schema*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.Pipeline.Log
+      commentId: P:Pdal.Pipeline.Log
+      language: CSharp
+      name:
+        CSharp: Log
+        VB: Log
+      nameWithType:
+        CSharp: Pipeline.Log
+        VB: Pipeline.Log
+      qualifiedName:
+        CSharp: Pdal.Pipeline.Log
+        VB: Pdal.Pipeline.Log
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Log
+        path: ''
+        startLine: 858
+      example: []
+      syntax:
+        content:
+          CSharp: public string Log { get; }
+          VB: Public ReadOnly Property Log As String
+        parameters: []
+        return:
+          type: System.String
+      overload: Pdal.Pipeline.Log*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.Pipeline.LogLevel
+      commentId: P:Pdal.Pipeline.LogLevel
+      language: CSharp
+      name:
+        CSharp: LogLevel
+        VB: LogLevel
+      nameWithType:
+        CSharp: Pipeline.LogLevel
+        VB: Pipeline.LogLevel
+      qualifiedName:
+        CSharp: Pdal.Pipeline.LogLevel
+        VB: Pdal.Pipeline.LogLevel
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: LogLevel
+        path: ''
+        startLine: 869
+      example: []
+      syntax:
+        content:
+          CSharp: public int LogLevel { get; set; }
+          VB: Public Property LogLevel As Integer
+        parameters: []
+        return:
+          type: System.Int32
+      overload: Pdal.Pipeline.LogLevel*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        - set
+        VB:
+        - Public
+    - id: Pdal.Pipeline.Valid
+      commentId: P:Pdal.Pipeline.Valid
+      language: CSharp
+      name:
+        CSharp: Valid
+        VB: Valid
+      nameWithType:
+        CSharp: Pipeline.Valid
+        VB: Pipeline.Valid
+      qualifiedName:
+        CSharp: Pdal.Pipeline.Valid
+        VB: Pdal.Pipeline.Valid
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Valid
+        path: ''
+        startLine: 876
+      example: []
+      syntax:
+        content:
+          CSharp: public bool Valid { get; }
+          VB: Public ReadOnly Property Valid As Boolean
+        parameters: []
+        return:
+          type: System.Boolean
+      overload: Pdal.Pipeline.Valid*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.Pipeline.Views
+      commentId: P:Pdal.Pipeline.Views
+      language: CSharp
+      name:
+        CSharp: Views
+        VB: Views
+      nameWithType:
+        CSharp: Pipeline.Views
+        VB: Pipeline.Views
+      qualifiedName:
+        CSharp: Pdal.Pipeline.Views
+        VB: Pdal.Pipeline.Views
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Views
+        path: ''
+        startLine: 881
+      syntax:
+        content:
+          CSharp: public PointViewIterator Views { get; }
+          VB: Public ReadOnly Property Views As PointViewIterator
+        parameters: []
+        return:
+          type: Pdal.PointViewIterator
+      overload: Pdal.Pipeline.Views*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.Pipeline.Execute
+      commentId: M:Pdal.Pipeline.Execute
+      language: CSharp
+      name:
+        CSharp: Execute()
+        VB: Execute()
+      nameWithType:
+        CSharp: Pipeline.Execute()
+        VB: Pipeline.Execute()
+      qualifiedName:
+        CSharp: Pdal.Pipeline.Execute()
+        VB: Pdal.Pipeline.Execute()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Execute
+        path: ''
+        startLine: 904
+      example: []
+      syntax:
+        content:
+          CSharp: public long Execute()
+          VB: Public Function Execute As Long
+        return:
+          type: System.Int64
+      overload: Pdal.Pipeline.Execute*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+  - id: Pdal.PointLayout
+    commentId: T:Pdal.PointLayout
+    language: CSharp
+    name:
+      CSharp: PointLayout
+      VB: PointLayout
+    nameWithType:
+      CSharp: PointLayout
+      VB: PointLayout
+    qualifiedName:
+      CSharp: Pdal.PointLayout
+      VB: Pdal.PointLayout
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: Pdal
+    source:
+      id: PointLayout
+      path: ''
+      startLine: 946
+    syntax:
+      content:
+        CSharp: public class PointLayout
+        VB: Public Class PointLayout
+    inheritance:
+    - System.Object
+    inheritedMembers:
+    - System.Object.ToString
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: Pdal.PointLayout.#ctor(IntPtr)
+      commentId: M:Pdal.PointLayout.#ctor(IntPtr)
+      language: CSharp
+      name:
+        CSharp: PointLayout(IntPtr)
+        VB: PointLayout(IntPtr)
+      nameWithType:
+        CSharp: PointLayout.PointLayout(IntPtr)
+        VB: PointLayout.PointLayout(IntPtr)
+      qualifiedName:
+        CSharp: Pdal.PointLayout.PointLayout(IntPtr)
+        VB: Pdal.PointLayout.PointLayout(IntPtr)
+      type: Constructor
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: .ctor
+        path: ''
+        startLine: 970
+      syntax:
+        content:
+          CSharp: public PointLayout(IntPtr nativeLayout)
+          VB: Public Sub New(nativeLayout As IntPtr)
+        parameters:
+        - id: nativeLayout
+          type: IntPtr
+      overload: Pdal.PointLayout.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.PointLayout.Types
+      commentId: P:Pdal.PointLayout.Types
+      language: CSharp
+      name:
+        CSharp: Types
+        VB: Types
+      nameWithType:
+        CSharp: PointLayout.Types
+        VB: PointLayout.Types
+      qualifiedName:
+        CSharp: Pdal.PointLayout.Types
+        VB: Pdal.PointLayout.Types
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Types
+        path: ''
+        startLine: 981
+      syntax:
+        content:
+          CSharp: public DimTypeList Types { get; }
+          VB: Public ReadOnly Property Types As DimTypeList
+        parameters: []
+        return:
+          type: Pdal.DimTypeList
+      overload: Pdal.PointLayout.Types*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.PointLayout.PointSize
+      commentId: P:Pdal.PointLayout.PointSize
+      language: CSharp
+      name:
+        CSharp: PointSize
+        VB: PointSize
+      nameWithType:
+        CSharp: PointLayout.PointSize
+        VB: PointLayout.PointSize
+      qualifiedName:
+        CSharp: Pdal.PointLayout.PointSize
+        VB: Pdal.PointLayout.PointSize
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: PointSize
+        path: ''
+        startLine: 986
+      syntax:
+        content:
+          CSharp: public uint PointSize { get; }
+          VB: Public ReadOnly Property PointSize As UInteger
+        parameters: []
+        return:
+          type: System.UInt32
+      overload: Pdal.PointLayout.PointSize*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.PointLayout.FindDimType(System.String)
+      commentId: M:Pdal.PointLayout.FindDimType(System.String)
+      language: CSharp
+      name:
+        CSharp: FindDimType(String)
+        VB: FindDimType(String)
+      nameWithType:
+        CSharp: PointLayout.FindDimType(String)
+        VB: PointLayout.FindDimType(String)
+      qualifiedName:
+        CSharp: Pdal.PointLayout.FindDimType(System.String)
+        VB: Pdal.PointLayout.FindDimType(System.String)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: FindDimType
+        path: ''
+        startLine: 991
+      syntax:
+        content:
+          CSharp: public DimType FindDimType(string name)
+          VB: Public Function FindDimType(name As String) As DimType
+        parameters:
+        - id: name
+          type: System.String
+        return:
+          type: Pdal.DimType
+      overload: Pdal.PointLayout.FindDimType*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.PointLayout.GetDimSize(System.String)
+      commentId: M:Pdal.PointLayout.GetDimSize(System.String)
+      language: CSharp
+      name:
+        CSharp: GetDimSize(String)
+        VB: GetDimSize(String)
+      nameWithType:
+        CSharp: PointLayout.GetDimSize(String)
+        VB: PointLayout.GetDimSize(String)
+      qualifiedName:
+        CSharp: Pdal.PointLayout.GetDimSize(System.String)
+        VB: Pdal.PointLayout.GetDimSize(System.String)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: GetDimSize
+        path: ''
+        startLine: 1004
+      syntax:
+        content:
+          CSharp: public uint GetDimSize(string name)
+          VB: Public Function GetDimSize(name As String) As UInteger
+        parameters:
+        - id: name
+          type: System.String
+        return:
+          type: System.UInt32
+      overload: Pdal.PointLayout.GetDimSize*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.PointLayout.GetDimPackedOffset(System.String)
+      commentId: M:Pdal.PointLayout.GetDimPackedOffset(System.String)
+      language: CSharp
+      name:
+        CSharp: GetDimPackedOffset(String)
+        VB: GetDimPackedOffset(String)
+      nameWithType:
+        CSharp: PointLayout.GetDimPackedOffset(String)
+        VB: PointLayout.GetDimPackedOffset(String)
+      qualifiedName:
+        CSharp: Pdal.PointLayout.GetDimPackedOffset(System.String)
+        VB: Pdal.PointLayout.GetDimPackedOffset(System.String)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: GetDimPackedOffset
+        path: ''
+        startLine: 1009
+      syntax:
+        content:
+          CSharp: public uint GetDimPackedOffset(string name)
+          VB: Public Function GetDimPackedOffset(name As String) As UInteger
+        parameters:
+        - id: name
+          type: System.String
+        return:
+          type: System.UInt32
+      overload: Pdal.PointLayout.GetDimPackedOffset*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+  - id: Pdal.PointView
+    commentId: T:Pdal.PointView
+    language: CSharp
+    name:
+      CSharp: PointView
+      VB: PointView
+    nameWithType:
+      CSharp: PointView
+      VB: PointView
+    qualifiedName:
+      CSharp: Pdal.PointView
+      VB: Pdal.PointView
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: Pdal
+    source:
+      id: PointView
+      path: ''
+      startLine: 1053
+    syntax:
+      content:
+        CSharp: 'public class PointView : IDisposable'
+        VB: >-
+          Public Class PointView
+
+              Inherits IDisposable
+    inheritance:
+    - System.Object
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: Pdal.PointView.#ctor(IntPtr)
+      commentId: M:Pdal.PointView.#ctor(IntPtr)
+      language: CSharp
+      name:
+        CSharp: PointView(IntPtr)
+        VB: PointView(IntPtr)
+      nameWithType:
+        CSharp: PointView.PointView(IntPtr)
+        VB: PointView.PointView(IntPtr)
+      qualifiedName:
+        CSharp: Pdal.PointView.PointView(IntPtr)
+        VB: Pdal.PointView.PointView(IntPtr)
+      type: Constructor
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: .ctor
+        path: ''
+        startLine: 1100
+      syntax:
+        content:
+          CSharp: public PointView(IntPtr nativeView)
+          VB: Public Sub New(nativeView As IntPtr)
+        parameters:
+        - id: nativeView
+          type: IntPtr
+      overload: Pdal.PointView.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.PointView.Dispose
+      commentId: M:Pdal.PointView.Dispose
+      language: CSharp
+      name:
+        CSharp: Dispose()
+        VB: Dispose()
+      nameWithType:
+        CSharp: PointView.Dispose()
+        VB: PointView.Dispose()
+      qualifiedName:
+        CSharp: Pdal.PointView.Dispose()
+        VB: Pdal.PointView.Dispose()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Dispose
+        path: ''
+        startLine: 1105
+      syntax:
+        content:
+          CSharp: public void Dispose()
+          VB: Public Sub Dispose
+      overload: Pdal.PointView.Dispose*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.PointView.Id
+      commentId: P:Pdal.PointView.Id
+      language: CSharp
+      name:
+        CSharp: Id
+        VB: Id
+      nameWithType:
+        CSharp: PointView.Id
+        VB: PointView.Id
+      qualifiedName:
+        CSharp: Pdal.PointView.Id
+        VB: Pdal.PointView.Id
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Id
+        path: ''
+        startLine: 1111
+      syntax:
+        content:
+          CSharp: public int Id { get; }
+          VB: Public ReadOnly Property Id As Integer
+        parameters: []
+        return:
+          type: System.Int32
+      overload: Pdal.PointView.Id*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.PointView.Size
+      commentId: P:Pdal.PointView.Size
+      language: CSharp
+      name:
+        CSharp: Size
+        VB: Size
+      nameWithType:
+        CSharp: PointView.Size
+        VB: PointView.Size
+      qualifiedName:
+        CSharp: Pdal.PointView.Size
+        VB: Pdal.PointView.Size
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Size
+        path: ''
+        startLine: 1116
+      syntax:
+        content:
+          CSharp: public ulong Size { get; }
+          VB: Public ReadOnly Property Size As ULong
+        parameters: []
+        return:
+          type: System.UInt64
+      overload: Pdal.PointView.Size*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.PointView.Empty
+      commentId: P:Pdal.PointView.Empty
+      language: CSharp
+      name:
+        CSharp: Empty
+        VB: Empty
+      nameWithType:
+        CSharp: PointView.Empty
+        VB: PointView.Empty
+      qualifiedName:
+        CSharp: Pdal.PointView.Empty
+        VB: Pdal.PointView.Empty
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Empty
+        path: ''
+        startLine: 1121
+      syntax:
+        content:
+          CSharp: public bool Empty { get; }
+          VB: Public ReadOnly Property Empty As Boolean
+        parameters: []
+        return:
+          type: System.Boolean
+      overload: Pdal.PointView.Empty*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.PointView.Proj4
+      commentId: P:Pdal.PointView.Proj4
+      language: CSharp
+      name:
+        CSharp: Proj4
+        VB: Proj4
+      nameWithType:
+        CSharp: PointView.Proj4
+        VB: PointView.Proj4
+      qualifiedName:
+        CSharp: Pdal.PointView.Proj4
+        VB: Pdal.PointView.Proj4
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Proj4
+        path: ''
+        startLine: 1126
+      syntax:
+        content:
+          CSharp: public string Proj4 { get; }
+          VB: Public ReadOnly Property Proj4 As String
+        parameters: []
+        return:
+          type: System.String
+      overload: Pdal.PointView.Proj4*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.PointView.Wkt
+      commentId: P:Pdal.PointView.Wkt
+      language: CSharp
+      name:
+        CSharp: Wkt
+        VB: Wkt
+      nameWithType:
+        CSharp: PointView.Wkt
+        VB: PointView.Wkt
+      qualifiedName:
+        CSharp: Pdal.PointView.Wkt
+        VB: Pdal.PointView.Wkt
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Wkt
+        path: ''
+        startLine: 1136
+      syntax:
+        content:
+          CSharp: public string Wkt { get; }
+          VB: Public ReadOnly Property Wkt As String
+        parameters: []
+        return:
+          type: System.String
+      overload: Pdal.PointView.Wkt*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.PointView.PrettyWkt
+      commentId: P:Pdal.PointView.PrettyWkt
+      language: CSharp
+      name:
+        CSharp: PrettyWkt
+        VB: PrettyWkt
+      nameWithType:
+        CSharp: PointView.PrettyWkt
+        VB: PointView.PrettyWkt
+      qualifiedName:
+        CSharp: Pdal.PointView.PrettyWkt
+        VB: Pdal.PointView.PrettyWkt
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: PrettyWkt
+        path: ''
+        startLine: 1146
+      syntax:
+        content:
+          CSharp: public string PrettyWkt { get; }
+          VB: Public ReadOnly Property PrettyWkt As String
+        parameters: []
+        return:
+          type: System.String
+      overload: Pdal.PointView.PrettyWkt*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.PointView.Layout
+      commentId: P:Pdal.PointView.Layout
+      language: CSharp
+      name:
+        CSharp: Layout
+        VB: Layout
+      nameWithType:
+        CSharp: PointView.Layout
+        VB: PointView.Layout
+      qualifiedName:
+        CSharp: Pdal.PointView.Layout
+        VB: Pdal.PointView.Layout
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Layout
+        path: ''
+        startLine: 1156
+      syntax:
+        content:
+          CSharp: public PointLayout Layout { get; }
+          VB: Public ReadOnly Property Layout As PointLayout
+        parameters: []
+        return:
+          type: Pdal.PointLayout
+      overload: Pdal.PointView.Layout*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.PointView.GetAllPackedPoints(Pdal.DimTypeList)
+      commentId: M:Pdal.PointView.GetAllPackedPoints(Pdal.DimTypeList)
+      language: CSharp
+      name:
+        CSharp: GetAllPackedPoints(DimTypeList)
+        VB: GetAllPackedPoints(DimTypeList)
+      nameWithType:
+        CSharp: PointView.GetAllPackedPoints(DimTypeList)
+        VB: PointView.GetAllPackedPoints(DimTypeList)
+      qualifiedName:
+        CSharp: Pdal.PointView.GetAllPackedPoints(Pdal.DimTypeList)
+        VB: Pdal.PointView.GetAllPackedPoints(Pdal.DimTypeList)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: GetAllPackedPoints
+        path: ''
+        startLine: 1171
+      syntax:
+        content:
+          CSharp: public byte[] GetAllPackedPoints(DimTypeList dims)
+          VB: Public Function GetAllPackedPoints(dims As DimTypeList) As Byte()
+        parameters:
+        - id: dims
+          type: Pdal.DimTypeList
+        return:
+          type: System.Byte[]
+      overload: Pdal.PointView.GetAllPackedPoints*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.PointView.GetPackedPoint(Pdal.DimTypeList,System.UInt64)
+      commentId: M:Pdal.PointView.GetPackedPoint(Pdal.DimTypeList,System.UInt64)
+      language: CSharp
+      name:
+        CSharp: GetPackedPoint(DimTypeList, UInt64)
+        VB: GetPackedPoint(DimTypeList, UInt64)
+      nameWithType:
+        CSharp: PointView.GetPackedPoint(DimTypeList, UInt64)
+        VB: PointView.GetPackedPoint(DimTypeList, UInt64)
+      qualifiedName:
+        CSharp: Pdal.PointView.GetPackedPoint(Pdal.DimTypeList, System.UInt64)
+        VB: Pdal.PointView.GetPackedPoint(Pdal.DimTypeList, System.UInt64)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: GetPackedPoint
+        path: ''
+        startLine: 1185
+      syntax:
+        content:
+          CSharp: public byte[] GetPackedPoint(DimTypeList dims, ulong idx)
+          VB: Public Function GetPackedPoint(dims As DimTypeList, idx As ULong) As Byte()
+        parameters:
+        - id: dims
+          type: Pdal.DimTypeList
+        - id: idx
+          type: System.UInt64
+        return:
+          type: System.Byte[]
+      overload: Pdal.PointView.GetPackedPoint*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.PointView.Clone
+      commentId: M:Pdal.PointView.Clone
+      language: CSharp
+      name:
+        CSharp: Clone()
+        VB: Clone()
+      nameWithType:
+        CSharp: PointView.Clone()
+        VB: PointView.Clone()
+      qualifiedName:
+        CSharp: Pdal.PointView.Clone()
+        VB: Pdal.PointView.Clone()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Clone
+        path: ''
+        startLine: 1198
+      syntax:
+        content:
+          CSharp: public PointView Clone()
+          VB: Public Function Clone As PointView
+        return:
+          type: Pdal.PointView
+      overload: Pdal.PointView.Clone*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.PointView.GetBakedPointCloud(System.Int64)
+      commentId: M:Pdal.PointView.GetBakedPointCloud(System.Int64)
+      language: CSharp
+      name:
+        CSharp: GetBakedPointCloud(Int64)
+        VB: GetBakedPointCloud(Int64)
+      nameWithType:
+        CSharp: PointView.GetBakedPointCloud(Int64)
+        VB: PointView.GetBakedPointCloud(Int64)
+      qualifiedName:
+        CSharp: Pdal.PointView.GetBakedPointCloud(System.Int64)
+        VB: Pdal.PointView.GetBakedPointCloud(System.Int64)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: GetBakedPointCloud
+        path: ''
+        startLine: 1211
+      syntax:
+        content:
+          CSharp: public BakedPointCloud GetBakedPointCloud(long size)
+          VB: Public Function GetBakedPointCloud(size As Long) As BakedPointCloud
+        parameters:
+        - id: size
+          type: System.Int64
+        return:
+          type: Pdal.BakedPointCloud
+      overload: Pdal.PointView.GetBakedPointCloud*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+  - id: Pdal.PointViewIterator
+    commentId: T:Pdal.PointViewIterator
+    language: CSharp
+    name:
+      CSharp: PointViewIterator
+      VB: PointViewIterator
+    nameWithType:
+      CSharp: PointViewIterator
+      VB: PointViewIterator
+    qualifiedName:
+      CSharp: Pdal.PointViewIterator
+      VB: Pdal.PointViewIterator
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: Pdal
+    source:
+      id: PointViewIterator
+      path: ''
+      startLine: 1318
+    syntax:
+      content:
+        CSharp: 'public class PointViewIterator : IDisposable'
+        VB: >-
+          Public Class PointViewIterator
+
+              Inherits IDisposable
+    inheritance:
+    - System.Object
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: Pdal.PointViewIterator.#ctor(IntPtr)
+      commentId: M:Pdal.PointViewIterator.#ctor(IntPtr)
+      language: CSharp
+      name:
+        CSharp: PointViewIterator(IntPtr)
+        VB: PointViewIterator(IntPtr)
+      nameWithType:
+        CSharp: PointViewIterator.PointViewIterator(IntPtr)
+        VB: PointViewIterator.PointViewIterator(IntPtr)
+      qualifiedName:
+        CSharp: Pdal.PointViewIterator.PointViewIterator(IntPtr)
+        VB: Pdal.PointViewIterator.PointViewIterator(IntPtr)
+      type: Constructor
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: .ctor
+        path: ''
+        startLine: 1336
+      syntax:
+        content:
+          CSharp: public PointViewIterator(IntPtr nativeIterator)
+          VB: Public Sub New(nativeIterator As IntPtr)
+        parameters:
+        - id: nativeIterator
+          type: IntPtr
+      overload: Pdal.PointViewIterator.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.PointViewIterator.Dispose
+      commentId: M:Pdal.PointViewIterator.Dispose
+      language: CSharp
+      name:
+        CSharp: Dispose()
+        VB: Dispose()
+      nameWithType:
+        CSharp: PointViewIterator.Dispose()
+        VB: PointViewIterator.Dispose()
+      qualifiedName:
+        CSharp: Pdal.PointViewIterator.Dispose()
+        VB: Pdal.PointViewIterator.Dispose()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Dispose
+        path: ''
+        startLine: 1341
+      syntax:
+        content:
+          CSharp: public void Dispose()
+          VB: Public Sub Dispose
+      overload: Pdal.PointViewIterator.Dispose*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.PointViewIterator.Next
+      commentId: P:Pdal.PointViewIterator.Next
+      language: CSharp
+      name:
+        CSharp: Next
+        VB: Next
+      nameWithType:
+        CSharp: PointViewIterator.Next
+        VB: PointViewIterator.Next
+      qualifiedName:
+        CSharp: Pdal.PointViewIterator.Next
+        VB: Pdal.PointViewIterator.Next
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Next
+        path: ''
+        startLine: 1347
+      syntax:
+        content:
+          CSharp: public PointView Next { get; }
+          VB: Public ReadOnly Property Next As PointView
+        parameters: []
+        return:
+          type: Pdal.PointView
+      overload: Pdal.PointViewIterator.Next*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: Pdal.PointViewIterator.HasNext
+      commentId: M:Pdal.PointViewIterator.HasNext
+      language: CSharp
+      name:
+        CSharp: HasNext()
+        VB: HasNext()
+      nameWithType:
+        CSharp: PointViewIterator.HasNext()
+        VB: PointViewIterator.HasNext()
+      qualifiedName:
+        CSharp: Pdal.PointViewIterator.HasNext()
+        VB: Pdal.PointViewIterator.HasNext()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: HasNext
+        path: ''
+        startLine: 1364
+      syntax:
+        content:
+          CSharp: public bool HasNext()
+          VB: Public Function HasNext As Boolean
+        return:
+          type: System.Boolean
+      overload: Pdal.PointViewIterator.HasNext*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: Pdal.PointViewIterator.Reset
+      commentId: M:Pdal.PointViewIterator.Reset
+      language: CSharp
+      name:
+        CSharp: Reset()
+        VB: Reset()
+      nameWithType:
+        CSharp: PointViewIterator.Reset()
+        VB: PointViewIterator.Reset()
+      qualifiedName:
+        CSharp: Pdal.PointViewIterator.Reset()
+        VB: Pdal.PointViewIterator.Reset()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: Pdal
+      source:
+        id: Reset
+        path: ''
+        startLine: 1369
+      syntax:
+        content:
+          CSharp: public void Reset()
+          VB: Public Sub Reset
+      overload: Pdal.PointViewIterator.Reset*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+references:
+  System:
+    name:
+      CSharp:
+      - name: System
+        nameWithType: System
+        qualifiedName: System
+        isExternal: true
+      VB:
+      - name: System
+        nameWithType: System
+        qualifiedName: System
+    isDefinition: true
+    commentId: N:System
+  System.Object:
+    name:
+      CSharp:
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      VB:
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Object
+  System.Object.ToString:
+    name:
+      CSharp:
+      - id: System.Object.ToString
+        name: ToString
+        nameWithType: Object.ToString
+        qualifiedName: System.Object.ToString
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.ToString
+        name: ToString
+        nameWithType: Object.ToString
+        qualifiedName: System.Object.ToString
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.ToString
+  System.Object.Equals(System.Object):
+    name:
+      CSharp:
+      - id: System.Object.Equals(System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.Equals(System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.Equals(System.Object)
+  System.Object.Equals(System.Object,System.Object):
+    name:
+      CSharp:
+      - id: System.Object.Equals(System.Object,System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.Equals(System.Object,System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.Equals(System.Object,System.Object)
+  System.Object.ReferenceEquals(System.Object,System.Object):
+    name:
+      CSharp:
+      - id: System.Object.ReferenceEquals(System.Object,System.Object)
+        name: ReferenceEquals
+        nameWithType: Object.ReferenceEquals
+        qualifiedName: System.Object.ReferenceEquals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.ReferenceEquals(System.Object,System.Object)
+        name: ReferenceEquals
+        nameWithType: Object.ReferenceEquals
+        qualifiedName: System.Object.ReferenceEquals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  System.Object.GetHashCode:
+    name:
+      CSharp:
+      - id: System.Object.GetHashCode
+        name: GetHashCode
+        nameWithType: Object.GetHashCode
+        qualifiedName: System.Object.GetHashCode
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.GetHashCode
+        name: GetHashCode
+        nameWithType: Object.GetHashCode
+        qualifiedName: System.Object.GetHashCode
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.GetHashCode
+  System.Object.GetType:
+    name:
+      CSharp:
+      - id: System.Object.GetType
+        name: GetType
+        nameWithType: Object.GetType
+        qualifiedName: System.Object.GetType
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.GetType
+        name: GetType
+        nameWithType: Object.GetType
+        qualifiedName: System.Object.GetType
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.GetType
+  System.Object.MemberwiseClone:
+    name:
+      CSharp:
+      - id: System.Object.MemberwiseClone
+        name: MemberwiseClone
+        nameWithType: Object.MemberwiseClone
+        qualifiedName: System.Object.MemberwiseClone
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.MemberwiseClone
+        name: MemberwiseClone
+        nameWithType: Object.MemberwiseClone
+        qualifiedName: System.Object.MemberwiseClone
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.MemberwiseClone
+  System.Int32:
+    name:
+      CSharp:
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+      VB:
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Int32
+  Pdal.BakedPointCloud.pointCount*:
+    name:
+      CSharp:
+      - id: Pdal.BakedPointCloud.pointCount*
+        name: pointCount
+        nameWithType: BakedPointCloud.pointCount
+        qualifiedName: Pdal.BakedPointCloud.pointCount
+      VB:
+      - id: Pdal.BakedPointCloud.pointCount*
+        name: pointCount
+        nameWithType: BakedPointCloud.pointCount
+        qualifiedName: Pdal.BakedPointCloud.pointCount
+    isDefinition: true
+    commentId: Overload:Pdal.BakedPointCloud.pointCount
+  Texture2D:
+    name:
+      CSharp:
+      - id: Texture2D
+        name: Texture2D
+        nameWithType: Texture2D
+        qualifiedName: Texture2D
+        isExternal: true
+      VB:
+      - id: Texture2D
+        name: Texture2D
+        nameWithType: Texture2D
+        qualifiedName: Texture2D
+        isExternal: true
+    isDefinition: true
+  Pdal.BakedPointCloud.positionMap*:
+    name:
+      CSharp:
+      - id: Pdal.BakedPointCloud.positionMap*
+        name: positionMap
+        nameWithType: BakedPointCloud.positionMap
+        qualifiedName: Pdal.BakedPointCloud.positionMap
+      VB:
+      - id: Pdal.BakedPointCloud.positionMap*
+        name: positionMap
+        nameWithType: BakedPointCloud.positionMap
+        qualifiedName: Pdal.BakedPointCloud.positionMap
+    isDefinition: true
+    commentId: Overload:Pdal.BakedPointCloud.positionMap
+  Pdal.BakedPointCloud.colorMap*:
+    name:
+      CSharp:
+      - id: Pdal.BakedPointCloud.colorMap*
+        name: colorMap
+        nameWithType: BakedPointCloud.colorMap
+        qualifiedName: Pdal.BakedPointCloud.colorMap
+      VB:
+      - id: Pdal.BakedPointCloud.colorMap*
+        name: colorMap
+        nameWithType: BakedPointCloud.colorMap
+        qualifiedName: Pdal.BakedPointCloud.colorMap
+    isDefinition: true
+    commentId: Overload:Pdal.BakedPointCloud.colorMap
+  System.Collections.Generic.IEnumerable`1:
+    name:
+      CSharp:
+      - id: System.Collections.Generic.IEnumerable`1
+        name: IEnumerable
+        nameWithType: IEnumerable
+        qualifiedName: System.Collections.Generic.IEnumerable
+        isExternal: true
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: System.Collections.Generic.IEnumerable`1
+        name: IEnumerable
+        nameWithType: IEnumerable
+        qualifiedName: System.Collections.Generic.IEnumerable
+        isExternal: true
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    commentId: T:System.Collections.Generic.IEnumerable`1
+  System.Collections.Generic:
+    name:
+      CSharp:
+      - name: System.Collections.Generic
+        nameWithType: System.Collections.Generic
+        qualifiedName: System.Collections.Generic
+        isExternal: true
+      VB:
+      - name: System.Collections.Generic
+        nameWithType: System.Collections.Generic
+        qualifiedName: System.Collections.Generic
+    isDefinition: true
+    commentId: N:System.Collections.Generic
+  System.Collections.Generic.IEnumerable{Vector3d}:
+    name:
+      CSharp:
+      - id: System.Collections.Generic.IEnumerable`1
+        name: IEnumerable
+        nameWithType: IEnumerable
+        qualifiedName: System.Collections.Generic.IEnumerable
+        isExternal: true
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - id: Vector3d
+        name: Vector3d
+        nameWithType: Vector3d
+        qualifiedName: Vector3d
+        isExternal: true
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: System.Collections.Generic.IEnumerable`1
+        name: IEnumerable
+        nameWithType: IEnumerable
+        qualifiedName: System.Collections.Generic.IEnumerable
+        isExternal: true
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - id: Vector3d
+        name: Vector3d
+        nameWithType: Vector3d
+        qualifiedName: Vector3d
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: System.Collections.Generic.IEnumerable`1
+    parent: System.Collections.Generic
+    commentId: T:System.Collections.Generic.IEnumerable{Vector3d}
+  System.Collections.Generic.IEnumerable{Vector3f}:
+    name:
+      CSharp:
+      - id: System.Collections.Generic.IEnumerable`1
+        name: IEnumerable
+        nameWithType: IEnumerable
+        qualifiedName: System.Collections.Generic.IEnumerable
+        isExternal: true
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - id: Vector3f
+        name: Vector3f
+        nameWithType: Vector3f
+        qualifiedName: Vector3f
+        isExternal: true
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: System.Collections.Generic.IEnumerable`1
+        name: IEnumerable
+        nameWithType: IEnumerable
+        qualifiedName: System.Collections.Generic.IEnumerable
+        isExternal: true
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - id: Vector3f
+        name: Vector3f
+        nameWithType: Vector3f
+        qualifiedName: Vector3f
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: System.Collections.Generic.IEnumerable`1
+    parent: System.Collections.Generic
+    commentId: T:System.Collections.Generic.IEnumerable{Vector3f}
+  Pdal.BakedPointCloud.Initialize*:
+    name:
+      CSharp:
+      - id: Pdal.BakedPointCloud.Initialize*
+        name: Initialize
+        nameWithType: BakedPointCloud.Initialize
+        qualifiedName: Pdal.BakedPointCloud.Initialize
+      VB:
+      - id: Pdal.BakedPointCloud.Initialize*
+        name: Initialize
+        nameWithType: BakedPointCloud.Initialize
+        qualifiedName: Pdal.BakedPointCloud.Initialize
+    isDefinition: true
+    commentId: Overload:Pdal.BakedPointCloud.Initialize
+  Pdal.BakedPointCloud:
+    name:
+      CSharp:
+      - id: Pdal.BakedPointCloud
+        name: BakedPointCloud
+        nameWithType: BakedPointCloud
+        qualifiedName: Pdal.BakedPointCloud
+      VB:
+      - id: Pdal.BakedPointCloud
+        name: BakedPointCloud
+        nameWithType: BakedPointCloud
+        qualifiedName: Pdal.BakedPointCloud
+    isDefinition: true
+    parent: Pdal
+    commentId: T:Pdal.BakedPointCloud
+  Pdal.PdalConfiguration.ConfigurePdal*:
+    name:
+      CSharp:
+      - id: Pdal.PdalConfiguration.ConfigurePdal*
+        name: ConfigurePdal
+        nameWithType: PdalConfiguration.ConfigurePdal
+        qualifiedName: Pdal.PdalConfiguration.ConfigurePdal
+      VB:
+      - id: Pdal.PdalConfiguration.ConfigurePdal*
+        name: ConfigurePdal
+        nameWithType: PdalConfiguration.ConfigurePdal
+        qualifiedName: Pdal.PdalConfiguration.ConfigurePdal
+    isDefinition: true
+    commentId: Overload:Pdal.PdalConfiguration.ConfigurePdal
+  Pdal.PdalConfiguration:
+    name:
+      CSharp:
+      - id: Pdal.PdalConfiguration
+        name: PdalConfiguration
+        nameWithType: PdalConfiguration
+        qualifiedName: Pdal.PdalConfiguration
+      VB:
+      - id: Pdal.PdalConfiguration
+        name: PdalConfiguration
+        nameWithType: PdalConfiguration
+        qualifiedName: Pdal.PdalConfiguration
+    isDefinition: true
+    commentId: T:Pdal.PdalConfiguration
+  Pdal.Config.#ctor*:
+    name:
+      CSharp:
+      - id: Pdal.Config.#ctor*
+        name: Config
+        nameWithType: Config.Config
+        qualifiedName: Pdal.Config.Config
+      VB:
+      - id: Pdal.Config.#ctor*
+        name: Config
+        nameWithType: Config.Config
+        qualifiedName: Pdal.Config.Config
+    isDefinition: true
+    commentId: Overload:Pdal.Config.#ctor
+  System.String:
+    name:
+      CSharp:
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      VB:
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.String
+  Pdal.Config.GdalData*:
+    name:
+      CSharp:
+      - id: Pdal.Config.GdalData*
+        name: GdalData
+        nameWithType: Config.GdalData
+        qualifiedName: Pdal.Config.GdalData
+      VB:
+      - id: Pdal.Config.GdalData*
+        name: GdalData
+        nameWithType: Config.GdalData
+        qualifiedName: Pdal.Config.GdalData
+    isDefinition: true
+    commentId: Overload:Pdal.Config.GdalData
+  Pdal.Config.Proj4Data*:
+    name:
+      CSharp:
+      - id: Pdal.Config.Proj4Data*
+        name: Proj4Data
+        nameWithType: Config.Proj4Data
+        qualifiedName: Pdal.Config.Proj4Data
+      VB:
+      - id: Pdal.Config.Proj4Data*
+        name: Proj4Data
+        nameWithType: Config.Proj4Data
+        qualifiedName: Pdal.Config.Proj4Data
+    isDefinition: true
+    commentId: Overload:Pdal.Config.Proj4Data
+  Pdal.Config.FullVersion*:
+    name:
+      CSharp:
+      - id: Pdal.Config.FullVersion*
+        name: FullVersion
+        nameWithType: Config.FullVersion
+        qualifiedName: Pdal.Config.FullVersion
+      VB:
+      - id: Pdal.Config.FullVersion*
+        name: FullVersion
+        nameWithType: Config.FullVersion
+        qualifiedName: Pdal.Config.FullVersion
+    isDefinition: true
+    commentId: Overload:Pdal.Config.FullVersion
+  Pdal.Config.Version*:
+    name:
+      CSharp:
+      - id: Pdal.Config.Version*
+        name: Version
+        nameWithType: Config.Version
+        qualifiedName: Pdal.Config.Version
+      VB:
+      - id: Pdal.Config.Version*
+        name: Version
+        nameWithType: Config.Version
+        qualifiedName: Pdal.Config.Version
+    isDefinition: true
+    commentId: Overload:Pdal.Config.Version
+  Pdal.Config.VersionInteger*:
+    name:
+      CSharp:
+      - id: Pdal.Config.VersionInteger*
+        name: VersionInteger
+        nameWithType: Config.VersionInteger
+        qualifiedName: Pdal.Config.VersionInteger
+      VB:
+      - id: Pdal.Config.VersionInteger*
+        name: VersionInteger
+        nameWithType: Config.VersionInteger
+        qualifiedName: Pdal.Config.VersionInteger
+    isDefinition: true
+    commentId: Overload:Pdal.Config.VersionInteger
+  Pdal.Config.Sha1*:
+    name:
+      CSharp:
+      - id: Pdal.Config.Sha1*
+        name: Sha1
+        nameWithType: Config.Sha1
+        qualifiedName: Pdal.Config.Sha1
+      VB:
+      - id: Pdal.Config.Sha1*
+        name: Sha1
+        nameWithType: Config.Sha1
+        qualifiedName: Pdal.Config.Sha1
+    isDefinition: true
+    commentId: Overload:Pdal.Config.Sha1
+  Pdal.Config.VersionMajor*:
+    name:
+      CSharp:
+      - id: Pdal.Config.VersionMajor*
+        name: VersionMajor
+        nameWithType: Config.VersionMajor
+        qualifiedName: Pdal.Config.VersionMajor
+      VB:
+      - id: Pdal.Config.VersionMajor*
+        name: VersionMajor
+        nameWithType: Config.VersionMajor
+        qualifiedName: Pdal.Config.VersionMajor
+    isDefinition: true
+    commentId: Overload:Pdal.Config.VersionMajor
+  Pdal.Config.VersionMinor*:
+    name:
+      CSharp:
+      - id: Pdal.Config.VersionMinor*
+        name: VersionMinor
+        nameWithType: Config.VersionMinor
+        qualifiedName: Pdal.Config.VersionMinor
+      VB:
+      - id: Pdal.Config.VersionMinor*
+        name: VersionMinor
+        nameWithType: Config.VersionMinor
+        qualifiedName: Pdal.Config.VersionMinor
+    isDefinition: true
+    commentId: Overload:Pdal.Config.VersionMinor
+  Pdal.Config.VersionPatch*:
+    name:
+      CSharp:
+      - id: Pdal.Config.VersionPatch*
+        name: VersionPatch
+        nameWithType: Config.VersionPatch
+        qualifiedName: Pdal.Config.VersionPatch
+      VB:
+      - id: Pdal.Config.VersionPatch*
+        name: VersionPatch
+        nameWithType: Config.VersionPatch
+        qualifiedName: Pdal.Config.VersionPatch
+    isDefinition: true
+    commentId: Overload:Pdal.Config.VersionPatch
+  Pdal.Config.DebugInfo*:
+    name:
+      CSharp:
+      - id: Pdal.Config.DebugInfo*
+        name: DebugInfo
+        nameWithType: Config.DebugInfo
+        qualifiedName: Pdal.Config.DebugInfo
+      VB:
+      - id: Pdal.Config.DebugInfo*
+        name: DebugInfo
+        nameWithType: Config.DebugInfo
+        qualifiedName: Pdal.Config.DebugInfo
+    isDefinition: true
+    commentId: Overload:Pdal.Config.DebugInfo
+  Pdal.Config:
+    name:
+      CSharp:
+      - id: Pdal.Config
+        name: Config
+        nameWithType: Config
+        qualifiedName: Pdal.Config
+      VB:
+      - id: Pdal.Config
+        name: Config
+        nameWithType: Config
+        qualifiedName: Pdal.Config
+    isDefinition: true
+    commentId: T:Pdal.Config
+  Pdal.DimType.#ctor*:
+    name:
+      CSharp:
+      - id: Pdal.DimType.#ctor*
+        name: DimType
+        nameWithType: DimType.DimType
+        qualifiedName: Pdal.DimType.DimType
+      VB:
+      - id: Pdal.DimType.#ctor*
+        name: DimType
+        nameWithType: DimType.DimType
+        qualifiedName: Pdal.DimType.DimType
+    isDefinition: true
+    commentId: Overload:Pdal.DimType.#ctor
+  Pdal:
+    name:
+      CSharp:
+      - name: Pdal
+        nameWithType: Pdal
+        qualifiedName: Pdal
+      VB:
+      - name: Pdal
+        nameWithType: Pdal
+        qualifiedName: Pdal
+    isDefinition: true
+    commentId: N:Pdal
+  Pdal.DimType.NativeDimType:
+    name:
+      CSharp:
+      - id: Pdal.DimType.NativeDimType
+        name: DimType.NativeDimType
+        nameWithType: DimType.NativeDimType
+        qualifiedName: Pdal.DimType.NativeDimType
+      VB:
+      - id: Pdal.DimType.NativeDimType
+        name: DimType.NativeDimType
+        nameWithType: DimType.NativeDimType
+        qualifiedName: Pdal.DimType.NativeDimType
+    isDefinition: true
+    parent: Pdal
+    commentId: T:Pdal.DimType.NativeDimType
+  System.UInt32:
+    name:
+      CSharp:
+      - id: System.UInt32
+        name: UInt32
+        nameWithType: UInt32
+        qualifiedName: System.UInt32
+        isExternal: true
+      VB:
+      - id: System.UInt32
+        name: UInt32
+        nameWithType: UInt32
+        qualifiedName: System.UInt32
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.UInt32
+  System.Double:
+    name:
+      CSharp:
+      - id: System.Double
+        name: Double
+        nameWithType: Double
+        qualifiedName: System.Double
+        isExternal: true
+      VB:
+      - id: System.Double
+        name: Double
+        nameWithType: Double
+        qualifiedName: System.Double
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Double
+  Pdal.DimType.Id*:
+    name:
+      CSharp:
+      - id: Pdal.DimType.Id*
+        name: Id
+        nameWithType: DimType.Id
+        qualifiedName: Pdal.DimType.Id
+      VB:
+      - id: Pdal.DimType.Id*
+        name: Id
+        nameWithType: DimType.Id
+        qualifiedName: Pdal.DimType.Id
+    isDefinition: true
+    commentId: Overload:Pdal.DimType.Id
+  Pdal.DimType.IdName*:
+    name:
+      CSharp:
+      - id: Pdal.DimType.IdName*
+        name: IdName
+        nameWithType: DimType.IdName
+        qualifiedName: Pdal.DimType.IdName
+      VB:
+      - id: Pdal.DimType.IdName*
+        name: IdName
+        nameWithType: DimType.IdName
+        qualifiedName: Pdal.DimType.IdName
+    isDefinition: true
+    commentId: Overload:Pdal.DimType.IdName
+  Pdal.DimType.Interpretation*:
+    name:
+      CSharp:
+      - id: Pdal.DimType.Interpretation*
+        name: Interpretation
+        nameWithType: DimType.Interpretation
+        qualifiedName: Pdal.DimType.Interpretation
+      VB:
+      - id: Pdal.DimType.Interpretation*
+        name: Interpretation
+        nameWithType: DimType.Interpretation
+        qualifiedName: Pdal.DimType.Interpretation
+    isDefinition: true
+    commentId: Overload:Pdal.DimType.Interpretation
+  Pdal.DimType.InterpretationName*:
+    name:
+      CSharp:
+      - id: Pdal.DimType.InterpretationName*
+        name: InterpretationName
+        nameWithType: DimType.InterpretationName
+        qualifiedName: Pdal.DimType.InterpretationName
+      VB:
+      - id: Pdal.DimType.InterpretationName*
+        name: InterpretationName
+        nameWithType: DimType.InterpretationName
+        qualifiedName: Pdal.DimType.InterpretationName
+    isDefinition: true
+    commentId: Overload:Pdal.DimType.InterpretationName
+  Pdal.DimType.InterpretationByteCount*:
+    name:
+      CSharp:
+      - id: Pdal.DimType.InterpretationByteCount*
+        name: InterpretationByteCount
+        nameWithType: DimType.InterpretationByteCount
+        qualifiedName: Pdal.DimType.InterpretationByteCount
+      VB:
+      - id: Pdal.DimType.InterpretationByteCount*
+        name: InterpretationByteCount
+        nameWithType: DimType.InterpretationByteCount
+        qualifiedName: Pdal.DimType.InterpretationByteCount
+    isDefinition: true
+    commentId: Overload:Pdal.DimType.InterpretationByteCount
+  Pdal.DimType.Scale*:
+    name:
+      CSharp:
+      - id: Pdal.DimType.Scale*
+        name: Scale
+        nameWithType: DimType.Scale
+        qualifiedName: Pdal.DimType.Scale
+      VB:
+      - id: Pdal.DimType.Scale*
+        name: Scale
+        nameWithType: DimType.Scale
+        qualifiedName: Pdal.DimType.Scale
+    isDefinition: true
+    commentId: Overload:Pdal.DimType.Scale
+  Pdal.DimType.Offset*:
+    name:
+      CSharp:
+      - id: Pdal.DimType.Offset*
+        name: Offset
+        nameWithType: DimType.Offset
+        qualifiedName: Pdal.DimType.Offset
+      VB:
+      - id: Pdal.DimType.Offset*
+        name: Offset
+        nameWithType: DimType.Offset
+        qualifiedName: Pdal.DimType.Offset
+    isDefinition: true
+    commentId: Overload:Pdal.DimType.Offset
+  Pdal.DimType:
+    name:
+      CSharp:
+      - id: Pdal.DimType
+        name: DimType
+        nameWithType: DimType
+        qualifiedName: Pdal.DimType
+      VB:
+      - id: Pdal.DimType
+        name: DimType
+        nameWithType: DimType
+        qualifiedName: Pdal.DimType
+    isDefinition: true
+    parent: Pdal
+    commentId: T:Pdal.DimType
+  System.ValueType:
+    name:
+      CSharp:
+      - id: System.ValueType
+        name: ValueType
+        nameWithType: ValueType
+        qualifiedName: System.ValueType
+        isExternal: true
+      VB:
+      - id: System.ValueType
+        name: ValueType
+        nameWithType: ValueType
+        qualifiedName: System.ValueType
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.ValueType
+  System.ValueType.Equals(System.Object):
+    name:
+      CSharp:
+      - id: System.ValueType.Equals(System.Object)
+        name: Equals
+        nameWithType: ValueType.Equals
+        qualifiedName: System.ValueType.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.ValueType.Equals(System.Object)
+        name: Equals
+        nameWithType: ValueType.Equals
+        qualifiedName: System.ValueType.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.ValueType
+    commentId: M:System.ValueType.Equals(System.Object)
+  System.ValueType.GetHashCode:
+    name:
+      CSharp:
+      - id: System.ValueType.GetHashCode
+        name: GetHashCode
+        nameWithType: ValueType.GetHashCode
+        qualifiedName: System.ValueType.GetHashCode
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.ValueType.GetHashCode
+        name: GetHashCode
+        nameWithType: ValueType.GetHashCode
+        qualifiedName: System.ValueType.GetHashCode
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.ValueType
+    commentId: M:System.ValueType.GetHashCode
+  System.ValueType.ToString:
+    name:
+      CSharp:
+      - id: System.ValueType.ToString
+        name: ToString
+        nameWithType: ValueType.ToString
+        qualifiedName: System.ValueType.ToString
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.ValueType.ToString
+        name: ToString
+        nameWithType: ValueType.ToString
+        qualifiedName: System.ValueType.ToString
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.ValueType
+    commentId: M:System.ValueType.ToString
+  UInt32:
+    name:
+      CSharp:
+      - id: UInt32
+        name: UInt32
+        nameWithType: UInt32
+        qualifiedName: UInt32
+        isExternal: true
+      VB:
+      - id: UInt32
+        name: UInt32
+        nameWithType: UInt32
+        qualifiedName: UInt32
+        isExternal: true
+    isDefinition: true
+  IntPtr:
+    name:
+      CSharp:
+      - id: IntPtr
+        name: IntPtr
+        nameWithType: IntPtr
+        qualifiedName: IntPtr
+        isExternal: true
+      VB:
+      - id: IntPtr
+        name: IntPtr
+        nameWithType: IntPtr
+        qualifiedName: IntPtr
+        isExternal: true
+    isDefinition: true
+  Pdal.DimTypeList.#ctor*:
+    name:
+      CSharp:
+      - id: Pdal.DimTypeList.#ctor*
+        name: DimTypeList
+        nameWithType: DimTypeList.DimTypeList
+        qualifiedName: Pdal.DimTypeList.DimTypeList
+      VB:
+      - id: Pdal.DimTypeList.#ctor*
+        name: DimTypeList
+        nameWithType: DimTypeList.DimTypeList
+        qualifiedName: Pdal.DimTypeList.DimTypeList
+    isDefinition: true
+    commentId: Overload:Pdal.DimTypeList.#ctor
+  System.UInt64:
+    name:
+      CSharp:
+      - id: System.UInt64
+        name: UInt64
+        nameWithType: UInt64
+        qualifiedName: System.UInt64
+        isExternal: true
+      VB:
+      - id: System.UInt64
+        name: UInt64
+        nameWithType: UInt64
+        qualifiedName: System.UInt64
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.UInt64
+  Pdal.DimTypeList.ByteCount*:
+    name:
+      CSharp:
+      - id: Pdal.DimTypeList.ByteCount*
+        name: ByteCount
+        nameWithType: DimTypeList.ByteCount
+        qualifiedName: Pdal.DimTypeList.ByteCount
+      VB:
+      - id: Pdal.DimTypeList.ByteCount*
+        name: ByteCount
+        nameWithType: DimTypeList.ByteCount
+        qualifiedName: Pdal.DimTypeList.ByteCount
+    isDefinition: true
+    commentId: Overload:Pdal.DimTypeList.ByteCount
+  Pdal.DimTypeList.Native*:
+    name:
+      CSharp:
+      - id: Pdal.DimTypeList.Native*
+        name: Native
+        nameWithType: DimTypeList.Native
+        qualifiedName: Pdal.DimTypeList.Native
+      VB:
+      - id: Pdal.DimTypeList.Native*
+        name: Native
+        nameWithType: DimTypeList.Native
+        qualifiedName: Pdal.DimTypeList.Native
+    isDefinition: true
+    commentId: Overload:Pdal.DimTypeList.Native
+  Pdal.DimTypeList.Size*:
+    name:
+      CSharp:
+      - id: Pdal.DimTypeList.Size*
+        name: Size
+        nameWithType: DimTypeList.Size
+        qualifiedName: Pdal.DimTypeList.Size
+      VB:
+      - id: Pdal.DimTypeList.Size*
+        name: Size
+        nameWithType: DimTypeList.Size
+        qualifiedName: Pdal.DimTypeList.Size
+    isDefinition: true
+    commentId: Overload:Pdal.DimTypeList.Size
+  Pdal.DimTypeList.Dispose*:
+    name:
+      CSharp:
+      - id: Pdal.DimTypeList.Dispose*
+        name: Dispose
+        nameWithType: DimTypeList.Dispose
+        qualifiedName: Pdal.DimTypeList.Dispose
+      VB:
+      - id: Pdal.DimTypeList.Dispose*
+        name: Dispose
+        nameWithType: DimTypeList.Dispose
+        qualifiedName: Pdal.DimTypeList.Dispose
+    isDefinition: true
+    commentId: Overload:Pdal.DimTypeList.Dispose
+  Pdal.DimTypeList.at*:
+    name:
+      CSharp:
+      - id: Pdal.DimTypeList.at*
+        name: at
+        nameWithType: DimTypeList.at
+        qualifiedName: Pdal.DimTypeList.at
+      VB:
+      - id: Pdal.DimTypeList.at*
+        name: at
+        nameWithType: DimTypeList.at
+        qualifiedName: Pdal.DimTypeList.at
+    isDefinition: true
+    commentId: Overload:Pdal.DimTypeList.at
+  Pdal.DimTypeList:
+    name:
+      CSharp:
+      - id: Pdal.DimTypeList
+        name: DimTypeList
+        nameWithType: DimTypeList
+        qualifiedName: Pdal.DimTypeList
+      VB:
+      - id: Pdal.DimTypeList
+        name: DimTypeList
+        nameWithType: DimTypeList
+        qualifiedName: Pdal.DimTypeList
+    isDefinition: true
+    parent: Pdal
+    commentId: T:Pdal.DimTypeList
+  Pdal.Pipeline.#ctor*:
+    name:
+      CSharp:
+      - id: Pdal.Pipeline.#ctor*
+        name: Pipeline
+        nameWithType: Pipeline.Pipeline
+        qualifiedName: Pdal.Pipeline.Pipeline
+      VB:
+      - id: Pdal.Pipeline.#ctor*
+        name: Pipeline
+        nameWithType: Pipeline.Pipeline
+        qualifiedName: Pdal.Pipeline.Pipeline
+    isDefinition: true
+    commentId: Overload:Pdal.Pipeline.#ctor
+  Pdal.Pipeline.Dispose*:
+    name:
+      CSharp:
+      - id: Pdal.Pipeline.Dispose*
+        name: Dispose
+        nameWithType: Pipeline.Dispose
+        qualifiedName: Pdal.Pipeline.Dispose
+      VB:
+      - id: Pdal.Pipeline.Dispose*
+        name: Dispose
+        nameWithType: Pipeline.Dispose
+        qualifiedName: Pdal.Pipeline.Dispose
+    isDefinition: true
+    commentId: Overload:Pdal.Pipeline.Dispose
+  Pdal.Pipeline.Json*:
+    name:
+      CSharp:
+      - id: Pdal.Pipeline.Json*
+        name: Json
+        nameWithType: Pipeline.Json
+        qualifiedName: Pdal.Pipeline.Json
+      VB:
+      - id: Pdal.Pipeline.Json*
+        name: Json
+        nameWithType: Pipeline.Json
+        qualifiedName: Pdal.Pipeline.Json
+    isDefinition: true
+    commentId: Overload:Pdal.Pipeline.Json
+  Pdal.Pipeline.Metadata*:
+    name:
+      CSharp:
+      - id: Pdal.Pipeline.Metadata*
+        name: Metadata
+        nameWithType: Pipeline.Metadata
+        qualifiedName: Pdal.Pipeline.Metadata
+      VB:
+      - id: Pdal.Pipeline.Metadata*
+        name: Metadata
+        nameWithType: Pipeline.Metadata
+        qualifiedName: Pdal.Pipeline.Metadata
+    isDefinition: true
+    commentId: Overload:Pdal.Pipeline.Metadata
+  Pdal.Pipeline.Schema*:
+    name:
+      CSharp:
+      - id: Pdal.Pipeline.Schema*
+        name: Schema
+        nameWithType: Pipeline.Schema
+        qualifiedName: Pdal.Pipeline.Schema
+      VB:
+      - id: Pdal.Pipeline.Schema*
+        name: Schema
+        nameWithType: Pipeline.Schema
+        qualifiedName: Pdal.Pipeline.Schema
+    isDefinition: true
+    commentId: Overload:Pdal.Pipeline.Schema
+  Pdal.Pipeline.Log*:
+    name:
+      CSharp:
+      - id: Pdal.Pipeline.Log*
+        name: Log
+        nameWithType: Pipeline.Log
+        qualifiedName: Pdal.Pipeline.Log
+      VB:
+      - id: Pdal.Pipeline.Log*
+        name: Log
+        nameWithType: Pipeline.Log
+        qualifiedName: Pdal.Pipeline.Log
+    isDefinition: true
+    commentId: Overload:Pdal.Pipeline.Log
+  Pdal.Pipeline.LogLevel*:
+    name:
+      CSharp:
+      - id: Pdal.Pipeline.LogLevel*
+        name: LogLevel
+        nameWithType: Pipeline.LogLevel
+        qualifiedName: Pdal.Pipeline.LogLevel
+      VB:
+      - id: Pdal.Pipeline.LogLevel*
+        name: LogLevel
+        nameWithType: Pipeline.LogLevel
+        qualifiedName: Pdal.Pipeline.LogLevel
+    isDefinition: true
+    commentId: Overload:Pdal.Pipeline.LogLevel
+  System.Boolean:
+    name:
+      CSharp:
+      - id: System.Boolean
+        name: Boolean
+        nameWithType: Boolean
+        qualifiedName: System.Boolean
+        isExternal: true
+      VB:
+      - id: System.Boolean
+        name: Boolean
+        nameWithType: Boolean
+        qualifiedName: System.Boolean
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Boolean
+  Pdal.Pipeline.Valid*:
+    name:
+      CSharp:
+      - id: Pdal.Pipeline.Valid*
+        name: Valid
+        nameWithType: Pipeline.Valid
+        qualifiedName: Pdal.Pipeline.Valid
+      VB:
+      - id: Pdal.Pipeline.Valid*
+        name: Valid
+        nameWithType: Pipeline.Valid
+        qualifiedName: Pdal.Pipeline.Valid
+    isDefinition: true
+    commentId: Overload:Pdal.Pipeline.Valid
+  Pdal.PointViewIterator:
+    name:
+      CSharp:
+      - id: Pdal.PointViewIterator
+        name: PointViewIterator
+        nameWithType: PointViewIterator
+        qualifiedName: Pdal.PointViewIterator
+      VB:
+      - id: Pdal.PointViewIterator
+        name: PointViewIterator
+        nameWithType: PointViewIterator
+        qualifiedName: Pdal.PointViewIterator
+    isDefinition: true
+    parent: Pdal
+    commentId: T:Pdal.PointViewIterator
+  Pdal.Pipeline.Views*:
+    name:
+      CSharp:
+      - id: Pdal.Pipeline.Views*
+        name: Views
+        nameWithType: Pipeline.Views
+        qualifiedName: Pdal.Pipeline.Views
+      VB:
+      - id: Pdal.Pipeline.Views*
+        name: Views
+        nameWithType: Pipeline.Views
+        qualifiedName: Pdal.Pipeline.Views
+    isDefinition: true
+    commentId: Overload:Pdal.Pipeline.Views
+  System.Int64:
+    name:
+      CSharp:
+      - id: System.Int64
+        name: Int64
+        nameWithType: Int64
+        qualifiedName: System.Int64
+        isExternal: true
+      VB:
+      - id: System.Int64
+        name: Int64
+        nameWithType: Int64
+        qualifiedName: System.Int64
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Int64
+  Pdal.Pipeline.Execute*:
+    name:
+      CSharp:
+      - id: Pdal.Pipeline.Execute*
+        name: Execute
+        nameWithType: Pipeline.Execute
+        qualifiedName: Pdal.Pipeline.Execute
+      VB:
+      - id: Pdal.Pipeline.Execute*
+        name: Execute
+        nameWithType: Pipeline.Execute
+        qualifiedName: Pdal.Pipeline.Execute
+    isDefinition: true
+    commentId: Overload:Pdal.Pipeline.Execute
+  Pdal.Pipeline:
+    name:
+      CSharp:
+      - id: Pdal.Pipeline
+        name: Pipeline
+        nameWithType: Pipeline
+        qualifiedName: Pdal.Pipeline
+      VB:
+      - id: Pdal.Pipeline
+        name: Pipeline
+        nameWithType: Pipeline
+        qualifiedName: Pdal.Pipeline
+    isDefinition: true
+    commentId: T:Pdal.Pipeline
+  Pdal.PointLayout.#ctor*:
+    name:
+      CSharp:
+      - id: Pdal.PointLayout.#ctor*
+        name: PointLayout
+        nameWithType: PointLayout.PointLayout
+        qualifiedName: Pdal.PointLayout.PointLayout
+      VB:
+      - id: Pdal.PointLayout.#ctor*
+        name: PointLayout
+        nameWithType: PointLayout.PointLayout
+        qualifiedName: Pdal.PointLayout.PointLayout
+    isDefinition: true
+    commentId: Overload:Pdal.PointLayout.#ctor
+  Pdal.PointLayout.Types*:
+    name:
+      CSharp:
+      - id: Pdal.PointLayout.Types*
+        name: Types
+        nameWithType: PointLayout.Types
+        qualifiedName: Pdal.PointLayout.Types
+      VB:
+      - id: Pdal.PointLayout.Types*
+        name: Types
+        nameWithType: PointLayout.Types
+        qualifiedName: Pdal.PointLayout.Types
+    isDefinition: true
+    commentId: Overload:Pdal.PointLayout.Types
+  Pdal.PointLayout.PointSize*:
+    name:
+      CSharp:
+      - id: Pdal.PointLayout.PointSize*
+        name: PointSize
+        nameWithType: PointLayout.PointSize
+        qualifiedName: Pdal.PointLayout.PointSize
+      VB:
+      - id: Pdal.PointLayout.PointSize*
+        name: PointSize
+        nameWithType: PointLayout.PointSize
+        qualifiedName: Pdal.PointLayout.PointSize
+    isDefinition: true
+    commentId: Overload:Pdal.PointLayout.PointSize
+  Pdal.PointLayout.FindDimType*:
+    name:
+      CSharp:
+      - id: Pdal.PointLayout.FindDimType*
+        name: FindDimType
+        nameWithType: PointLayout.FindDimType
+        qualifiedName: Pdal.PointLayout.FindDimType
+      VB:
+      - id: Pdal.PointLayout.FindDimType*
+        name: FindDimType
+        nameWithType: PointLayout.FindDimType
+        qualifiedName: Pdal.PointLayout.FindDimType
+    isDefinition: true
+    commentId: Overload:Pdal.PointLayout.FindDimType
+  Pdal.PointLayout.GetDimSize*:
+    name:
+      CSharp:
+      - id: Pdal.PointLayout.GetDimSize*
+        name: GetDimSize
+        nameWithType: PointLayout.GetDimSize
+        qualifiedName: Pdal.PointLayout.GetDimSize
+      VB:
+      - id: Pdal.PointLayout.GetDimSize*
+        name: GetDimSize
+        nameWithType: PointLayout.GetDimSize
+        qualifiedName: Pdal.PointLayout.GetDimSize
+    isDefinition: true
+    commentId: Overload:Pdal.PointLayout.GetDimSize
+  Pdal.PointLayout.GetDimPackedOffset*:
+    name:
+      CSharp:
+      - id: Pdal.PointLayout.GetDimPackedOffset*
+        name: GetDimPackedOffset
+        nameWithType: PointLayout.GetDimPackedOffset
+        qualifiedName: Pdal.PointLayout.GetDimPackedOffset
+      VB:
+      - id: Pdal.PointLayout.GetDimPackedOffset*
+        name: GetDimPackedOffset
+        nameWithType: PointLayout.GetDimPackedOffset
+        qualifiedName: Pdal.PointLayout.GetDimPackedOffset
+    isDefinition: true
+    commentId: Overload:Pdal.PointLayout.GetDimPackedOffset
+  Pdal.PointLayout:
+    name:
+      CSharp:
+      - id: Pdal.PointLayout
+        name: PointLayout
+        nameWithType: PointLayout
+        qualifiedName: Pdal.PointLayout
+      VB:
+      - id: Pdal.PointLayout
+        name: PointLayout
+        nameWithType: PointLayout
+        qualifiedName: Pdal.PointLayout
+    isDefinition: true
+    parent: Pdal
+    commentId: T:Pdal.PointLayout
+  Pdal.PointView.#ctor*:
+    name:
+      CSharp:
+      - id: Pdal.PointView.#ctor*
+        name: PointView
+        nameWithType: PointView.PointView
+        qualifiedName: Pdal.PointView.PointView
+      VB:
+      - id: Pdal.PointView.#ctor*
+        name: PointView
+        nameWithType: PointView.PointView
+        qualifiedName: Pdal.PointView.PointView
+    isDefinition: true
+    commentId: Overload:Pdal.PointView.#ctor
+  Pdal.PointView.Dispose*:
+    name:
+      CSharp:
+      - id: Pdal.PointView.Dispose*
+        name: Dispose
+        nameWithType: PointView.Dispose
+        qualifiedName: Pdal.PointView.Dispose
+      VB:
+      - id: Pdal.PointView.Dispose*
+        name: Dispose
+        nameWithType: PointView.Dispose
+        qualifiedName: Pdal.PointView.Dispose
+    isDefinition: true
+    commentId: Overload:Pdal.PointView.Dispose
+  Pdal.PointView.Id*:
+    name:
+      CSharp:
+      - id: Pdal.PointView.Id*
+        name: Id
+        nameWithType: PointView.Id
+        qualifiedName: Pdal.PointView.Id
+      VB:
+      - id: Pdal.PointView.Id*
+        name: Id
+        nameWithType: PointView.Id
+        qualifiedName: Pdal.PointView.Id
+    isDefinition: true
+    commentId: Overload:Pdal.PointView.Id
+  Pdal.PointView.Size*:
+    name:
+      CSharp:
+      - id: Pdal.PointView.Size*
+        name: Size
+        nameWithType: PointView.Size
+        qualifiedName: Pdal.PointView.Size
+      VB:
+      - id: Pdal.PointView.Size*
+        name: Size
+        nameWithType: PointView.Size
+        qualifiedName: Pdal.PointView.Size
+    isDefinition: true
+    commentId: Overload:Pdal.PointView.Size
+  Pdal.PointView.Empty*:
+    name:
+      CSharp:
+      - id: Pdal.PointView.Empty*
+        name: Empty
+        nameWithType: PointView.Empty
+        qualifiedName: Pdal.PointView.Empty
+      VB:
+      - id: Pdal.PointView.Empty*
+        name: Empty
+        nameWithType: PointView.Empty
+        qualifiedName: Pdal.PointView.Empty
+    isDefinition: true
+    commentId: Overload:Pdal.PointView.Empty
+  Pdal.PointView.Proj4*:
+    name:
+      CSharp:
+      - id: Pdal.PointView.Proj4*
+        name: Proj4
+        nameWithType: PointView.Proj4
+        qualifiedName: Pdal.PointView.Proj4
+      VB:
+      - id: Pdal.PointView.Proj4*
+        name: Proj4
+        nameWithType: PointView.Proj4
+        qualifiedName: Pdal.PointView.Proj4
+    isDefinition: true
+    commentId: Overload:Pdal.PointView.Proj4
+  Pdal.PointView.Wkt*:
+    name:
+      CSharp:
+      - id: Pdal.PointView.Wkt*
+        name: Wkt
+        nameWithType: PointView.Wkt
+        qualifiedName: Pdal.PointView.Wkt
+      VB:
+      - id: Pdal.PointView.Wkt*
+        name: Wkt
+        nameWithType: PointView.Wkt
+        qualifiedName: Pdal.PointView.Wkt
+    isDefinition: true
+    commentId: Overload:Pdal.PointView.Wkt
+  Pdal.PointView.PrettyWkt*:
+    name:
+      CSharp:
+      - id: Pdal.PointView.PrettyWkt*
+        name: PrettyWkt
+        nameWithType: PointView.PrettyWkt
+        qualifiedName: Pdal.PointView.PrettyWkt
+      VB:
+      - id: Pdal.PointView.PrettyWkt*
+        name: PrettyWkt
+        nameWithType: PointView.PrettyWkt
+        qualifiedName: Pdal.PointView.PrettyWkt
+    isDefinition: true
+    commentId: Overload:Pdal.PointView.PrettyWkt
+  Pdal.PointView.Layout*:
+    name:
+      CSharp:
+      - id: Pdal.PointView.Layout*
+        name: Layout
+        nameWithType: PointView.Layout
+        qualifiedName: Pdal.PointView.Layout
+      VB:
+      - id: Pdal.PointView.Layout*
+        name: Layout
+        nameWithType: PointView.Layout
+        qualifiedName: Pdal.PointView.Layout
+    isDefinition: true
+    commentId: Overload:Pdal.PointView.Layout
+  System.Byte[]:
+    name:
+      CSharp:
+      - id: System.Byte
+        name: Byte
+        nameWithType: Byte
+        qualifiedName: System.Byte
+        isExternal: true
+      - name: '[]'
+        nameWithType: '[]'
+        qualifiedName: '[]'
+      VB:
+      - id: System.Byte
+        name: Byte
+        nameWithType: Byte
+        qualifiedName: System.Byte
+        isExternal: true
+      - name: ()
+        nameWithType: ()
+        qualifiedName: ()
+    isDefinition: false
+  Pdal.PointView.GetAllPackedPoints*:
+    name:
+      CSharp:
+      - id: Pdal.PointView.GetAllPackedPoints*
+        name: GetAllPackedPoints
+        nameWithType: PointView.GetAllPackedPoints
+        qualifiedName: Pdal.PointView.GetAllPackedPoints
+      VB:
+      - id: Pdal.PointView.GetAllPackedPoints*
+        name: GetAllPackedPoints
+        nameWithType: PointView.GetAllPackedPoints
+        qualifiedName: Pdal.PointView.GetAllPackedPoints
+    isDefinition: true
+    commentId: Overload:Pdal.PointView.GetAllPackedPoints
+  Pdal.PointView.GetPackedPoint*:
+    name:
+      CSharp:
+      - id: Pdal.PointView.GetPackedPoint*
+        name: GetPackedPoint
+        nameWithType: PointView.GetPackedPoint
+        qualifiedName: Pdal.PointView.GetPackedPoint
+      VB:
+      - id: Pdal.PointView.GetPackedPoint*
+        name: GetPackedPoint
+        nameWithType: PointView.GetPackedPoint
+        qualifiedName: Pdal.PointView.GetPackedPoint
+    isDefinition: true
+    commentId: Overload:Pdal.PointView.GetPackedPoint
+  Pdal.PointView:
+    name:
+      CSharp:
+      - id: Pdal.PointView
+        name: PointView
+        nameWithType: PointView
+        qualifiedName: Pdal.PointView
+      VB:
+      - id: Pdal.PointView
+        name: PointView
+        nameWithType: PointView
+        qualifiedName: Pdal.PointView
+    isDefinition: true
+    parent: Pdal
+    commentId: T:Pdal.PointView
+  Pdal.PointView.Clone*:
+    name:
+      CSharp:
+      - id: Pdal.PointView.Clone*
+        name: Clone
+        nameWithType: PointView.Clone
+        qualifiedName: Pdal.PointView.Clone
+      VB:
+      - id: Pdal.PointView.Clone*
+        name: Clone
+        nameWithType: PointView.Clone
+        qualifiedName: Pdal.PointView.Clone
+    isDefinition: true
+    commentId: Overload:Pdal.PointView.Clone
+  Pdal.PointView.GetBakedPointCloud*:
+    name:
+      CSharp:
+      - id: Pdal.PointView.GetBakedPointCloud*
+        name: GetBakedPointCloud
+        nameWithType: PointView.GetBakedPointCloud
+        qualifiedName: Pdal.PointView.GetBakedPointCloud
+      VB:
+      - id: Pdal.PointView.GetBakedPointCloud*
+        name: GetBakedPointCloud
+        nameWithType: PointView.GetBakedPointCloud
+        qualifiedName: Pdal.PointView.GetBakedPointCloud
+    isDefinition: true
+    commentId: Overload:Pdal.PointView.GetBakedPointCloud
+  Pdal.PointViewIterator.#ctor*:
+    name:
+      CSharp:
+      - id: Pdal.PointViewIterator.#ctor*
+        name: PointViewIterator
+        nameWithType: PointViewIterator.PointViewIterator
+        qualifiedName: Pdal.PointViewIterator.PointViewIterator
+      VB:
+      - id: Pdal.PointViewIterator.#ctor*
+        name: PointViewIterator
+        nameWithType: PointViewIterator.PointViewIterator
+        qualifiedName: Pdal.PointViewIterator.PointViewIterator
+    isDefinition: true
+    commentId: Overload:Pdal.PointViewIterator.#ctor
+  Pdal.PointViewIterator.Dispose*:
+    name:
+      CSharp:
+      - id: Pdal.PointViewIterator.Dispose*
+        name: Dispose
+        nameWithType: PointViewIterator.Dispose
+        qualifiedName: Pdal.PointViewIterator.Dispose
+      VB:
+      - id: Pdal.PointViewIterator.Dispose*
+        name: Dispose
+        nameWithType: PointViewIterator.Dispose
+        qualifiedName: Pdal.PointViewIterator.Dispose
+    isDefinition: true
+    commentId: Overload:Pdal.PointViewIterator.Dispose
+  Pdal.PointViewIterator.Next*:
+    name:
+      CSharp:
+      - id: Pdal.PointViewIterator.Next*
+        name: Next
+        nameWithType: PointViewIterator.Next
+        qualifiedName: Pdal.PointViewIterator.Next
+      VB:
+      - id: Pdal.PointViewIterator.Next*
+        name: Next
+        nameWithType: PointViewIterator.Next
+        qualifiedName: Pdal.PointViewIterator.Next
+    isDefinition: true
+    commentId: Overload:Pdal.PointViewIterator.Next
+  Pdal.PointViewIterator.HasNext*:
+    name:
+      CSharp:
+      - id: Pdal.PointViewIterator.HasNext*
+        name: HasNext
+        nameWithType: PointViewIterator.HasNext
+        qualifiedName: Pdal.PointViewIterator.HasNext
+      VB:
+      - id: Pdal.PointViewIterator.HasNext*
+        name: HasNext
+        nameWithType: PointViewIterator.HasNext
+        qualifiedName: Pdal.PointViewIterator.HasNext
+    isDefinition: true
+    commentId: Overload:Pdal.PointViewIterator.HasNext
+  Pdal.PointViewIterator.Reset*:
+    name:
+      CSharp:
+      - id: Pdal.PointViewIterator.Reset*
+        name: Reset
+        nameWithType: PointViewIterator.Reset
+        qualifiedName: Pdal.PointViewIterator.Reset
+      VB:
+      - id: Pdal.PointViewIterator.Reset*
+        name: Reset
+        nameWithType: PointViewIterator.Reset
+        qualifiedName: Pdal.PointViewIterator.Reset
+    isDefinition: true
+    commentId: Overload:Pdal.PointViewIterator.Reset
