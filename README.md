@@ -8,7 +8,23 @@ This Package is part of the [ViRGiS project](https://www.virgis.org/) - bringing
 
 ## Installation
 
-The Package can be installed using the Unity Package Manager directly from the [GitHub Repo](https://github.com/ViRGIS-Team/pdal-upm).
+The Package can be installed from [Open UPM](https://openupm.com/packages/com.virgis.mdal/). If you use this method, the dependencies will be automatically loaded provided the relevent scoped registry is included in your project's `manifest.json` :
+```
+scopedRegistries": [
+    {
+      "name": "package.openupm.com",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.openupm",
+        "com.virgis.geometry3sharp",
+        "com.virgis.gdal"
+      ]
+    }
+  ],
+```
+
+
+The Package can also be installed using the Unity Package Manager directly from the [GitHub Repo](https://github.com/ViRGIS-Team/pdal-upm).
 
 This package is dependent on the following packages having been loaded (and the UPM / GH combination does not allow package dependencies  - so you have to do that yourself) :
 
@@ -36,7 +52,7 @@ For this package to work , the development machine MUST have a working copy of C
 conda info
 ```
 
-The package will keep the installation of Mdal in `Assets\Conda`. You may want to exclude this folder from source control.
+The package will keep the installation of Pdal in `Assets\Conda`. You may want to exclude this folder from source control.
 
 This package installs the GDAL package, which copies data for GDAL and for PROJ into the `Assets/StreamingAssets`folder. You may also want to exclude this folder from source control.
 
