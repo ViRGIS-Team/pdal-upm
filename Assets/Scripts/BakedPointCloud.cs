@@ -5,9 +5,18 @@
 
 using UnityEngine;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using g3;
 namespace Pdal
 {
+    
+    public struct BpcData
+    {
+        public IEnumerable<Vector3d> positions;
+        public IEnumerable<Vector3f> colors;
+        public int size;
+    }
+    
     /// A container class for texture-baked point clouds.
     public sealed class BakedPointCloud 
     {
@@ -28,9 +37,9 @@ namespace Pdal
 
 
 
-        public void Initialize(IEnumerable<Vector3d> positions, IEnumerable<Vector3f> colors, int size)
+        public void Initialize(BpcData data)
         {
-            _pointCount = size;
+            _pointCount = data.size;
 
             int width = Mathf.CeilToInt(Mathf.Sqrt(_pointCount));
 
@@ -45,8 +54,8 @@ namespace Pdal
             int i1 = 0;
             uint i2 = 0U;
 
-            IEnumerator<Vector3d> position = positions.GetEnumerator();
-            IEnumerator<Vector3f> color = colors.GetEnumerator();
+            IEnumerator<Vector3d> position = data.positions.GetEnumerator();
+            IEnumerator<Vector3f> color = data.colors.GetEnumerator();
 
             position.MoveNext();
             color.MoveNext();
@@ -74,6 +83,16 @@ namespace Pdal
 
             _positionMap.Apply(false, true);
             _colorMap.Apply(false, true);
+        }
+
+        public Task InitializeAsync(BpcData data) {
+            Task t1 = new Task(() =>
+            {
+                Initialize(data);
+                return;
+            });
+            t1.Start(TaskScheduler.FromCurrentSynchronizationContext());
+            return t1;
         }
     }
 }

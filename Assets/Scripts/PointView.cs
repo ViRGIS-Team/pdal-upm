@@ -32,6 +32,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using g3;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Pdal
  {
@@ -193,8 +194,8 @@ namespace Pdal
 			return clonedView;
 		}
 
-        public BakedPointCloud GetBakedPointCloud(long size) {
-            BakedPointCloud pc = new BakedPointCloud();
+        public BpcData GetBpcData(long size) {
+            BpcData pc;
             PointLayout layout = Layout;
             DimTypeList typelist = layout.Types;
             byte[] data = GetAllPackedPoints(typelist);
@@ -230,8 +231,20 @@ namespace Pdal
                             ));
             }
 
-            pc.Initialize(positions, colors, (int)size);
+			pc.positions = positions;
+			pc.colors = colors;
+			pc.size = (int)size;
             return pc;
+        }
+
+		public Task<BpcData> GetBpcDataAsync(long size)
+        {
+			Task<BpcData> t1 = new Task<BpcData>(() =>
+			{
+				return GetBpcData(size);
+			});
+			t1.Start();
+			return t1;
         }
 
         private double parseDouble(byte[] buffer, string interpretationName, int position) {

@@ -30,6 +30,7 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Pdal
  {
@@ -196,5 +197,15 @@ namespace Pdal
 		{
 			return execute(mNative);
 		}
+
+		public Task<long> ExecuteAsync()
+        {
+			Task<long> t1 = new Task<long>(() =>
+			{
+				return Execute();
+			});
+			t1.Start();
+			return t1;
+        }
 	}
  }
