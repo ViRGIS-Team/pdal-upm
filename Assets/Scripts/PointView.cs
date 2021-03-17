@@ -212,9 +212,14 @@ namespace Pdal
                 string interpretationName = type.InterpretationName;
                 int interpretationByteCount = type.InterpretationByteCount;
                 string name = type.IdName;
-                indexs.Add(name, count);
-                types.Add(name, interpretationName);
-                if (name == "Red")
+				try
+				{
+					if (name == "") name = type.Id.ToString();
+					indexs.Add(name, count);
+                    types.Add(name, interpretationName);
+				}
+				catch { }
+				if (name == "Red")
                     hasColor = true;
                 count += interpretationByteCount;
             }

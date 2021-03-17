@@ -37,19 +37,21 @@ namespace Pdal
 
 
 
-        public void Initialize(BpcData data)
+        public static BakedPointCloud Initialize(BpcData data)
         {
-            _pointCount = data.size;
+            BakedPointCloud bpc = new BakedPointCloud();
+            
+            bpc._pointCount = data.size;
 
-            int width = Mathf.CeilToInt(Mathf.Sqrt(_pointCount));
+            int width = Mathf.CeilToInt(Mathf.Sqrt(bpc._pointCount));
 
-            _positionMap = new Texture2D(width, width, TextureFormat.RGBAHalf, false);
-            _positionMap.name = "Position Map";
-            _positionMap.filterMode = FilterMode.Point;
+            bpc._positionMap = new Texture2D(width, width, TextureFormat.RGBAHalf, false);
+            bpc._positionMap.name = "Position Map";
+            bpc._positionMap.filterMode = FilterMode.Point;
 
-            _colorMap = new Texture2D(width, width, TextureFormat.RGBA32, false);
-            _colorMap.name = "Color Map";
-            _colorMap.filterMode = FilterMode.Point;
+            bpc._colorMap = new Texture2D(width, width, TextureFormat.RGBA32, false);
+            bpc._colorMap.name = "Color Map";
+            bpc._colorMap.filterMode = FilterMode.Point;
 
             int i1 = 0;
             uint i2 = 0U;
@@ -65,13 +67,13 @@ namespace Pdal
             {
                 for (int x = 0; x < width; x++)
                 {
-                    int i = i1 < _pointCount ? i1 : (int)(i2 % _pointCount);
+                    int i = i1 < bpc._pointCount ? i1 : (int)(i2 % bpc._pointCount);
 
                     Vector3d p = position.Current;
                     Vector3f c = color.Current;
 
-                    _positionMap.SetPixel(x, y, new Color((float)p.x, (float)p.y, (float)p.z));
-                    _colorMap.SetPixel(x, y, new Color(c.x, c.y, c.z));
+                    bpc._positionMap.SetPixel(x, y, new Color((float)p.x, (float)p.y, (float)p.z));
+                    bpc._colorMap.SetPixel(x, y, new Color(c.x, c.y, c.z));
 
                     i1 ++;
                     i2 += 132049U; // prime
@@ -81,15 +83,15 @@ namespace Pdal
                 }
             }
 
-            _positionMap.Apply(false, true);
-            _colorMap.Apply(false, true);
+            bpc._positionMap.Apply(false, true);
+            bpc._colorMap.Apply(false, true);
+            return bpc;
         }
 
-        public Task InitializeAsync(BpcData data) {
-            Task t1 = new Task(() =>
+        public static Task<BakedPointCloud> InitializeAsync(BpcData data) {
+            Task<BakedPointCloud> t1 = new Task<BakedPointCloud>(() =>
             {
-                Initialize(data);
-                return;
+                return Initialize(data);
             });
             t1.Start(TaskScheduler.FromCurrentSynchronizationContext());
             return t1;
