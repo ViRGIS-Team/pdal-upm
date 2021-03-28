@@ -31,7 +31,7 @@
   "hideInEditor": false,
   "dependencies": {
     "com.virgis.geometry3sharp": "1.0.4",
-    "com.virgis.gdal": "3.2.2"
+    "com.virgis.gdal": "3.2.200"
   },
   "type": "library"
 }
