@@ -1,6 +1,6 @@
 {
   "name": "com.virgis.pdal",
-  "version": "2.2.100",
+  "version": "2.2.1",
   "displayName": "Pdal",
   "description": "Open-Source Point Cloud Data Translation LIbrary v2.2.0",
   "unity": "2018.1",
