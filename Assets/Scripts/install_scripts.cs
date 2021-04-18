@@ -103,7 +103,7 @@ namespace Pdal {
                                                     $"-test pdal.exe";
 #else
                 compiler.StartInfo.FileName = "/bin/bash";
-                compiler.StartInfo.Arguments = $" -l  \"{Path.Combine(path, "install_script.sh")}\" " +
+                compiler.StartInfo.Arguments = $" -i  \"{Path.Combine(path, "install_script.sh")}\" " +
                                                 "-p pdal " +
                                                 $"-i {install} " +
                                                 $"-d \'{pluginPath}\' " +
@@ -130,7 +130,7 @@ namespace Pdal {
                                                     $"-test {test}";
 #else
                 compiler.StartInfo.FileName = "/bin/bash";
-                compiler.StartInfo.Arguments = $" -l \"{Path.Combine(path, "install_script.sh")}\" " +
+                compiler.StartInfo.Arguments = $" -i \"{Path.Combine(path, "install_script.sh")}\" " +
                                                 "-p pdal-c " +
                                                 $"-i {install} " +
                                                 $"-d '{pluginPath}' " +
@@ -160,7 +160,7 @@ namespace Pdal {
                                                     $"-test laszip3.dll";
 #else
                 compiler.StartInfo.FileName = "/bin/bash";
-                compiler.StartInfo.Arguments = $" -l \"{Path.Combine(path, "install_script.sh")}\" " +
+                compiler.StartInfo.Arguments = $" -i \"{Path.Combine(path, "install_script.sh")}\" " +
                                                 "-p laszip " +
                                                 $"-i {install} " +
                                                 $"-d '{pluginPath}' " +
