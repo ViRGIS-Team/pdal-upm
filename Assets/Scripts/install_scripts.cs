@@ -14,8 +14,10 @@ namespace Pdal {
         const string test = "test_pdalc.exe";
 #elif UNITY_EDITOR_OSX
         const string test = "test_pdalc";
+        const string basharg = "-l";
 #elif UNITY_EDITOR_LINUX
         const string test = "test_pdalc";
+        const string basharg = "-l";
 #endif
         const string packageVersion = "2.2.0";
         const string pdalcVersion = "2.0.0";
@@ -103,7 +105,7 @@ namespace Pdal {
                                                     $"-test pdal.exe";
 #else
                 compiler.StartInfo.FileName = "/bin/bash";
-                compiler.StartInfo.Arguments = $" -i  \"{Path.Combine(path, "install_script.sh")}\" " +
+                compiler.StartInfo.Arguments = $" {basharg}  \"{Path.Combine(path, "install_script.sh")}\" " +
                                                 "-p pdal " +
                                                 $"-i {install} " +
                                                 $"-d \'{pluginPath}\' " +
@@ -130,7 +132,7 @@ namespace Pdal {
                                                     $"-test {test}";
 #else
                 compiler.StartInfo.FileName = "/bin/bash";
-                compiler.StartInfo.Arguments = $" -i \"{Path.Combine(path, "install_script.sh")}\" " +
+                compiler.StartInfo.Arguments = $" {basharg} \"{Path.Combine(path, "install_script.sh")}\" " +
                                                 "-p pdal-c " +
                                                 $"-i {install} " +
                                                 $"-d '{pluginPath}' " +
@@ -160,7 +162,7 @@ namespace Pdal {
                                                     $"-test laszip3.dll";
 #else
                 compiler.StartInfo.FileName = "/bin/bash";
-                compiler.StartInfo.Arguments = $" -i \"{Path.Combine(path, "install_script.sh")}\" " +
+                compiler.StartInfo.Arguments = $" {basharg} \"{Path.Combine(path, "install_script.sh")}\" " +
                                                 "-p laszip " +
                                                 $"-i {install} " +
                                                 $"-d '{pluginPath}' " +
