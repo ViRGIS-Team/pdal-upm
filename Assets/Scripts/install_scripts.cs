@@ -34,7 +34,7 @@ namespace Pdal {
                     string pluginPath = Path.Combine(Application.dataPath, "Conda");
                     if (!Directory.Exists(pluginPath)) Directory.CreateDirectory(pluginPath);
 #if UNITY_EDITOR_WIN
-                    string file = Path.Combine(pluginPath, test);
+                    string file = Path.Combine(pluginPath, "Library", "bin", test);
 #else
                     string file = Path.Combine(pluginPath, "bin", test);
 #endif
@@ -92,79 +92,21 @@ namespace Pdal {
             string pluginPath = Path.Combine(Application.dataPath, "Conda");
             string path = Path.GetDirectoryName(new StackTrace(true).GetFrame(0).GetFileName());
             string response;
-            string install = $"pdal={packageVersion}";
-            using (Process compiler = new Process())
-            {
-#if UNITY_EDITOR_WIN
-                compiler.StartInfo.FileName = "powershell.exe";
-                compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass \"{Path.Combine(path, "install_script.ps1")}\" -package pdal " +
-                                                    $"-install {install} " +
-                                                    $"-destination '{pluginPath}' " +
-                                                    $"-test pdal.exe";
-#else
-                compiler.StartInfo.FileName = "/bin/bash";
-                compiler.StartInfo.Arguments = $" -l  \"{Path.Combine(path, "install_script.sh")}\" " +
-                                                "-p pdal " +
-                                                $"-i {install} " +
-                                                $"-d \'{pluginPath}\' " +
-                                                $"-t pdal ";
-#endif
-                compiler.StartInfo.UseShellExecute = false;
-                compiler.StartInfo.RedirectStandardOutput = true;
-                compiler.StartInfo.CreateNoWindow = true;
-                compiler.Start();
-
-                response = compiler.StandardOutput.ReadToEnd();
-
-                compiler.WaitForExit();
-            }
-            Debug.Log(response);
-            install = $"pdal-c={pdalcVersion}";
+            string install = $"pdal-c={pdalcVersion}";
             using (Process compiler = new Process())
             {
 #if UNITY_EDITOR_WIN
                 compiler.StartInfo.FileName = "powershell.exe";
                 compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass \"{Path.Combine(path, "install_script.ps1")}\" -package pdal-c " +
                                                     $"-install {install} " +
-                                                    $"-destination '{pluginPath}' " +
-                                                    $"-test {test}";
+                                                    $"-destination '{pluginPath}'" +
+                                                    $"-shared_assets '{Application.streamingAssetsPath}' ";
 #else
                 compiler.StartInfo.FileName = "/bin/bash";
                 compiler.StartInfo.Arguments = $" -l \"{Path.Combine(path, "install_script.sh")}\" " +
                                                 "-p pdal-c " +
                                                 $"-i {install} " +
-                                                $"-d '{pluginPath}' " +
-                                                $"-t {test} ";
-
-
-#endif
-                compiler.StartInfo.UseShellExecute = false;
-                compiler.StartInfo.RedirectStandardOutput = true;
-                compiler.StartInfo.CreateNoWindow = true;
-                compiler.Start();
-
-                response = compiler.StandardOutput.ReadToEnd();
-
-                compiler.WaitForExit();
-            }
-            Debug.Log(response);
-
-            install = $"laszip";
-            using (Process compiler = new Process())
-            {
-#if UNITY_EDITOR_WIN
-                compiler.StartInfo.FileName = "powershell.exe";
-                compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass \"{Path.Combine(path, "install_script.ps1")}\" -package laszip " +
-                                                    $"-install {install} " +
-                                                    $"-destination '{pluginPath}' " +
-                                                    $"-test laszip3.dll";
-#else
-                compiler.StartInfo.FileName = "/bin/bash";
-                compiler.StartInfo.Arguments = $" -l \"{Path.Combine(path, "install_script.sh")}\" " +
-                                                "-p laszip " +
-                                                $"-i {install} " +
-                                                $"-d '{pluginPath}' " +
-                                                $"-t  laszip3.dll";
+                                                $"-d '{pluginPath}' "
 
 
 #endif
