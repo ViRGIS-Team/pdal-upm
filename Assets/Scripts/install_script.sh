@@ -21,7 +21,7 @@ echo "copy $env/lib/*.dylib to $destination"
 mkdir -p "$destination/lib" && cp -avf "$env"/lib/*.dylib "$destination/lib"
 
 echo "copy $env/lib/*.so to $destination" 
-mkdir -p "$destination/lib" && cp -avf "$env"/lib/*.so "$destination/lib"
+mkdir -p "$destination/lib" && cp -avf "$env"/lib/*.so* "$destination/lib"
 
 echo "copy $env/bin/$test $destination"
 mkdir -p "$destination/bin" && cp -avf "$env"/bin/$test "$destination/bin"

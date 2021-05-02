@@ -14,8 +14,10 @@ namespace Pdal {
         const string test = "test_pdalc.exe";
 #elif UNITY_EDITOR_OSX
         const string test = "test_pdalc";
+        const string basharg = "-l";
 #elif UNITY_EDITOR_LINUX
         const string test = "test_pdalc";
+        const string basharg = "-l";
 #endif
         const string packageVersion = "2.2.0";
         const string pdalcVersion = "2.0.0";
@@ -103,7 +105,7 @@ namespace Pdal {
                                                     $"-shared_assets '{Application.streamingAssetsPath}' ";
 #else
                 compiler.StartInfo.FileName = "/bin/bash";
-                compiler.StartInfo.Arguments = $" -l \"{Path.Combine(path, "install_script.sh")}\" " +
+                compiler.StartInfo.Arguments = $" {basharg} \"{Path.Combine(path, "install_script.sh")}\" " +
                                                 "-p pdal-c " +
                                                 $"-i {install} " +
                                                 $"-d '{pluginPath}' "
