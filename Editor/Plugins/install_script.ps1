@@ -25,7 +25,7 @@ Set-Location $destination
 
 Remove-Item *.dll
 
-Get-ChildItem -exclude .*, conda-meta, Library | Remove-Item -Recurse
+Get-ChildItem -exclude .*, conda-meta, *.meta, Library | Remove-Item -Recurse
 
 Set-Location Library
 
