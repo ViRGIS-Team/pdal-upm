@@ -1,29 +1,28 @@
 #!/bin/bash
 
-while getopts "p:i:d:t:" opt
+while getopts "p:i:d:s:" opt
 do
    case "$opt" in
       p ) package="$OPTARG" ;;
       d ) destination="$OPTARG" ;;
       i ) install="$OPTARG" ;;
-      t ) test="$OPTARG" ;;
+      s ) shared_assets="$OPTARG" ;;
    esac
 done
 
-echo "Package is $package"
-echo "Install is $package"
-conda create --name upm -y
-conda install -c conda-forge --name upm $install -y --no-deps
+conda install -c conda-forge --prefix $destination --copy --mkdir $install -y
 
-env=`conda info --envs |grep upm | grep -o '/.*'`
+echo "Processing gdal data"
+echo "copy $destination/share/gdal to $shared_assets"
+mkdir -p "$shared_assets/gdal" 
+cp "$destination"/share/gdal/* "$shared_assets/gdal"
 
-echo "copy $env/lib/*.dylib to $destination" 
-mkdir -p "$destination/lib" && cp -avf "$env"/lib/*.dylib "$destination/lib"
+echo "Processing proj data"
+echo "copy $destination/share/proj to $shared_assets"
+mkdir -p "$shared_assets/proj" 
+cp "$destination"/share/proj/* "$shared_assets/proj"
 
-echo "copy $env/lib/*.so to $destination" 
-mkdir -p "$destination/lib" && cp -avf "$env"/lib/*.so* "$destination/lib"
+find "$destination" -type d -not \( -name *bin -or -name *lib -or -name *Conda -or -name *conda-meta \) -maxdepth 1 -print0 | xargs -0 -I {} rm -r {}
 
-echo "copy $env/bin/$test $destination"
-mkdir -p "$destination/bin" && cp -avf "$env"/bin/$test "$destination/bin"
-
-conda remove --name upm --all -y
+find "$destination/lib" -type d -not -name *lib -maxdepth 1 -print0 | xargs -0 -I {} rm -r {}
+rm "$destination/lib/terminfo"

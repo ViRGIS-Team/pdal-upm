@@ -108,7 +108,8 @@ namespace Pdal {
                 compiler.StartInfo.Arguments = $" {basharg} \"{Path.Combine(path, "install_script.sh")}\" " +
                                                 "-p pdal-c " +
                                                 $"-i {install} " +
-                                                $"-d '{pluginPath}' "
+                                                $"-d '{pluginPath}' " +
+                                                $"-s '{Application.streamingAssetsPath}'  ";
 
 
 #endif
