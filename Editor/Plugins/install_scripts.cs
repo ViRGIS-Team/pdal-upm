@@ -20,7 +20,7 @@ namespace Pdal {
         const string basharg = "-l";
 #endif
         const string packageVersion = "2.2.0";
-        const string pdalcVersion = "2.0.0";
+        const string pdalcVersion = "2.1.0";
 
         [InitializeOnLoadMethod]
         static void OnProjectLoadedinEditor()
