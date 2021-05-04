@@ -52,7 +52,7 @@ For C# API is shown in [the API Documentation](https://virgis-team.github.io/pda
 
 The PDAL library is loaded as an unmanaged native plugin. This plugin will load correctly in the player when built. See below for a note about use in the Editor.
 
-This Library currently works on Windows and Mac based platforms.
+This Library currently works on Windows, Linux and Mac based platforms.
 
 ## Running in the Editor
 
@@ -63,6 +63,8 @@ For this package to work , the development machine MUST have a working copy of C
 ```
 conda info
 ```
+
+If the development machine is running Windows it must have a reasonably up to date version of POwershell loaded.
 
 The package will keep the installation of Pdal in `Assets\Conda`. You may want to exclude this folder from source control.
 
