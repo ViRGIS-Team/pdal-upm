@@ -61,6 +61,3 @@ crashlytics-build.properties
 
 # Documentation
 
-docs/
-Documentation/obj
-Documentation/api

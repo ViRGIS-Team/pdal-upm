@@ -1,8 +1,0 @@
-- name: Usage
-  href: usage/
-- name: PDAL Docs
-  href: https://pdal.io/
-- name: PDAL C# API
-  href: /pdal-upm/api/Pdal.html
-- name: PDAL C API
-  href: https://pdal.io/CAPI/doxygen/html/index.html
