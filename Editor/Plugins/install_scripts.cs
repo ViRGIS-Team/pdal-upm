@@ -17,7 +17,7 @@ namespace Pdal {
         const string basharg = "-l";
 #elif UNITY_EDITOR_LINUX
         const string test = "test_pdalc";
-        const string basharg = "-l";
+        const string basharg = "-i";
 #endif
         const string packageVersion = "2.2.0";
         const string pdalcVersion = "2.1.0";
@@ -100,7 +100,7 @@ namespace Pdal {
 #if UNITY_EDITOR_WIN
                 compiler.StartInfo.FileName = "powershell.exe";
                 compiler.StartInfo.Arguments = $"-ExecutionPolicy Bypass \"{Path.Combine(path, "install_script.ps1")}\" -package pdal-c " +
-                                                    $"-install {install} " +
+                                                    $"-install '{install}' " +
                                                     $"-destination '{pluginPath}'" +
                                                     $"-shared_assets '{Application.streamingAssetsPath}' ";
 #else

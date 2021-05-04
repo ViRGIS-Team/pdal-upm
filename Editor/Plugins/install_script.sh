@@ -10,7 +10,7 @@ do
    esac
 done
 
-conda install -c conda-forge --prefix $destination --copy --mkdir $install -y
+echo `conda install -c conda-forge --prefix $destination --copy --mkdir $install -y`
 
 echo "Processing gdal data"
 echo "copy $destination/share/gdal to $shared_assets"
