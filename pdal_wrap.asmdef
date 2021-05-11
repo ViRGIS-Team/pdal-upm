@@ -1,7 +1,9 @@
 {
     "name": "Pdal",
+    "rootNamespace": "",
     "references": [
-        "geometry3Sharp"
+        "geometry3Sharp",
+        "CondaExt"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
