@@ -17,7 +17,7 @@ scopedRegistries": [
       "scopes": [
         "com.openupm",
         "com.virgis.geometry3sharp",
-        "com.viris.conda-extensions"
+        "com.virgis.conda-extensions"
       ]
     }
   ],
