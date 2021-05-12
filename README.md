@@ -16,7 +16,8 @@ scopedRegistries": [
       "url": "https://package.openupm.com",
       "scopes": [
         "com.openupm",
-        "com.virgis.geometry3sharp"
+        "com.virgis.geometry3sharp",
+        "com.viris.conda-extensions"
       ]
     }
   ],
@@ -24,10 +25,6 @@ scopedRegistries": [
 
 
 The Package can also be installed using the Unity Package Manager directly from the [GitHub Repo](https://github.com/ViRGIS-Team/pdal-upm).
-
-This package is dependent on the following packages having been loaded (and the UPM / GH combination does not allow package dependencies  - so you have to do that yourself) :
-
-- Geometry3Sharp -[UPM GH Repo](https://github.com/ViRGIS-Team/geometry3Sharp). This providse the Mesh data strcuture and manipulation tools in c#
 
 ## Version numbers
 
