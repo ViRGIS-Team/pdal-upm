@@ -14,7 +14,7 @@ namespace Pdal
     {
         public IEnumerable<Vector3d> positions;
         public IEnumerable<Vector3f> colors;
-        public int size;
+        public ulong size;
     }
     
     /// A container class for texture-baked point clouds.
@@ -22,7 +22,7 @@ namespace Pdal
     {
 
         /// Number of points
-        public int pointCount { get { return _pointCount; } }
+        public int pointCount { get { return (int)_pointCount; } }
 
         /// Position map texture
         public Texture2D positionMap { get { return _positionMap; } }
@@ -31,7 +31,7 @@ namespace Pdal
         public Texture2D colorMap { get { return _colorMap; } }
 
 
-        [SerializeField] int _pointCount;
+        [SerializeField] ulong _pointCount;
         [SerializeField] Texture2D _positionMap;
         [SerializeField] Texture2D _colorMap;
 
@@ -67,7 +67,7 @@ namespace Pdal
             {
                 for (int x = 0; x < width; x++)
                 {
-                    int i = i1 < bpc._pointCount ? i1 : (int)(i2 % bpc._pointCount);
+                    int i = i1 < bpc.pointCount ? i1 : (int)(i2 % bpc._pointCount);
 
                     Vector3d p = position.Current;
                     Vector3f c = color.Current;

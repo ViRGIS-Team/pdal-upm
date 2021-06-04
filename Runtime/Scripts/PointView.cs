@@ -256,7 +256,7 @@ namespace Pdal
 
 			pc.positions = positions;
 			pc.colors = colors;
-			pc.size = (int)size;
+			pc.size = Size;
 			return pc;
 		}
 

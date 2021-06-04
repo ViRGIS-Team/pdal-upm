@@ -9,7 +9,6 @@ using Debug = UnityEngine.Debug;
 namespace Pdal {
     public class Install{
 
-        const string packageVersion = "2.3.0";
         const string pdalcVersion = "2.1.0";
 
         [InitializeOnLoadMethod]
@@ -25,11 +24,6 @@ namespace Pdal {
                 {
                     Config config = new Config();
                     string currentVersion = config.Version;
-                    if (currentVersion != packageVersion)
-                        {
-                            UpdatePackage();
-                            AssetDatabase.Refresh();
-                    }
                 }
                 catch (Exception e)
                 {
