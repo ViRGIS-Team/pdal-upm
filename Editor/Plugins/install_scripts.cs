@@ -41,7 +41,7 @@ namespace Pdal {
 
         static void UpdatePackage()
         {
-            Debug.Log("Mdal Install Script Awake");
+            Debug.Log("Pdal Install Script Awake");
             string path = Path.GetDirectoryName(new StackTrace(true).GetFrame(0).GetFileName());
 #if UNITY_EDITOR_WIN
             path = Path.Combine(path, "install_script.ps1");
