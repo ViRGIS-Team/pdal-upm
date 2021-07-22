@@ -36,13 +36,13 @@ Move-Item -Path $file -Destination $shared_assets  -Force
 
 Remove-Item *.dll
 
-Get-ChildItem -exclude .*, conda-meta, *.meta, Library | Remove-Item -Recurse
+Get-ChildItem -exclude .*, conda-meta, *.meta, Library, *.txt | Remove-Item -Recurse
 
 Set-Location Library
 
 Get-ChildItem -exclude bin | Remove-Item -Recurse
 Set-Location bin
-Get-ChildItem -exclude *.dll, *.exe, *.txt | Remove-Item -Recurse
+Get-ChildItem -exclude *.dll, *.exe | Remove-Item -Recurse
 Remove-Item api-*
 Remove-Item vcr*
 Remove-Item msvcp*
