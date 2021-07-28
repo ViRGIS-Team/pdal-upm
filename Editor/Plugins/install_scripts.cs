@@ -44,11 +44,11 @@ namespace Pdal {
             Debug.Log("Pdal Install Script Awake");
             string path = Path.GetDirectoryName(new StackTrace(true).GetFrame(0).GetFileName());
 #if UNITY_EDITOR_WIN
-            path = Path.Combine(path, "install_script.ps1");
+            string script = "install_script.ps1";
 #else
-            path = Path.Combine(path, "install_script.sh");
+            string script = "install_script.sh";
 #endif
-            string response = Conda.Conda.Install($"pdal-c={pdalcVersion}", path);
+            string response = Conda.Conda.Install($"pdal-c={pdalcVersion}",script, path);
         }
     }
 }

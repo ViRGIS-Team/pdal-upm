@@ -1,6 +1,6 @@
 {
   "name": "com.virgis.pdal",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "displayName": "Pdal",
   "description": "Open-Source Point Cloud Data Translation LIbrary v2.2.0",
   "unity": "2018.1",
@@ -32,7 +32,7 @@
   "hideInEditor": false,
   "dependencies": {
     "com.virgis.geometry3sharp": "1.0.4",
-    "com.virgis.conda-extensions": "1.0.1"
+    "com.virgis.conda-extensions": "1.0.2"
   },
   "type": "library"
 }
