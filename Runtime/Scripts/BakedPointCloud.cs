@@ -13,7 +13,7 @@ namespace Pdal
     public struct BpcData
     {
         public IEnumerable<Vector3d> positions;
-        public IEnumerable<Vector3f> colors;
+        public IEnumerable<Colorf> colors;
         public ulong size;
     }
     
@@ -45,7 +45,7 @@ namespace Pdal
 
             int width = Mathf.CeilToInt(Mathf.Sqrt(bpc._pointCount));
 
-            bpc._positionMap = new Texture2D(width, width, TextureFormat.RGBAHalf, false);
+            bpc._positionMap = new Texture2D(width, width, TextureFormat.RGBAFloat, false);
             bpc._positionMap.name = "Position Map";
             bpc._positionMap.filterMode = FilterMode.Point;
 
@@ -57,7 +57,7 @@ namespace Pdal
             uint i2 = 0U;
 
             IEnumerator<Vector3d> position = data.positions.GetEnumerator();
-            IEnumerator<Vector3f> color = data.colors.GetEnumerator();
+            IEnumerator<Colorf> color = data.colors.GetEnumerator();
 
             position.MoveNext();
             color.MoveNext();
@@ -70,10 +70,10 @@ namespace Pdal
                     int i = i1 < bpc.pointCount ? i1 : (int)(i2 % bpc._pointCount);
 
                     Vector3d p = position.Current;
-                    Vector3f c = color.Current;
+                    Colorf c = color.Current;
 
                     bpc._positionMap.SetPixel(x, y, new Color((float)p.x, (float)p.y, (float)p.z));
-                    bpc._colorMap.SetPixel(x, y, new Color(c.x, c.y, c.z));
+                    bpc._colorMap.SetPixel(x, y, c);
 
                     i1 ++;
                     i2 += 132049U; // prime

@@ -221,7 +221,7 @@ namespace Pdal
 			DimTypeList typelist = layout.Types;
 			byte[] data = GetAllPackedPoints(typelist, out size);
 			List<Vector3d> positions = new List<Vector3d>();
-			List<Vector3f> colors = new List<Vector3f>();
+			List<Colorf> colors = new List<Colorf>();
 
 			uint pointSize = layout.PointSize;
 			Dictionary<string, int> indexs = new Dictionary<string, int>();
@@ -248,7 +248,7 @@ namespace Pdal
 											parseDouble(data, types["Z"], (int)(i + indexs["Z"]))
 							  ));
 				if (hasColor)
-					colors.Add(new Vector3f((float)parseColor(data, types["Red"], (int)(i + indexs["Red"])),
+					colors.Add(new Colorf((float)parseColor(data, types["Red"], (int)(i + indexs["Red"])),
 											(float)parseColor(data, types["Green"], (int)(i + indexs["Green"])),
 											(float)parseColor(data, types["Blue"], (int)(i + indexs["Blue"]))
 							));
