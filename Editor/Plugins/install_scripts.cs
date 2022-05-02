@@ -9,7 +9,7 @@ using Debug = UnityEngine.Debug;
 namespace Pdal {
     public class Install{
 
-        const string pdalcVersion = "2.1.0";
+        const string pdalcVersion = "2.1.1";
 
         [InitializeOnLoadMethod]
         static void OnProjectLoadedinEditor()
