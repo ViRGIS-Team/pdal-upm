@@ -10,6 +10,8 @@ do
    esac
 done
 
+export PATH=~/local/miniconda3/bin:$PATH
+
 outp=$(conda install -c conda-forge --prefix "$destination" --copy --mkdir $install -y -vv  2>&1)
 
 echo $outp > "$destination"/pdal_log.txt
