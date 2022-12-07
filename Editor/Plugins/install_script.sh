@@ -14,7 +14,7 @@ export PATH=~/local/miniconda3/bin:$PATH
 
 outp=$(conda install -c conda-forge --prefix "$destination" --copy --mkdir python -y -vv  2>&1)
 
-export $CONDA_SUBDIR=$platform
+export CONDA_SUBDIR=$platform
 echo $CONDA_SUBDIR > "$destination"/pdal_log.txt
 echo $outp >> "$destination"/pdal_log.txt
 
