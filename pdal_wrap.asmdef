@@ -3,7 +3,8 @@
     "rootNamespace": "",
     "references": [
         "geometry3Sharp",
-        "CondaExt"
+        "CondaExt",
+        "Unity.Burst"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

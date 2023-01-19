@@ -27,312 +27,425 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
+using g3;
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
-using g3;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Linq;
+using System.Threading;
+using Unity.Collections;
+using Unity.Jobs;
+using UnityEngine;
+using Unity.Burst;
 
 namespace Pdal
  {
-	public class PointView : IDisposable
-	{
-		private const string PDALC_LIBRARY = "pdalc";
-		private const int BUFFER_SIZE = 1024;
-		private IntPtr mNative = IntPtr.Zero;
+    public class PointView : IDisposable
+    {
+        private const string PDALC_LIBRARY = "pdalc";
+        private const int BUFFER_SIZE = 1024;
+        private IntPtr mNative = IntPtr.Zero;
 
-		[DllImport(PDALC_LIBRARY, EntryPoint="PDALDisposePointView")]
-		private static extern void dispose(IntPtr view);
+        [DllImport(PDALC_LIBRARY, EntryPoint = "PDALDisposePointView")]
+        private static extern void dispose(IntPtr view);
 
-		[DllImport(PDALC_LIBRARY, EntryPoint="PDALGetPointViewId")]
-		private static extern int id(IntPtr view);
+        [DllImport(PDALC_LIBRARY, EntryPoint = "PDALGetPointViewId")]
+        private static extern int id(IntPtr view);
 
-		[DllImport(PDALC_LIBRARY, EntryPoint="PDALGetPointViewSize")]
-		private static extern ulong size(IntPtr view);
+        [DllImport(PDALC_LIBRARY, EntryPoint = "PDALGetPointViewSize")]
+        private static extern ulong size(IntPtr view);
 
-		[DllImport(PDALC_LIBRARY, EntryPoint="PDALIsPointViewEmpty")]
-		private static extern bool empty(IntPtr view);
+        [DllImport(PDALC_LIBRARY, EntryPoint = "PDALIsPointViewEmpty")]
+        private static extern bool empty(IntPtr view);
 
-		[DllImport(PDALC_LIBRARY, EntryPoint="PDALClonePointView")]
-		private static extern IntPtr clone(IntPtr view);
+        [DllImport(PDALC_LIBRARY, EntryPoint = "PDALClonePointView")]
+        private static extern IntPtr clone(IntPtr view);
 
-		[DllImport(PDALC_LIBRARY, EntryPoint="PDALGetPointViewProj4")]
-		private static extern uint getProj4(IntPtr view, StringBuilder buffer, uint size);
+        [DllImport(PDALC_LIBRARY, EntryPoint = "PDALGetPointViewProj4")]
+        private static extern uint getProj4(IntPtr view, StringBuilder buffer, uint size);
 
-		[DllImport(PDALC_LIBRARY, EntryPoint="PDALGetPointViewWkt")]
-		private static extern uint getWkt(IntPtr view, StringBuilder buffer, uint size, bool pretty);
+        [DllImport(PDALC_LIBRARY, EntryPoint = "PDALGetPointViewWkt")]
+        private static extern uint getWkt(IntPtr view, StringBuilder buffer, uint size, bool pretty);
 
-		[DllImport(PDALC_LIBRARY, EntryPoint="PDALGetPointViewLayout")]
-		private static extern IntPtr getLayout(IntPtr view);
+        [DllImport(PDALC_LIBRARY, EntryPoint = "PDALGetPointViewLayout")]
+        private static extern IntPtr getLayout(IntPtr view);
 
-		[DllImport(PDALC_LIBRARY, EntryPoint="PDALGetPackedPoint")]
-		private static extern uint getPackedPoint(IntPtr view, IntPtr types, ulong idx, [MarshalAs(UnmanagedType.LPArray)] byte[] buf);
-
-
-		[DllImport(PDALC_LIBRARY, EntryPoint="PDALGetAllPackedPoints")]
-		private static extern ulong getAllPackedPoints(IntPtr view, IntPtr types, [MarshalAs(UnmanagedType.LPArray)] byte[] buf);
+        [DllImport(PDALC_LIBRARY, EntryPoint = "PDALGetPackedPoint")]
+        private static extern uint getPackedPoint(IntPtr view, IntPtr types, ulong idx, [MarshalAs(UnmanagedType.LPArray)] byte[] buf);
 
 
-		[DllImport(PDALC_LIBRARY, EntryPoint = "PDALGetMeshSize")]
-		private static extern ulong meshSize(IntPtr view);
+        [DllImport(PDALC_LIBRARY, EntryPoint = "PDALGetAllPackedPoints")]
+        private static extern ulong getAllPackedPoints(IntPtr view, IntPtr types, [MarshalAs(UnmanagedType.LPArray)] byte[] buf);
 
-		[DllImport(PDALC_LIBRARY, EntryPoint = "PDALGetAllTriangles")]
-		private static extern ulong getAllTriangles(IntPtr view, [MarshalAs(UnmanagedType.LPArray)] byte[] buf);
 
-		public PointView(IntPtr nativeView)
-		{
-			mNative = nativeView;
-		}
+        [DllImport(PDALC_LIBRARY, EntryPoint = "PDALGetMeshSize")]
+        private static extern ulong meshSize(IntPtr view);
 
-		public void Dispose()
-		{
-			dispose(mNative);
-			mNative = IntPtr.Zero;
-		}
+        [DllImport(PDALC_LIBRARY, EntryPoint = "PDALGetAllTriangles")]
+        private static extern ulong getAllTriangles(IntPtr view, [MarshalAs(UnmanagedType.LPArray)] byte[] buf);
 
-		public int Id
-		{
-			get { return id(mNative); }
-		}
+        public PointView(IntPtr nativeView)
+        {
+            mNative = nativeView;
+        }
 
-		public ulong Size
-		{
-			get { return size(mNative); }
-		}
+        public void Dispose()
+        {
+            dispose(mNative);
+            mNative = IntPtr.Zero;
+        }
 
-		public ulong MeshSize
-		{
-			get { return meshSize(mNative); }
-		}
+        public int Id
+        {
+            get { return id(mNative); }
+        }
 
-		public bool Empty
-		{
-			get { return empty(mNative); }
-		}
+        public ulong Size
+        {
+            get { return size(mNative); }
+        }
 
-		public string Proj4
-		{
-			get
-			{
-				StringBuilder buffer = new StringBuilder(BUFFER_SIZE);
-				getProj4(mNative, buffer, (uint)buffer.Capacity);
-				return buffer.ToString();
-			}
-		}
+        public ulong MeshSize
+        {
+            get { return meshSize(mNative); }
+        }
 
-		public string Wkt
-		{
-			get
-			{
-				StringBuilder buffer = new StringBuilder(BUFFER_SIZE);
-				getWkt(mNative, buffer, (uint)buffer.Capacity, false);
-				return buffer.ToString();
-			}
-		}
+        public bool Empty
+        {
+            get { return empty(mNative); }
+        }
 
-		public string PrettyWkt
-		{
-			get
-			{
-				StringBuilder buffer = new StringBuilder(BUFFER_SIZE);
-				getWkt(mNative, buffer, (uint)buffer.Capacity, true);
-				return buffer.ToString();
-			}
-		}
+        public string Proj4
+        {
+            get
+            {
+                StringBuilder buffer = new(BUFFER_SIZE);
+                getProj4(mNative, buffer, (uint)buffer.Capacity);
+                return buffer.ToString();
+            }
+        }
 
-		public PointLayout Layout
-		{
-			get
-			{
-				PointLayout layout = null;
-				IntPtr nativeLayout = getLayout(mNative);
+        public string Wkt
+        {
+            get
+            {
+                StringBuilder buffer = new(BUFFER_SIZE);
+                getWkt(mNative, buffer, (uint)buffer.Capacity, false);
+                return buffer.ToString();
+            }
+        }
 
-				if (nativeLayout != IntPtr.Zero)
-				{
-					layout = new PointLayout(nativeLayout);
-				}
-				return layout;
-			}
-		}
+        public string PrettyWkt
+        {
+            get
+            {
+                StringBuilder buffer = new(BUFFER_SIZE);
+                getWkt(mNative, buffer, (uint)buffer.Capacity, true);
+                return buffer.ToString();
+            }
+        }
 
-		public byte[] GetAllPackedPoints(DimTypeList dims, out ulong size)
-		{
-			byte[] data = null;
-			size = 0;
+        public PointLayout Layout
+        {
+            get
+            {
+                PointLayout layout = null;
+                IntPtr nativeLayout = getLayout(mNative);
 
-			if (this.Size > 0 && dims != null && dims.Size > 0)
-			{
-				ulong byteCount = this.Size * dims.ByteCount;
-				data = new byte[byteCount];
-				size = getAllPackedPoints(mNative, dims.Native, data);
-			}
+                if (nativeLayout != IntPtr.Zero)
+                {
+                    layout = new PointLayout(nativeLayout);
+                }
+                return layout;
+            }
+        }
 
-			return data;
-		}
+        public byte[] GetAllPackedPoints(DimTypeList dims, out ulong size)
+        {
+            byte[] data = null;
+            size = 0;
 
-		public byte[] GetPackedPoint(DimTypeList dims, ulong idx)
+            if (this.Size > 0 && dims != null && dims.Size > 0)
+            {
+                ulong byteCount = this.Size * dims.ByteCount;
+                data = new byte[byteCount];
+                size = getAllPackedPoints(mNative, dims.Native, data);
+            }
+            return data;
+        }
+
+        public byte[] GetPackedPoint(DimTypeList dims, ulong idx)
         {
             byte[] data = null;
 
-			if (this.Size > idx && dims != null && dims.Size > 0)
-			{
-				data = new byte[dims.ByteCount];
-				getPackedPoint(mNative, dims.Native, idx, data);
-			}
-
-			return data;
-        }
-
-		public byte[] GetPackedMesh(out ulong size)
-		{
-			byte[] data = null;
-			size = 0;
-
-			if (meshSize(mNative) > 0)
-			{
-				ulong byteCount = meshSize(mNative) * 12;
-				data = new byte[byteCount];
-				size = getAllTriangles(mNative, data);
-			}
-
-			return data;
-		}
-
-		public PointView Clone()
-		{
-			PointView clonedView = null;
-			IntPtr nativeClone = clone(mNative);
-        
-			if (nativeClone != IntPtr.Zero)
-			{
-                clonedView = new PointView(nativeClone);
-			}
-
-			return clonedView;
-		}
-
-		public BpcData GetBpcData()
-		{
-			BpcData pc;
-			ulong size;
-			PointLayout layout = Layout;
-			DimTypeList typelist = layout.Types;
-			byte[] data = GetAllPackedPoints(typelist, out size);
-			List<Vector3d> positions = new List<Vector3d>();
-			List<Colorf> colors = new List<Colorf>();
-
-			uint pointSize = layout.PointSize;
-			Dictionary<string, int> indexs = new Dictionary<string, int>();
-			Dictionary<string, string> types = new Dictionary<string, string>();
-			int count = 0;
-			bool hasColor = false;
-			for (uint j = 0; j < typelist.Size; j++)
-			{
-				DimType type = typelist.at(j);
-				string interpretationName = type.InterpretationName;
-				int interpretationByteCount = type.InterpretationByteCount;
-				string name = type.IdName;
-				indexs.Add(name, count);
-				types.Add(name, interpretationName);
-				if (name == "Red")
-					hasColor = true;
-				count += interpretationByteCount;
-			}
-
-			for (long i = 0; i < (long)size; i += pointSize)
-			{
-				positions.Add(new Vector3d(parseDouble(data, types["X"], (int)(i + indexs["X"])),
-											parseDouble(data, types["Y"], (int)(i + indexs["Y"])),
-											parseDouble(data, types["Z"], (int)(i + indexs["Z"]))
-							  ));
-				if (hasColor)
-					colors.Add(new Colorf((float)parseColor(data, types["Red"], (int)(i + indexs["Red"])),
-											(float)parseColor(data, types["Green"], (int)(i + indexs["Green"])),
-											(float)parseColor(data, types["Blue"], (int)(i + indexs["Blue"]))
-							));
-			}
-
-			pc.positions = positions;
-			pc.colors = colors;
-			pc.size = Size;
-			return pc;
-		}
-
-		public Task<BpcData> GetBpcDataAsync()
-        {
-			Task<BpcData> t1 = new Task<BpcData>(() =>
-			{
-				return GetBpcData();
-			});
-			t1.Start();
-			return t1;
-        }
-
-		public DMesh3 getMesh()
-		{
-			BpcData pc = GetBpcData();
-
-			ulong size;
-			byte[] data = GetPackedMesh(out size);
-			Console.WriteLine($"Rawmesh size: {size}");
-
-			List<int> tris = new List<int>();
-
-			if (size > 0)
-			{
-				for (int position = 0; position < (int)size; position += 12)
-				{
-					tris.Add((int)BitConverter.ToUInt32(data, position));
-					tris.Add((int)BitConverter.ToUInt32(data, position + 4));
-					tris.Add((int)BitConverter.ToUInt32(data, position + 8));
-				}
-
-			}
-
-			DMesh3 dmesh = DMesh3Builder.Build<Vector3d, int, int>(pc.positions, tris);
-			if (pc.colors.Count() > 0)
-			{
-				dmesh.EnableVertexColors(new Vector3f());
-				foreach (int idx in dmesh.VertexIndices())
-				{
-					dmesh.SetVertexColor(idx, pc.colors.ElementAt(idx));
-				}
-			}
-			return dmesh;
-		}
-
-
-
-		private double parseDouble(byte[] buffer, string interpretationName, int position) {
-            double value = 0;
-            if (interpretationName == "double") {
-                value = BitConverter.ToDouble(buffer, position);
-            } else if (interpretationName == "float") {
-                value = BitConverter.ToSingle(buffer, position);
-            } else if (interpretationName.StartsWith("uint64")) {
-                value = BitConverter.ToUInt64(buffer, position);
-            } else if (interpretationName.StartsWith("uint32")) {
-                value = BitConverter.ToUInt32(buffer, position);
-            } else if (interpretationName.StartsWith("uint16")) {
-                value = BitConverter.ToUInt16(buffer, position);
-            } else if (interpretationName.StartsWith("uint8")) {
-                value = buffer[position];
-            } else if (interpretationName.StartsWith("int64")) {
-                value = BitConverter.ToInt64(buffer, position);
-            } else if (interpretationName.StartsWith("int32")) {
-                value = BitConverter.ToInt32(buffer, position);
-            } else if (interpretationName.StartsWith("int16")) {
-                value = BitConverter.ToInt16(buffer, position);
-            } else if (interpretationName.StartsWith("int8")) {
-                value = ((sbyte) buffer[position]);
+            if (this.Size > idx && dims != null && dims.Size > 0)
+            {
+                data = new byte[dims.ByteCount];
+                getPackedPoint(mNative, dims.Native, idx, data);
             }
-            return value;
+
+            return data;
         }
 
-        private float parseColor(byte[] buffer, string interpretationName, int position) {
-            return (float) parseDouble(buffer, interpretationName, position) / 256;
-        }  
+        public byte[] GetPackedMesh(out ulong size)
+        {
+            byte[] data = null;
+            size = 0;
+
+            if (meshSize(mNative) > 0)
+            {
+                ulong byteCount = meshSize(mNative) * 12;
+                data = new byte[byteCount];
+                size = getAllTriangles(mNative, data);
+            }
+
+            return data;
+        }
+
+        public PointView Clone()
+        {
+            PointView clonedView = null;
+            IntPtr nativeClone = clone(mNative);
+
+            if (nativeClone != IntPtr.Zero)
+            {
+                clonedView = new PointView(nativeClone);
+            }
+
+            return clonedView;
+        }
+
+        /// <summary>
+        /// Job System Job to Decode the Point CLoud Vertices
+        /// </summary>
+        //[BurstCompile]
+        public struct DecodeView : IJobParallelFor
+        {
+            [ReadOnly]
+            public NativeArray<UInt32> Types;
+
+            [ReadOnly]
+            public NativeArray<UInt32> Indexes;
+
+            [ReadOnly]
+            public NativeArray<byte> Data;
+
+            [ReadOnly]
+            public uint PointSize;
+
+            [ReadOnly]
+            public int Width;
+
+            [NativeDisableParallelForRestriction]
+            public NativeArray<Color32> Colors;
+
+            [NativeDisableParallelForRestriction]
+            public NativeArray<Color> Positions;
+
+            public void Execute(int job)
+            {
+                int pointer = job * Width;
+                long index = pointer * PointSize;
+
+                //iterate through a row
+                for (int i = 0; i < Width; i++)
+                {
+                    if (index + PointSize > Data.Length) break;
+                    /// Get the raw data for this point
+                    double X = ParseDouble(Data, Types[0], (int)(index + Indexes[0]));
+                    double Y = ParseDouble(Data, Types[1], (int)(index + Indexes[1]));
+                    double Z = ParseDouble(Data, Types[2], (int)(index + Indexes[2]));
+                    Positions[pointer] = new Color((float)X, (float)Y, (float)Z);
+
+                    if (Types[3] != 0)
+                    {
+                        byte Red = ParseColor(Data, Types[3], (int)(index + Indexes[3]));
+                        byte Green = ParseColor(Data, Types[4], (int)(index + Indexes[4]));
+                        byte Blue = ParseColor(Data, Types[5], (int)(index + Indexes[5]));
+                        Colors[pointer] = new Color32(Red, Green, Blue, 0xFF);
+                    }
+                    index += PointSize;
+                    pointer += 1;
+                }
+            }
+
+            public DecodeAwaiter GetAwaiter()
+            {
+                return new DecodeAwaiter(this);
+            }
+
+        }
+
+        /// <summary>
+        /// Used to Get Double Values from the Pointview as Byte Stream
+        /// </summary>
+        /// <param name="buffer"></param>
+        /// <param name="type"></param>
+        /// <param name="position"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        private static double ParseDouble(NativeArray<Byte>  buffer, UInt32 type, int position)
+        {
+            if (type == 10)
+            {
+                return buffer.ReinterpretLoad<double>(position);
+            }
+            else if (type == 9)
+            {
+                return buffer.ReinterpretLoad<float>(position);
+            }
+            else if (type == 7)
+            {
+                return buffer.ReinterpretLoad<UInt64>(position);
+            }
+            else if (type == 5)
+            {
+                return buffer.ReinterpretLoad<UInt32>(position);
+            }
+            else if (type == 3)
+            {
+                return buffer.ReinterpretLoad<UInt16>(position);
+            }
+            else if (type == 1)
+            {
+                return buffer[position];
+            }
+            else if (type == 8)
+            {
+                return buffer.ReinterpretLoad<Int64>(position);
+            }
+            else if (type == 6)
+            {
+                return buffer.ReinterpretLoad<Int32>(position);
+            }
+            else if (type == 4)
+            {
+                return buffer.ReinterpretLoad<Int16>(position);
+            }
+            else if (type == 2)
+            {
+                return ((sbyte)buffer[position]);
+            }
+            else
+            {
+                throw new Exception("Invalid PDAL type id");
+            }
+        }
+
+        /// <summary>
+        /// Used to get Byte Values from the PointView as Byte Stream
+        /// </summary>
+        /// <param name="buffer"></param>
+        /// <param name="type"></param>
+        /// <param name="position"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        private static byte ParseColor(NativeArray<Byte> buffer, UInt32 type, int position)
+        {
+            if (type == 1 || type == 2) return (byte)ParseDouble(buffer, type, position);
+            else if (type == 3 | type == 4) return (byte)(ParseDouble(buffer, type, position));
+            else if (type == 9 || type == 10)
+            {
+                double value = ParseDouble(buffer, type, position);
+                if (value < 1) value *= 256;
+                return (byte)value;
+            }
+            throw new Exception("PDAL - Unsupported Color type");
+        }
+
+        /// <summary>
+        /// Used to Get PDAL type as a number
+        /// </summary>
+        /// <param name="InterpretationName"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public static UInt32 TypeValue(string InterpretationName)
+        {
+            if (InterpretationName == "double")
+            {
+                return 10;
+            }
+            else if (InterpretationName == "float")
+            {
+                return 9;
+            }
+            else if (InterpretationName.StartsWith("uint64"))
+            {
+                return 7;
+            }
+            else if (InterpretationName.StartsWith("uint32"))
+            {
+                return 5;
+            }
+            else if (InterpretationName.StartsWith("uint16"))
+            {
+                return 3;
+            }
+            else if (InterpretationName.StartsWith("uint8"))
+            {
+                return 1;
+            }
+            else if (InterpretationName.StartsWith("int64"))
+            {
+                return 8;
+            }
+            else if (InterpretationName.StartsWith("int32"))
+            {
+                return 6;
+            }
+            else if (InterpretationName.StartsWith("int16"))
+            {
+                return 4;
+            }
+            else if (InterpretationName.StartsWith("int8"))
+            {
+                return 2;
+            }
+            throw new Exception("invalid PDAL type name");
+        }
+
+        /// <summary>
+        /// Custom Awaiter for the Decode View
+        /// </summary>
+        public struct DecodeAwaiter : INotifyCompletion
+        {
+            JobHandle jh;
+            private Action continuation;
+        
+            public DecodeAwaiter(DecodeView dv) {
+                jh = dv.Schedule(dv.Width, 1);
+                continuation = null;
+            }
+
+            public bool IsCompleted
+            {
+                get {
+                    return jh.IsCompleted;
+                }
+            }
+
+            public void OnCompleted(Action continuation)
+            {
+                {
+                    ScheduleContinuation(continuation);
+                    RunToCompletion();
+                }
+            }
+
+            public void GetResult() { }
+
+            internal void ScheduleContinuation(Action action)
+            {
+                continuation = action;
+            }
+
+            internal void RunToCompletion()
+            {
+                var wait = new SpinWait();
+                while (! IsCompleted)
+                    wait.SpinOnce();
+                continuation();
+            }
+        }
     }
  }
