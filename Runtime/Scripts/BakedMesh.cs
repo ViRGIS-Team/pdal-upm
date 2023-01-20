@@ -30,17 +30,16 @@ namespace Pdal
             NativeArray<byte> Data = new(view.GetPackedMesh(out ulong dataSize), Allocator.Persistent);
             if (dataSize == 0) throw new Exception("BakedMesh : No Mesh Found");
 
-            NativeArray<Int32> Tris = new(new Int32[dataSize / 4 ], Allocator.Persistent);
+            ulong sizeTri = dataSize / 12;
 
-            const int stride = 1000;
+            NativeArray<Int32> Tris = new(new Int32[sizeTri * 3], Allocator.Persistent);
 
             DecodeMesh dm = new() {
                 Data = Data,
-                Width = stride,
                 Tris = Tris,
             };
 
-            JobHandle jh = dm.Schedule(Mathf.CeilToInt(dataSize /(12 * stride)) + 1, 1);
+            JobHandle jh = dm.Schedule((int)sizeTri, 100);
             jh.Complete();
 
             NativeArray<Color> positions = bpc.PositionMap.GetRawTextureData<Color>();
@@ -87,28 +86,19 @@ namespace Pdal
             [ReadOnly]
             public NativeArray<byte> Data;
 
-            [ReadOnly]
-            public int Width;
-
             [NativeDisableParallelForRestriction]
             public NativeArray<Int32> Tris;
 
             public void Execute(int job)
             {
-                int pointer = job * Width * 3;
+                int pointer = job * 3;
                 int index = pointer * 4;
 
-                //iterate through a row
-                for (int i = 0; i < Width; i++)
-                {
-                    if (index + 12 > Data.Length) 
-                        break;
-                    Tris[pointer] = (int)Data.ReinterpretLoad<UInt32>(index);
-                    Tris[pointer + 1] = (int)Data.ReinterpretLoad<UInt32>(index + 4);
-                    Tris[pointer + 2] = (int)Data.ReinterpretLoad<UInt32>(index + 8);
-                    index += 12;
-                    pointer += 3;
-                }
+                if (index + 12 > Data.Length) 
+                    return;
+                Tris[pointer] = (int)Data.ReinterpretLoad<UInt32>(index);
+                Tris[pointer + 1] = (int)Data.ReinterpretLoad<UInt32>(index + 4);
+                Tris[pointer + 2] = (int)Data.ReinterpretLoad<UInt32>(index + 8);
             }
         }
     }

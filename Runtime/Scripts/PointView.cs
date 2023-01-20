@@ -27,7 +27,6 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-using g3;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -37,6 +36,8 @@ using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
 using Unity.Burst;
+using System.Collections;
+using System.Threading.Tasks;
 
 namespace Pdal
  {
@@ -218,7 +219,7 @@ namespace Pdal
         /// <summary>
         /// Job System Job to Decode the Point CLoud Vertices
         /// </summary>
-        //[BurstCompile]
+        [BurstCompile]
         public struct DecodeView : IJobParallelFor
         {
             [ReadOnly]
@@ -234,46 +235,31 @@ namespace Pdal
             public uint PointSize;
 
             [ReadOnly]
-            public int Width;
+            public int pointCount;
 
-            [NativeDisableParallelForRestriction]
             public NativeArray<Color32> Colors;
 
-            [NativeDisableParallelForRestriction]
             public NativeArray<Color> Positions;
 
             public void Execute(int job)
             {
-                int pointer = job * Width;
-                long index = pointer * PointSize;
+                long index = job * PointSize;
 
-                //iterate through a row
-                for (int i = 0; i < Width; i++)
+                if (index + PointSize > Data.Length) return;
+                /// Get the raw data for this point
+                double X = ParseDouble(Data, Types[0], (int)(index + Indexes[0]));
+                double Y = ParseDouble(Data, Types[1], (int)(index + Indexes[1]));
+                double Z = ParseDouble(Data, Types[2], (int)(index + Indexes[2]));
+                Positions[job] = new Color((float)X, (float)Y, (float)Z);
+
+                if (Types[3] != 0)
                 {
-                    if (index + PointSize > Data.Length) break;
-                    /// Get the raw data for this point
-                    double X = ParseDouble(Data, Types[0], (int)(index + Indexes[0]));
-                    double Y = ParseDouble(Data, Types[1], (int)(index + Indexes[1]));
-                    double Z = ParseDouble(Data, Types[2], (int)(index + Indexes[2]));
-                    Positions[pointer] = new Color((float)X, (float)Y, (float)Z);
-
-                    if (Types[3] != 0)
-                    {
-                        byte Red = ParseColor(Data, Types[3], (int)(index + Indexes[3]));
-                        byte Green = ParseColor(Data, Types[4], (int)(index + Indexes[4]));
-                        byte Blue = ParseColor(Data, Types[5], (int)(index + Indexes[5]));
-                        Colors[pointer] = new Color32(Red, Green, Blue, 0xFF);
-                    }
-                    index += PointSize;
-                    pointer += 1;
+                    byte Red = ParseColor(Data, Types[3], (int)(index + Indexes[3]));
+                    byte Green = ParseColor(Data, Types[4], (int)(index + Indexes[4]));
+                    byte Blue = ParseColor(Data, Types[5], (int)(index + Indexes[5]));
+                    Colors[job] = new Color32(Red, Green, Blue, 0xFF);
                 }
             }
-
-            public DecodeAwaiter GetAwaiter()
-            {
-                return new DecodeAwaiter(this);
-            }
-
         }
 
         /// <summary>
@@ -284,7 +270,7 @@ namespace Pdal
         /// <param name="position"></param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        private static double ParseDouble(NativeArray<Byte>  buffer, UInt32 type, int position)
+        private static double ParseDouble(NativeArray<Byte> buffer, UInt32 type, int position)
         {
             if (type == 10)
             {
@@ -409,42 +395,46 @@ namespace Pdal
         /// </summary>
         public struct DecodeAwaiter : INotifyCompletion
         {
-            JobHandle jh;
-            private Action continuation;
-        
-            public DecodeAwaiter(DecodeView dv) {
-                jh = dv.Schedule(dv.Width, 1);
-                continuation = null;
+            bool m_Complete;
+            DecodeView dv;
+
+            public DecodeAwaiter(DecodeView dv)
+            {
+                m_Complete = false;
+                this.dv = dv;
+                Thread t = new Thread(this.RunToCompletion)
+                {
+                    Name = "Thread_Run"
+                };
+                t.Start();
             }
 
             public bool IsCompleted
             {
-                get {
-                    return jh.IsCompleted;
-                }
+                get { return m_Complete; }
             }
 
             public void OnCompleted(Action continuation)
             {
-                {
-                    ScheduleContinuation(continuation);
-                    RunToCompletion();
-                }
+                
             }
 
             public void GetResult() { }
 
-            internal void ScheduleContinuation(Action action)
+            public void RunToCompletion( )
             {
-                continuation = action;
+                JobHandle jh = dv.Schedule(dv.pointCount, 100);
+                jh.Complete();
+                m_Complete = true;
             }
+        }
 
-            internal void RunToCompletion()
+        public static async Task RunDVAsync( DecodeView dv)
+        {
+            DecodeAwaiter awaiter= new DecodeAwaiter(dv);
+            while (! awaiter.IsCompleted)
             {
-                var wait = new SpinWait();
-                while (! IsCompleted)
-                    wait.SpinOnce();
-                continuation();
+                await Task.Delay(500);
             }
         }
     }

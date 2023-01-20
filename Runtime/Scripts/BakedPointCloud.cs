@@ -9,7 +9,7 @@ using System;
 using Unity.Collections;
 using Unity.Jobs;
 using System.Threading.Tasks;
-using g3;
+
 
 namespace Pdal
 {
@@ -137,13 +137,13 @@ namespace Pdal
                 Indexes = indexes,
                 Data = data,
                 PointSize = pointSize,
-                Width = bpc.Width,
                 Positions = positions,
                 Colors = colors
             };
 
-            JobHandle jh = dv.Schedule(bpc.Height, 10);
+            JobHandle jh = dv.Schedule(bpc.PointCount, 100);
             jh.Complete();
+            //await PointView.RunDVAsync(dv);
 
             // Cleanup
 
