@@ -44,7 +44,6 @@ using System.Collections.Generic;
 		private static extern ulong getByteCount(IntPtr list);
 
 		[DllImport(PDALC_LIBRARY, EntryPoint="PDALGetDimType")]
-		[return:MarshalAs( UnmanagedType.Struct)]
 		private static extern DimType.NativeDimType getType(IntPtr list, uint index);
 
 		[DllImport(PDALC_LIBRARY, EntryPoint="PDALDisposeDimTypeList")]
