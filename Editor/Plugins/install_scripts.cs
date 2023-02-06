@@ -5,37 +5,40 @@ using System.Diagnostics;
 using System;
 using Debug = UnityEngine.Debug;
 
-#if UNITY_EDITOR
 namespace Pdal {
-    public class Install{
+    public class Install: AssetPostprocessor
+    {
+        const string pdalcVersion = "2.2.0";
 
-        const string pdalcVersion = "2.1.1";
-
-        [InitializeOnLoadMethod]
-        static void OnProjectLoadedinEditor()
+        private static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
         {
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
+            if (!SessionState.GetBool("PdalInitDone", false))
+            {
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
 
-            EditorUtility.DisplayProgressBar("Restoring Conda Package", "PDAL", 0);
+                EditorUtility.DisplayProgressBar("Restoring Conda Package", "PDAL", 0);
 
-            if (Application.isEditor) {
-                try
+                if (Application.isEditor)
                 {
-                    Config config = new Config();
-                    string currentVersion = config.Version;
-                }
-                catch (Exception e)
-                {
-                    Debug.Log($"Error in Conda Package PDAL : {e.ToString()}");
-                    UpdatePackage();
-                    AssetDatabase.Refresh();
+                    try
+                    {
+                        Config config = new Config();
+                        string currentVersion = config.Version;
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.Log($"Error in Conda Package PDAL : {e.ToString()}");
+                        UpdatePackage();
+                        AssetDatabase.Refresh();
+                    };
                 };
-            };
 
-            EditorUtility.ClearProgressBar();
-            stopwatch.Stop();
-            Debug.Log($"Pdal refresh took {stopwatch.Elapsed.TotalSeconds} seconds");
+                EditorUtility.ClearProgressBar();
+                stopwatch.Stop();
+                Debug.Log($"Pdal refresh took {stopwatch.Elapsed.TotalSeconds} seconds");
+            }
+            SessionState.SetBool("PdalInitDone", true);
         }
 
 
@@ -52,4 +55,3 @@ namespace Pdal {
         }
     }
 }
-#endif

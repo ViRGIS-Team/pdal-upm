@@ -1,5 +1,5 @@
 {
-    "name": "Pdal",
+    "name": "Pdal for Unity",
     "rootNamespace": "",
     "references": [
         "geometry3Sharp",
