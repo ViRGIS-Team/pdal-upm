@@ -48,17 +48,16 @@ using System.Text;
 		};
 
 		[DllImport(PDALC_LIBRARY, EntryPoint="PDALGetInvalidDimType")]
-		[return:MarshalAs(UnmanagedType.Struct)]
 		private static extern NativeDimType getInvalidDimType();
 
 		[DllImport(PDALC_LIBRARY, EntryPoint="PDALGetDimTypeIdName")]
-		private static extern int getIdName([MarshalAs(UnmanagedType.Struct)] NativeDimType type, [MarshalAs(UnmanagedType.LPStr)] StringBuilder buffer, uint size);
+		private static extern int getIdName(NativeDimType type, [MarshalAs(UnmanagedType.LPStr)] StringBuilder buffer, uint size);
 
 		[DllImport(PDALC_LIBRARY, EntryPoint="PDALGetDimTypeInterpretationName")]
-		private static extern int getInterpretationName([MarshalAs(UnmanagedType.Struct)] NativeDimType type, [MarshalAs(UnmanagedType.LPStr)] StringBuilder buffer, uint size);
+		private static extern int getInterpretationName( NativeDimType type, [MarshalAs(UnmanagedType.LPStr)] StringBuilder buffer, uint size);
 
 		[DllImport(PDALC_LIBRARY, EntryPoint="PDALGetDimTypeInterpretationByteCount")]
-		private static extern int getInterpretationByteCount([MarshalAs(UnmanagedType.Struct)] NativeDimType type);
+		private static extern int getInterpretationByteCount( NativeDimType type);
 
 		private NativeDimType mType = getInvalidDimType();
 

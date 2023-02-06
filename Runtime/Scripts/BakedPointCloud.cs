@@ -56,7 +56,7 @@ namespace Pdal
         }
 
         /// <summary>
-        /// Load and initialize a Pouintview as a Pointcloud
+        /// Load and initialize a Pointview as a Pointcloud
         /// </summary>
         /// <param name="view">Pointview</param>
         /// <returns></returns>

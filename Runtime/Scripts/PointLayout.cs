@@ -41,7 +41,6 @@ using System.Runtime.InteropServices;
 		private static extern IntPtr getDimTypeList(IntPtr layout);
 
 		[DllImport(PDALC_LIBRARY, EntryPoint="PDALFindDimType")]
-		[return:MarshalAs(UnmanagedType.Struct)]
 		private static extern DimType.NativeDimType findDimType(IntPtr layout, string name);
 
 		[DllImport(PDALC_LIBRARY, EntryPoint="PDALGetDimSize")]
