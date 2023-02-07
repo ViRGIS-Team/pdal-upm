@@ -1,0 +1,19 @@
+{
+    "name": "pdal-wrap.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:edb99114c63104e88a387a126b65c329",
+        "GUID:9234b3d67eb703642aee92eac5780579"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
