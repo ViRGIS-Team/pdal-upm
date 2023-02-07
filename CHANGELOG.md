@@ -1,5 +1,10 @@
 This plugin will be updated as and when new versions of PDAL are released and will use the version numbers from PDAL.
 
+
+# Version 2.5.1
+
+Correct the Editor Assemblies so that it runs under cloud build
+
 # Version 2.5.0
 
 Updates PDAL to version 2.5.0 using pdalc version 2.2.0 to get over the Pipeline Executor deprecation.
