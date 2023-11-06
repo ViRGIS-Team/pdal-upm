@@ -8,7 +8,7 @@ using Debug = UnityEngine.Debug;
 namespace Pdal {
     public class Install: AssetPostprocessor
     {
-        const string pdalcVersion = "2.2.0";
+        const string pdalcVersion = "2.2.1";
 
         private static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
         {
