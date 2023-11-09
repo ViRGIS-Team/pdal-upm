@@ -1,5 +1,5 @@
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+name: Deploy Doxygen with GitHub Pages dependencies preinstalled
 
 on:
   # Runs on pushes targeting the default branch
@@ -36,6 +36,8 @@ jobs:
           working-directory: 'docs/'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
+        with:
+          path: docs/html/
 
   # Deployment job
   deploy:
