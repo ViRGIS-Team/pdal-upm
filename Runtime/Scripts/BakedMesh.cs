@@ -66,7 +66,7 @@ namespace Pdal
                 bm.Dmesh.EnableVertexColors(new Vector3f());
                 foreach (int idx in bm.Dmesh.VertexIndices())
                 {
-                    bm.Dmesh.SetVertexColor(idx, new Vector3f(colors[idx].r / 256, colors[idx].g / 256, colors[idx].b / 256));
+                    bm.Dmesh.SetVertexColor(idx, new Vector3f((float)colors[idx].r / 256, (float)colors[idx].g / 256, (float)colors[idx].b / 256));
                 }
             }
 
