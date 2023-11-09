@@ -101,6 +101,52 @@ namespace Pdal
                 Tris[pointer + 2] = (int)Data.ReinterpretLoad<UInt32>(index + 8);
             }
         }
+
+        /// <summary>
+        /// Extracts a UnityEngine.Mesh from the BakedMesh
+        /// The DMesh3 must be compact. If neccesary - run Compactify first.
+        /// </summary>
+        /// <returns>UnityEngine.Mesh</returns>
+        public Mesh ToMesh()
+        {
+            Mesh unityMesh = new Mesh();
+            unityMesh.MarkDynamic();
+            unityMesh.indexFormat = UnityEngine.Rendering.IndexFormat.UInt32;
+            Vector3[] vertices = new Vector3[Dmesh.VertexCount];
+            Color[] colors = new Color[Dmesh.VertexCount];
+            Vector2[] uvs = new Vector2[Dmesh.VertexCount];
+            Vector3[] normals = new Vector3[Dmesh.VertexCount];
+            NewVertexInfo data;
+            for (int i = 0; i < Dmesh.VertexCount; i++)
+            {
+                if (Dmesh.IsVertex(i))
+                {
+                    data = Dmesh.GetVertexAll(i);
+                    vertices[i] = (Vector3)data.v;
+                    if (data.bHaveC)
+                        colors[i] = (Color)data.c;
+                    if (data.bHaveUV)
+                        uvs[i] = (Vector2)data.uv;
+                    if (data.bHaveN)
+                        normals[i] = (Vector3)data.n;
+                }
+            }
+            unityMesh.vertices = vertices;
+            if (Dmesh.HasVertexColors) unityMesh.SetColors(colors);
+            if (Dmesh.HasVertexUVs) unityMesh.SetUVs(0, uvs);
+            if (Dmesh.HasVertexNormals) unityMesh.SetNormals(normals);
+            int[] triangles = new int[Dmesh.TriangleCount * 3];
+            int j = 0;
+            foreach (Index3i tri in Dmesh.Triangles())
+            {
+                triangles[j * 3] = tri.a;
+                triangles[j * 3 + 1] = tri.b;
+                triangles[j * 3 + 2] = tri.c;
+                j++;
+            }
+            unityMesh.triangles = triangles;
+            return unityMesh;
+        }
     }
 }
 
