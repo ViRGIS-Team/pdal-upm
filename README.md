@@ -78,6 +78,7 @@ using System.Collections.Generic;
 using Pdal;
 using Newtonsoft.Json;
 using g3;
+using UnityEngine;
 
 namespace pdal_mesh
 {
@@ -120,9 +121,10 @@ namespace pdal_mesh
                         Console.WriteLine($"Point Count is {view.Size}");
                         Console.WriteLine($"Triangle Count is {view.MeshSize}");
 
-                        BpcData pc = view.GetBakedPointCloud();
+                        BakedPointCloud bpc = BakedPointCloud.Initialize(view);
 
-                        DMesh3 mesh = view.getMesh();
+                        BakedMesh bm = BakedMesh.Initialize(view);
+                        Mesh mesh = bm.ToMesh();
 
                     }
                 }
