@@ -45,7 +45,7 @@ This has the unfortunate side effect that 3.1.001 will revert to 3.1.1 and this 
 
 The scripts for accessing PDAL data are included in the `pdal`namespace and follow the [PDAL C Api](https://pdal.io/CAPI/doxygen/html/index.html).
 
-For C# API is shown in [the API Documentation](https://virgis-team.github.io/pdal-upm/html/index.html)..
+For C# API is shown in [the API Documentation](https://virgis-team.github.io/pdal-upm/index.html)..
 
 The PDAL library is loaded as an unmanaged native plugin. This plugin will load correctly in the player when built. See below for a note about use in the Editor.
 
@@ -68,7 +68,7 @@ The package will keep the installation of Pdal in `Assets\Conda`. You may want t
 This package installs the GDAL package, which copies data for GDAL and for PROJ into the `Assets/StreamingAssets`folder. You may also want to exclude this folder from source control.
 
 ## Documentation
-See [the API Documentation](https://virgis-team.github.io/pdal-upm/html/index.html).
+See [the API Documentation](https://virgis-team.github.io/pdal-upm/index.html).
 
 A typical sample program :
 
