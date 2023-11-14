@@ -9,6 +9,7 @@ This Package is part of the [ViRGiS project](https://www.virgis.org/) - bringing
 ## Installation
 
 The Package can be installed from [Open UPM](https://openupm.com/packages/com.virgis.mdal/). If you use this method, the dependencies will be automatically loaded provided the relevent scoped registry is included in your project's `manifest.json` :
+
 ```
 scopedRegistries": [
     {
