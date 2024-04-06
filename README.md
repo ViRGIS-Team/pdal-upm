@@ -44,6 +44,8 @@ This has the unfortunate side effect that 3.1.001 will revert to 3.1.1 and this 
 
 ## Developement and Use in the player
 
+> NOTE - For the avoidance of doubt, conda is NOT required on machines running the distributed application. The required libraries are automatically included in the distribution package created by Unity
+
 The scripts for accessing PDAL data are included in the `pdal`namespace and follow the [PDAL C Api](https://pdal.io/CAPI/doxygen/html/index.html).
 
 For C# API is shown in [the API Documentation](https://virgis-team.github.io/pdal-upm/index.html)..
@@ -63,6 +65,10 @@ conda info
 ```
 
 If the development machine is running Windows it must have a reasonably up to date version of POwershell loaded.
+
+> NOTE - recent versions of miniconda for Windows create a "Conda Shell" for running conda commands and have not included the conda executables in the general Windows path. For this package to work, the command listed above MUST work in the general Command Prompt and thus conda must be in the path.
+> This usually means that the following must be added to the path environment variable in Control Panel:
+> `%USERPROFILE%\miniconda3\condabin`
 
 The package will keep the installation of Pdal in `Assets\Conda`. You may want to exclude this folder from source control.
 
