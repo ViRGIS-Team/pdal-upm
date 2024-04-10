@@ -8,7 +8,7 @@ This Package is part of the [ViRGiS project](https://www.virgis.org/) - bringing
 
 ## Installation
 
-The Package can be installed from [Open UPM](https://openupm.com/packages/com.virgis.mdal/). If you use this method, the dependencies will be automatically loaded provided the relevent scoped registry is included in your project's `manifest.json` :
+The Package can be installed from [Open UPM](https://openupm.com/packages/com.virgis.mdal/). If you use this method, the dependencies will be automatically loaded provided the relevant scoped registry is included in your project's `manifest.json` :
 
 ```
 scopedRegistries": [
@@ -32,7 +32,7 @@ The Package can also be installed using the Unity Package Manager directly from 
 This package is a wrapper around a C++ library. We want to keep the link to the library version. However, we also need to be able to have multiple
 builds of the package for the same underlying library version. Unfortunately, UPM does not have the concept of a build number.
 
-Therefore, this package uses the version number ing proposed by [Favo Yang to solve this](https://medium.com/openupm/how-to-maintain-upm-package-part-3-2d08294269ad#88d8). This adds two digits for build number to the SemVer patch value i.e. 3.1.1 => 3.1.100, 3.1.101, 3.1..102 etc.
+Therefore, this package uses the version numbering proposed by [Favo Yang to solve this](https://medium.com/openupm/how-to-maintain-upm-package-part-3-2d08294269ad#88d8). This adds two digits for build number to the SemVer patch value i.e. 3.1.1 => 3.1.100, 3.1.101, 3.1..102 etc.
 
 This has the unfortunate side effect that 3.1.001 will revert to 3.1.1 and this means :
 
@@ -46,34 +46,33 @@ This has the unfortunate side effect that 3.1.001 will revert to 3.1.1 and this 
 
 > NOTE - For the avoidance of doubt, conda is NOT required on machines running the distributed application. The required libraries are automatically included in the distribution package created by Unity
 
-The scripts for accessing PDAL data are included in the `pdal`namespace and follow the [PDAL C Api](https://pdal.io/CAPI/doxygen/html/index.html).
+The scripts for accessing PDAL data are included in the `pdal` namespace and follow the [PDAL C Api](https://pdal.io/CAPI/doxygen/html/index.html).
 
-For C# API is shown in [the API Documentation](https://virgis-team.github.io/pdal-upm/index.html)..
+For C# API is shown in [the API Documentation](https://virgis-team.github.io/pdal-upm/index.html).
 
 The PDAL library is loaded as an unmanaged native plugin. This plugin will load correctly in the player when built. See below for a note about use in the Editor.
 
-This Library currently works on Windows, Linux and Mac based platforms.
+This Library currently works on Windows, Linux and Mac platforms.
 
 ## Running in the Editor
 
-This package uses [Conda](https://docs.conda.io/en/latest/) to download the latest version of PDAL.
+This package uses [Conda](https://docs.conda.io/en/latest/) to download the latest version of GDAL.
 
-For this package to work , the development machine MUST have a working copy of Conda (either full Conda or Miniconda) installed and in the path. The following CLI command should work without change or embellishment:
+> NOTE - When installing Miniconda on Windows, you should select the option to add to the Windows Path. This is not the preferred option but IS required for this package to work.
+
+For this package to work, the development machine MUST have a working copy of Conda (either full Conda or Miniconda) installed and in the path. The following CLI command should work without change or embellishment:
 
 ```
 conda info
 ```
 
-If the development machine is running Windows it must have a reasonably up to date version of POwershell loaded.
+If the development machine is running Windows, it must also have a reasonably up-to-date version of Powershell installed.
 
-> NOTE - recent versions of miniconda for Windows create a "Conda Shell" for running conda commands and have not included the conda executables in the general Windows path. For this package to work, the command listed above MUST work in the general Command Prompt and thus conda must be in the path.
-> This usually means that the following must be added to the path environment variable in Control Panel:
-> `%USERPROFILE%\miniconda3\condabin`
+> NOTE - recent versions of Miniconda for Windows by default create a "Conda Shell" for running conda commands and have not included the conda executables in the general Windows path. For this package to work, the command listed above MUST work in the general Command Prompt and thus conda must be in the path.
+> If the path entry is not created during the Miniconda install, this usually (if Miniconda was installed for one user only) means that the following must be added to the path environment variable in Control Panel:
+> `%USERPROFILE%\miniconda3\condabin`. If Miniconda was installed for All Users, the actual path will be different and this entry should be updated accordingly
 
-The package will keep the installation of Pdal in `Assets\Conda`. You may want to exclude this folder from source control.
-
-This package installs the GDAL package, which copies data for GDAL and for PROJ into the `Assets/StreamingAssets`folder. You may also want to exclude this folder from source control.
-
+The package will keep the installation of GDAL in `Assets\Conda`. You may want to exclude this folder from source control.
 ## Documentation
 See [the API Documentation](https://virgis-team.github.io/pdal-upm/index.html).
 
