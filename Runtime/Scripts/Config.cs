@@ -112,7 +112,7 @@ namespace Pdal
             //string cwd = Environment.CurrentDirectory;
 
             string gdalPath = Application.streamingAssetsPath;
-            GdalData = Path.Combine(gdalPath, "gdal-data");
+            GdalData = Path.Combine(gdalPath, "gdal");
             Proj4Data = Path.Combine(gdalPath, "proj");
         }
 
