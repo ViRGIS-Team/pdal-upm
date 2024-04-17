@@ -23,6 +23,9 @@ outp=$(conda install -c conda-forge --prefix "$destination" --copy $install -y -
 echo $CONDA_SUBDIR > "$destination"/pdal_log.txt
 echo $outp >> "$destination"/pdal_log.txt
 
+echo "removing Symlinks" >> "$destination"/pdal_log.txt 2>&1
+find "$destination/bin" -type l -delete
+
 echo "Processing gdal data" >> "$destination"/pdal_log.txt 2>&1
 echo "copy $destination/share/gdal to $shared_assets" >> "$destination"/pdal_log.txt 2>&1
 mkdir -p "$shared_assets/gdal" 
