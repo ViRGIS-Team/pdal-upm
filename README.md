@@ -139,6 +139,12 @@ namespace pdal_mesh
     }
 }
 ```
+
+# Minimum Project / Test Project
+You can see a minimum working project in the test project used to test build this package (and two others):
+
+https://github.com/ViRGIS-Team/test-project.
+
 # Use with Unity Cloud Build
 
 As of release 2.4.1, this package will work with Unity Cloud Build.
