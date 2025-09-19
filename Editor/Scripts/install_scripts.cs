@@ -4,7 +4,6 @@ using System.IO;
 using System.Diagnostics;
 using System;
 using Debug = UnityEngine.Debug;
-using System;
 
 namespace Pdal {
     public class Install: AssetPostprocessor
@@ -16,6 +15,7 @@ namespace Pdal {
             if (!SessionState.GetBool("PdalInitDone", false))
             {
                 Stopwatch stopwatch = new Stopwatch();
+                string response = "";
                 stopwatch.Start();
 
                 EditorUtility.DisplayProgressBar("Restoring Conda Package", "PDAL", 0);
@@ -30,20 +30,20 @@ namespace Pdal {
                     catch (Exception e)
                     {
                         Debug.Log($"Error in Conda Package PDAL : {e.ToString()}");
-                        UpdatePackage();
+                        response = UpdatePackage();
                         AssetDatabase.Refresh();
                     };
                 };
 
                 EditorUtility.ClearProgressBar();
                 stopwatch.Stop();
-                Debug.Log($"Pdal refresh took {stopwatch.Elapsed.TotalSeconds} seconds");
+                Debug.Log($"Pdal refresh took {stopwatch.Elapsed.TotalSeconds} seconds" + response);
             }
             SessionState.SetBool("PdalInitDone", true);
         }
 
 
-        static void UpdatePackage()
+        static string UpdatePackage()
         {
             Debug.Log("Pdal Install Script Awake");
             string path = Path.GetDirectoryName(new StackTrace(true).GetFrame(0).GetFileName());
@@ -89,6 +89,7 @@ namespace Pdal {
                 _ = e;
             }
             Conda.Conda.TreeShake();
+            return response;
         }
     }
 }
