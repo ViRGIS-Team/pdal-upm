@@ -46,12 +46,9 @@ namespace Pdal {
         {
             Debug.Log("Pdal Install Script Awake");
             string path = Path.GetDirectoryName(new StackTrace(true).GetFrame(0).GetFileName());
-#if UNITY_EDITOR_WIN
-            string script = "install_script.ps1";
-#else
-            string script = "install_script.sh";
-#endif
-            string response = Conda.Conda.Install($"pdal-c={pdalcVersion}",script, path);
+
+            string response = Conda.Conda.Install($"pdal-c={pdalcVersion}");
+            Conda.Conda.TreeShake();
         }
     }
 }
