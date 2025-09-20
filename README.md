@@ -27,6 +27,12 @@ scopedRegistries": [
 
 The Package can also be installed using the Unity Package Manager directly from the [GitHub Repo](https://github.com/ViRGIS-Team/pdal-upm).
 
+## Build Tests and Platform Support
+
+This package is build tested on multiple platforms using the [ViRGiS Team Test Project](https://github.com/ViRGIS-Team/test-project).
+
+See that project for working examples and current list of working platforms.
+
 ## Version numbers
 
 This package is a wrapper around a C++ library. We want to keep the link to the library version. However, we also need to be able to have multiple
@@ -42,6 +48,10 @@ This has the unfortunate side effect that 3.1.001 will revert to 3.1.1 and this 
 | 3.1.1   | 3.1.0   |
 | 3.1.100 | 3.1.1.  |
 
+## A note about Upgrading
+
+Unity is a bit "graby" about DLLs and SOs. Once it is loaded it keeps a hardlink to the DLL and does not like changing. This means that for this package, once you have upgraded to a new version of the UPM package you will, usually, need to restart the Unity Editor for the change to work.
+
 ## Developement and Use in the player
 
 > NOTE - For the avoidance of doubt, conda is NOT required on machines running the distributed application. The required libraries are automatically included in the distribution package created by Unity
@@ -56,23 +66,12 @@ This Library currently works on Windows, Linux and Mac platforms.
 
 ## Running in the Editor
 
-This package uses [Conda](https://docs.conda.io/en/latest/) to download the latest version of GDAL.
+This package uses [Conda](https://docs.conda.io/en/latest/) to download the latest version of PDAL.
 
-> NOTE - When installing Miniconda on Windows, you should select the option to add to the Windows Path. This is not the preferred option but IS required for this package to work.
+As of version 2.9.1, this package uses Version 2 of the Conda Extension package. This means that the package now includes a complete self contained and standalone installation of the Conda API. You no longer need to install Conda on your development machines.
 
-For this package to work, the development machine MUST have a working copy of Conda (either full Conda or Miniconda) installed and in the path. The following CLI command should work without change or embellishment:
+Note that when upgrading, you MUST delete the Assets/Conda directory and restart Unity.
 
-```
-conda info
-```
-
-If the development machine is running Windows, it must also have a reasonably up-to-date version of Powershell installed.
-
-> NOTE - recent versions of Miniconda for Windows by default create a "Conda Shell" for running conda commands and have not included the conda executables in the general Windows path. For this package to work, the command listed above MUST work in the general Command Prompt and thus conda must be in the path.
-> If the path entry is not created during the Miniconda install, this usually (if Miniconda was installed for one user only) means that the following must be added to the path environment variable in Control Panel:
-> `%USERPROFILE%\miniconda3\condabin`. If Miniconda was installed for All Users, the actual path will be different and this entry should be updated accordingly
-
-The package will keep the installation of GDAL in `Assets\Conda`. You may want to exclude this folder from source control.
 ## Documentation
 See [the API Documentation](https://virgis-team.github.io/pdal-upm/index.html).
 
@@ -149,18 +148,4 @@ https://github.com/ViRGIS-Team/test-project.
 
 As of release 2.4.1, this package will work with Unity Cloud Build.
 
-You will need to add a pre-build script to your build configuration in Unity Cloud Build to load Miniconda.
-
-For Windows configurations - the following script works well:
-
-https://gist.github.com/nimaid/a7d6d793f2eba4020135208a57f5c532
-
-For Macos and Linux, something like this:
-
-```
-echo starting conda install
-
-curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o conda.sh
-bash conda.sh -b -p ~/local/miniconda3
-echo completed conda install
-```
+As of release 2.9.1, this package will work with Unity Cloud Build without any need for additional work or scripts.
