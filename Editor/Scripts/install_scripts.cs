@@ -22,17 +22,9 @@ namespace Pdal {
 
                 if (Application.isEditor)
                 {
-                    try
-                    {
-                        Config config = new Config();
-                        string currentVersion = config.Version;
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.Log($"Error in Conda Package PDAL : {e.ToString()}");
+                    if (!Conda.Conda.IsInstalled("pdal-c", pdalcVersion))
                         response = UpdatePackage();
                         AssetDatabase.Refresh();
-                    };
                 };
 
                 EditorUtility.ClearProgressBar();
