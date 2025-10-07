@@ -31,7 +31,7 @@ namespace Pdal {
 
                         conda.Add($"pdal-c={pdalcVersion}", new ConfigFile.Package()
                         {
-                            Name = "gdal",
+                            Name = "pdal",
                             Cleans = new ConfigFile.Clean[] { },
                             Shared_Datas = new string[] {
                                 "gdal", "proj"
