@@ -29,37 +29,14 @@ namespace Pdal {
                         Debug.Log("Pdal Install Script Awake");
                         string path = Path.GetDirectoryName(new StackTrace(true).GetFrame(0).GetFileName());
 
-                        conda.Install($"pdal-c={pdalcVersion}");
-
-                        try
+                        conda.Add($"pdal-c={pdalcVersion}", new ConfigFile.Package()
                         {
-                            string sharedAssets = Application.streamingAssetsPath;
-                            if (Directory.Exists(Path.Combine(conda.condaShared, "gdal")))
-                            {
-                                if (!Directory.Exists(sharedAssets)) Directory.CreateDirectory(sharedAssets);
-                                string gdalDir = Path.Combine(sharedAssets, "gdal");
-                                if (!Directory.Exists(gdalDir)) Directory.CreateDirectory(gdalDir);
-                                string projDir = Path.Combine(sharedAssets, "proj");
-                                if (!Directory.Exists(projDir)) Directory.CreateDirectory(projDir);
-
-                                if (Directory.Exists(Path.Combine(conda.condaShared, "gdal")))
-                                    foreach (var file in Directory.GetFiles(Path.Combine(conda.condaShared, "gdal")))
-                                    {
-                                        File.Copy(file, Path.Combine(gdalDir, Path.GetFileName(file)), true);
-                                    }
-
-                                if (Directory.Exists(Path.Combine(conda.condaShared, "proj")))
-                                    foreach (var file in Directory.GetFiles(Path.Combine(conda.condaShared, "proj")))
-                                    {
-                                        File.Copy(file, Path.Combine(projDir, Path.GetFileName(file)), true);
-                                    }
+                            Name = "gdal",
+                            Cleans = new ConfigFile.Clean[] { },
+                            Shared_Datas = new string[] {
+                                "gdal", "proj"
                             }
-                        }
-                        catch (Exception e)
-                        {
-                            Debug.LogException(e);
-                        }
-                        conda.TreeShake();
+                        });
                         AssetDatabase.Refresh();
                     }
                 };
