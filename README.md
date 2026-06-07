@@ -66,9 +66,9 @@ This Library currently works on Windows, Linux and Mac platforms.
 
 ## Running in the Editor
 
-This package uses [Conda](https://docs.conda.io/en/latest/) to download the latest version of PDAL.
+This package uses [Conda](https://docs.conda.io/en/latest/) and [Pixi](https://pixi.prefix.dev/latest/) to download the latest version of MDAL.
 
-As of version 2.9.1, this package uses Version 2 of the Conda Extension package. This means that the package now includes a complete self contained and standalone installation of the Conda API. You no longer need to install Conda on your development machines.
+As of version 2.10.0, this package uses Version 3 of the Conda Extension package. This means that the package now includes a complete self contained and standalone installation of `Pixi`. You no longer need to install Conda on your development machines.
 
 Note that when upgrading, you MUST delete the Assets/Conda directory and restart Unity.
 
